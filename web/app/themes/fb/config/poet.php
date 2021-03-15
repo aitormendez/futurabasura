@@ -37,9 +37,9 @@ return [
     */
 
     'taxonomy' => [
-        'genre' => [
-            'links' => ['book'],
-            'meta_box' => 'radio',
+        'artist' => [
+            'links' => ['product'],
+            'meta_box' => 'dropdown',
         ],
     ],
 
