@@ -12,19 +12,19 @@ return [
     |
     */
 
-    'post' => [
-        'book' => [
-            'enter_title_here' => 'Enter book title',
-            'menu_icon' => 'dashicons-book-alt',
-            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
-            'show_in_rest' => true,
-            'has_archive' => false,
-            'labels' => [
-                'singular' => 'Book',
-                'plural' => 'Books',
-            ],
-        ],
-    ],
+    // 'post' => [
+    //     'book' => [
+    //         'enter_title_here' => 'Enter book title',
+    //         'menu_icon' => 'dashicons-book-alt',
+    //         'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+    //         'show_in_rest' => true,
+    //         'has_archive' => false,
+    //         'labels' => [
+    //             'singular' => 'Book',
+    //             'plural' => 'Books',
+    //         ],
+    //     ],
+    // ],
 
     /*
     |--------------------------------------------------------------------------
@@ -107,8 +107,10 @@ return [
     */
 
     'palette' => [
-        // 'red' => '#ff0000',
-        // 'blue' => '#0000ff',
+        'negro-fb' => '#3e2b2f',
+        'gris-fb' => '#ada3a4',
+        'allo' => '#ff0000',
+        'blue' => '#0000ff',
     ],
 
     /*

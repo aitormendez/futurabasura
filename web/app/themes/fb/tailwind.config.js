@@ -14,7 +14,12 @@ module.exports = {
         'sans': ['arial', 'sans-serif'],
         'serif': ['times-new-roman', 'serif'],
        },
-      colors: {},
+      colors: {
+        'negro-fb':'#3e2b2f',
+        'gris-fb':'#ada3a4',
+        'allo':'#ffff00',
+        'azul':'#0000ff',
+      },
       backgroundImage: theme => ({
         'fondo': "url('../images/bg.svg')",
        }),

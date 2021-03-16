@@ -27,6 +27,7 @@ class Navigation extends Composer
         return [
             'primary_nav' => $this->navigation(),
             'info_nav' => $this->infoNavigation(),
+            'items_cart' => $this->itemsInCart(),
         ];
     }
 
@@ -56,5 +57,16 @@ class Navigation extends Composer
         }
 
         return Navi::build('info')->toArray();
+    }
+
+    /**
+     * Returns number of items in cart.
+     *
+     * @return string
+     */
+    public function itemsInCart()
+    {
+        global $woocommerce;
+        return $woocommerce->cart->cart_contents_count;
     }
 }
