@@ -7,7 +7,8 @@
     <?php wp_head(); ?>
   </head>
 
-  <body <?php body_class('bg-fondo'); ?>>
+  <body <?php body_class(); ?>>
+    <div id="fondo" class="bg-fondo"></div>
     <?php wp_body_open(); ?>
     <?php do_action('get_header'); ?>
 
