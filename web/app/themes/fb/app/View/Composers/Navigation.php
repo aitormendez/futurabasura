@@ -13,7 +13,7 @@ class Navigation extends Composer
      * @var array
      */
     protected static $views = [
-        'partials.navigation',
+        'partials.header',
         'partials.footer',
     ];
 

@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   purge: {
     content: [
@@ -28,5 +30,32 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    plugin(function({ addComponents }) {
+      const textos = {
+        '.nav-item': {
+          textShadow: '0.1em 0.1em 0 #000',
+          textTransform: 'uppercase',
+          fontSize: '1.5rem',
+          letterSpacing: '0.2em',
+          lineHeight: '1em',
+          color: '#fff'
+        }
+      }
+      const botones = {
+        '.btn': {
+          border: '1px solid #000',
+          backgroundColor: '#fff',
+          textTransform: 'uppercase',
+          letterSpacing: '0.2em',
+          fontWeight: 'bold',
+          fontSize: '0.8rem',
+          color: '#000',
+          padding: '0.7em 1em 0.6em'
+        }
+      }
+      addComponents([textos, botones])
+    })
+  ],
 };

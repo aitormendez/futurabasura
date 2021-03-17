@@ -1,9 +1,19 @@
+html {
+  font-size: 1rem;
+
+  @screen sm {
+    font-size: calc(0.5vw + 0.7rem);
+  }
+}
+
 body {
   @apply font-sans;
 }
 
 #fondo {
   @apply fixed inset-0 bg-fondo;
+  background-size: 10px 10px;
+
 }
 
 #app {

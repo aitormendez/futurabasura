@@ -1,0 +1,47 @@
+.banner {
+  nav {
+    ul {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+
+      .li-brand {
+        grid-column-start: 1;
+        grid-row-start: 2;
+        grid-row-end: 4;
+      }
+
+      .li-cart {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+
+        .cart-link {
+          .cart {
+            width: 40%;
+          }
+
+          .hole {
+            width: 40%;
+
+            .num-items {
+              text-shadow: none;
+            }
+
+            svg {
+              width: 100%;
+              height: auto;
+            }
+
+            .espacio {
+              height: 0.5rem;
+            }
+          }
+
+          > .espacio {
+            width: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
