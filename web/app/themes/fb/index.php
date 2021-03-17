@@ -8,7 +8,7 @@
   </head>
 
   <body <?php body_class(); ?>>
-    <div id="fondo" class="bg-fondo"></div>
+    <div id="fondo"></div>
     <?php wp_body_open(); ?>
     <?php do_action('get_header'); ?>
 

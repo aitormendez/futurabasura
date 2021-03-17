@@ -2,12 +2,8 @@ body {
   @apply font-sans;
 }
 
-.brand {
-  @apply text-3xl font-medium text-indigo-500;
-}
-
 #fondo {
-  @apply fixed inset-0;
+  @apply fixed inset-0 bg-fondo;
 }
 
 #app {
