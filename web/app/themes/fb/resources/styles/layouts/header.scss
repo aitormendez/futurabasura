@@ -1,6 +1,7 @@
 .banner {
   nav {
     ul {
+      justify-content: space-between;
       flex-wrap: wrap;
 
       .li-brand {
@@ -9,6 +10,7 @@
       }
 
       .li-cart {
+        width: 100%;
         order: 0;
 
         .cart-link {
@@ -52,6 +54,34 @@
 
       .li-shop {
         order: 2;
+      }
+    }
+  }
+
+  @screen sm {
+    position: fixed;
+
+    nav ul {
+      flex-wrap: nowrap;
+
+      .li-brand {
+        width: 50%;
+        max-width: 100%;
+        flex-grow: 1;
+        order: 0;
+      }
+
+      .li-shop {
+        order: 2;
+      }
+
+      .li-cart {
+        width: 300px;
+        order: 3;
+      }
+
+      .li-menu {
+        order: 1;
       }
     }
   }
