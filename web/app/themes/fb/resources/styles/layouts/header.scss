@@ -1,19 +1,15 @@
 .banner {
   nav {
     ul {
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+      flex-wrap: wrap;
 
       .li-brand {
-        grid-column-start: 1;
-        grid-row-start: 2;
-        grid-row-end: 4;
+        order: 1;
+        max-width: 40%;
       }
 
       .li-cart {
-        grid-column-start: 1;
-        grid-column-end: 4;
-        grid-row-start: 1;
+        order: 0;
 
         .cart-link {
           .cart {
@@ -21,10 +17,11 @@
           }
 
           .hole {
-            width: 40%;
+            width: 120px;
 
             .num-items {
               text-shadow: none;
+              padding: 0.5rem;
             }
 
             svg {
@@ -41,6 +38,20 @@
             width: 2rem;
           }
         }
+      }
+
+      .li-menu {
+        order: 4;
+        top: 10rem;
+        right: 1.5rem;
+
+        &.posY {
+          top: 1rem;
+        }
+      }
+
+      .li-shop {
+        order: 2;
       }
     }
   }
