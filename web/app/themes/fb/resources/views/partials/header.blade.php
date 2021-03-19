@@ -13,14 +13,14 @@
       @endforeach
       <li class="li-cart">
         <a href="/cart" class="cart-link flex nav-item hover:text-allo">
-          <div class="cart bg-white flex items-center flex-shrink flex-grow pl-8 sm:pr-8">
+          <div class="cart bg-white flex items-center flex-shrink flex-grow pl-8 pr-8 justify-end">
             <span>cart</span>
           </div>
           <div class="hole flex flex-col">
             <div class="num-items font-serif text-azul font-bold bg-white text-center">
               {{ $items_cart }}
             </div>
-            <div>
+            <div class="hole-cell">
               @svg('images.cart-hole-min')
             </div>
             <div class="espacio bg-white"></div>

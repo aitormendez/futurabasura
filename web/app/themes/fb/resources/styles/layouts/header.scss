@@ -15,7 +15,7 @@
 
         .cart-link {
           .cart {
-            width: 40%;
+            // width: 8rem;
           }
 
           .hole {
@@ -24,6 +24,10 @@
             .num-items {
               text-shadow: none;
               padding: 0.5rem;
+            }
+
+            .hole-cell {
+              margin: -2px;
             }
 
             svg {
@@ -76,8 +80,12 @@
       }
 
       .li-cart {
-        width: 300px;
+        width: auto;
         order: 3;
+
+        .hole {
+          width: 8rem;
+        }
       }
 
       .li-menu {
