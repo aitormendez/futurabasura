@@ -1,4 +1,36 @@
-<header class="banner flex w-full">
+<div id="solapa" class="fixed w-screen h-screen bg-white z-40 pr-8 py-8 pl-0 sm:pr-16 sm:py-16">
+  <ul class="contents my-4">
+    @foreach ($contents_nav as $item)
+    <li class="">
+      <a href="{{ $item->url }}" class="uppercase text-black tracking-widest text-sm sm:text-xl">{{ $item->label }}</a>
+    </li>
+    @endforeach
+  </ul>
+  <ul class="shop my-4">
+    @foreach ($shop_nav as $item)
+    <li class="">
+      <a href="{{ $item->url }}" class="uppercase text-black tracking-widest text-sm sm:text-xl">{{ $item->label }}</a>
+    </li>
+    @endforeach
+  </ul>
+  <ul class="social my-4">
+    @foreach ($social_nav as $item)
+    <li class="">
+      <a href="{{ $item->url }}" class="uppercase text-black tracking-widest text-sm sm:text-xl">{{ $item->label }}</a>
+    </li>
+    @endforeach
+  </ul>
+  <ul class="info my-4">
+    @foreach ($info_nav as $item)
+    <li class="">
+      <a href="{{ $item->url }}" class="uppercase text-black tracking-widest text-sm sm:text-xl">{{ $item->label }}</a>
+    </li>
+    @endforeach
+  </ul>
+  <a id="btn-close" href="#" class="absolute right-8 top-8 btn inline-block hover:bg-allo">CLOSE</a>
+</div>
+
+<header class="banner flex w-full z-30">
   <nav class="w-full">
     <ul class="flex">
       <li class="li-brand inline-block sm:block p-4 sm:pt-8">
@@ -28,10 +60,9 @@
           <div class="espacio bg-white"></div>
         </a>
       </li>
-      <li id="btn-menu" class="li-menu block absolute sm:static sm:pt-6">
-        <a href="#" class="btn block hover:bg-allo">MENU</a>
+      <li id="li-btn-menu" class="li-menu block absolute sm:static sm:pt-6">
+        <a href="#" id="btn-menu" class="btn block hover:bg-allo">MENU</a>
       </li>
     </ul>
   </nav>
-
 </header>

@@ -66,6 +66,9 @@ add_action('after_setup_theme', function () {
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'sage'),
         'info_navigation' => __('Info Navigation', 'sage'),
+        'social_navigation' => __('Social Navigation', 'sage'),
+        'shop_navigation' => __('Shop Navigation', 'sage'),
+        'contents_navigation' => __('Contents Navigation', 'sage'),
     ]);
 
     /**

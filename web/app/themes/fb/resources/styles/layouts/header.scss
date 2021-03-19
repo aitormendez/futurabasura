@@ -1,3 +1,12 @@
+#solapa {
+  left: -100vw;
+
+  ul li {
+    position: relative;
+    left: -50rem;
+  }
+}
+
 .banner {
   nav {
     ul {
@@ -14,10 +23,6 @@
         order: 0;
 
         .cart-link {
-          .cart {
-            // width: 8rem;
-          }
-
           .hole {
             width: 120px;
 
