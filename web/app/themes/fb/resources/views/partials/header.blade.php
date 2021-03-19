@@ -13,7 +13,7 @@
       @endforeach
       <li class="li-cart">
         <a href="/cart" class="cart-link flex nav-item hover:text-allo">
-          <div class="cart bg-white flex items-center flex-shrink flex-grow pl-8 pr-8 justify-end">
+          <div class="cart bg-white flex items-center sm:items-start flex-shrink flex-grow pl-8 sm:pt-8 pr-8 justify-end">
             <span>cart</span>
           </div>
           <div class="hole flex flex-col">
@@ -29,7 +29,7 @@
         </a>
       </li>
       <li id="btn-menu" class="li-menu block absolute sm:static sm:pt-6">
-        <button class="btn block focus:rounded-none">MENU</button>
+        <a href="#" class="btn block hover:bg-allo">MENU</a>
       </li>
     </ul>
   </nav>
