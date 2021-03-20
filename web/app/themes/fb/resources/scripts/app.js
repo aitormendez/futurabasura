@@ -7,8 +7,6 @@ import Scrambler from 'scrambling-text';
 
 $(document).ready(() => {
 
-  console.log(fb);
-
   // comportamiento del scroll
   // ---------------------------------------------------------
 
@@ -81,7 +79,7 @@ $(document).ready(() => {
   let i = 0;
   function printText() {
     scrambler.scramble(TEXTS[i % TEXTS.length], handleScramble);
-    setTimeout(printText, 5000);
+    setTimeout(printText, 30000);
     i++;
   }
-  printText();
+  setTimeout(printText, 10000);

@@ -35,7 +35,7 @@
     <ul class="flex">
       <li class="li-brand inline-block sm:block p-4 sm:pt-8">
         <a id="brand" class="brand nav-item hover:text-allo"" href="{{ home_url('/') }}">
-          {{ $siteName }}
+          {{ $frase }}
         </a>
       </li>
       @foreach ($primary_nav as $item)

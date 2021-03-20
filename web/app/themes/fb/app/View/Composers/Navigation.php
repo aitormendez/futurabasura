@@ -31,6 +31,7 @@ class Navigation extends Composer
             'shop_nav' => $this->shopNavigation(),
             'contents_nav' => $this->contentsNavigation(),
             'items_cart' => $this->itemsInCart(),
+            'frase' => $this->frase(),
         ];
     }
 
@@ -116,17 +117,23 @@ class Navigation extends Composer
     }
 
     /**
-     * Frases para brand.
+     * Frases para brand. Se proporciona la primera frase que aparece en el banner.
      *
      * @return string
      */
-    // public function frases()
-    // {+
-    //     +
+    public function frase()
+    {
+        $frases = get_field('frases', 'option');
 
-    //     $frases = '';
-    //     return ;
-    // }
+        if( $frases ) {
+            $frases_array = [];
+            foreach( $frases as $frase ) {
+                $frases_array[] = $frase['frase'];
+            };
+        }
+
+        return $frases_array[array_rand($frases_array)];
+    }
 
 
 }
