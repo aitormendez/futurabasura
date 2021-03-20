@@ -114,4 +114,19 @@ class Navigation extends Composer
         global $woocommerce;
         return $woocommerce->cart->cart_contents_count;
     }
+
+    /**
+     * Frases para brand.
+     *
+     * @return string
+     */
+    // public function frases()
+    // {+
+    //     +
+
+    //     $frases = '';
+    //     return ;
+    // }
+
+
 }

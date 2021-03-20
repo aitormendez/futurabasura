@@ -1,4 +1,4 @@
-<div id="solapa" class="fixed w-screen h-screen bg-white z-40 pr-8 py-8 pl-0 sm:pr-16 sm:py-16">
+<div id="solapa" class="fixed w-screen h-screen bg-white z-40 pr-8 py-8 pl-0 sm:pr-16 sm:py-16 top-0">
   <ul class="contents my-4">
     @foreach ($contents_nav as $item)
     <li class="">
@@ -30,11 +30,11 @@
   <a id="btn-close" href="#" class="absolute right-8 top-8 btn inline-block hover:bg-allo">CLOSE</a>
 </div>
 
-<header class="banner flex w-full z-30">
+<header class="banner flex w-full z-30 top-0">
   <nav class="w-full">
     <ul class="flex">
       <li class="li-brand inline-block sm:block p-4 sm:pt-8">
-        <a class="brand nav-item hover:text-allo"" href="{{ home_url('/') }}">
+        <a id="brand" class="brand nav-item hover:text-allo"" href="{{ home_url('/') }}">
           {{ $siteName }}
         </a>
       </li>

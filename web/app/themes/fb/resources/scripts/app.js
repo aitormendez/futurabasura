@@ -3,8 +3,11 @@
  */
 import 'jquery';
 import anime from 'animejs';
+import Scrambler from 'scrambling-text';
 
 $(document).ready(() => {
+
+  console.log(fb);
 
   // comportamiento del scroll
   // ---------------------------------------------------------
@@ -65,4 +68,20 @@ $(document).ready(() => {
 });
 
 
+  // scramble text en brand
+  // https://github.com/sogoagain/scrambling-text-js
+  // ---------------------------------------------------------
+  const TEXTS = fb.frases;
 
+  const scrambler = new Scrambler();
+  const handleScramble = (text) => {
+    document.getElementById('brand').innerHTML = text;
+  }
+
+  let i = 0;
+  function printText() {
+    scrambler.scramble(TEXTS[i % TEXTS.length], handleScramble);
+    setTimeout(printText, 5000);
+    i++;
+  }
+  printText();

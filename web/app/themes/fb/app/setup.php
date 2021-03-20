@@ -24,6 +24,27 @@ add_action('wp_enqueue_scripts', function () {
     }
 
     wp_enqueue_style('sage/app.css', asset('styles/app.css')->uri(), false, null);
+
+    $frases = get_field('frases', 'option');
+
+    var_dump($frases);
+
+    if( $frases ) {
+        $frases_array = [];
+        foreach( $frases as $frase ) {
+            $frases_array[] = $frase['frase'];
+        };
+    }
+
+    var_dump($frases_array);
+
+    $datos = array(
+        'homeUrl' => get_bloginfo( 'url' ),
+        'frases' => $frases_array,
+    );
+
+    wp_localize_script('sage/app.js', 'fb', $datos);
+
 }, 100);
 
 /**
