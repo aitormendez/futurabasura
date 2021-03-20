@@ -19,12 +19,6 @@ class Slider extends Field
                 'label' => 'Mostrar en slider',
                 'instructions' => 'activar para enviar este producto al slider de portada',
                 'required' => 0,
-                'conditional_logic' => [],
-                'wrapper' => [
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ],
                 'message' => '',
                 'default_value' => 0,
                 'ui' => 1,
@@ -33,14 +27,8 @@ class Slider extends Field
             ])
             ->addImage('img_producto', [
                 'label' => 'Imagen de producto',
-                'instructions' => 'Debe ser de 2000px x 1155px, un PNG con fondo transparente y que encaje en el fondo predefinido',
+                'instructions' => 'Debe ser de 2000px x 1135px, un PNG con fondo transparente y que encaje en el fondo predefinido',
                 'required' => 0,
-                'conditional_logic' => [],
-                'wrapper' => [
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ],
                 'return_format' => 'array',
                 'preview_size' => 'thumbnail',
                 'library' => 'all',
@@ -52,7 +40,26 @@ class Slider extends Field
                 'max_size' => '',
                 'mime_types' => 'png',
             ])
-                ->conditional('mostrar_en_slider', '==', 1);
+                ->conditional('mostrar_en_slider', '==', 1)
+            ->addRadio('formato', [
+                'label' => 'Formato de la obra',
+                'instructions' => '',
+                'required' => 0,
+                'choices' => [
+                    '50x70h' => '50 x 70 horizontal',
+                    '50x70v' => '50 x 70 vertical',
+                    '61x91h' => '61 x 91 horizontal',
+                    '61x91v' => '61 x 91 vertical',
+                ],
+                'allow_null' => 0,
+                'other_choice' => 0,
+                'save_other_choice' => 0,
+                'default_value' => '',
+                'layout' => 'vertical',
+                'return_format' => 'value',
+            ])
+            ->conditional('mostrar_en_slider', '==', 1)
+            ;
 
 
         return $artist->build();

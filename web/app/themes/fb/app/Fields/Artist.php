@@ -7,11 +7,6 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 
 class Artist extends Field
 {
-    /**
-     * The field group.
-     *
-     * @return array
-     */
     public function fields()
     {
         $artist = new FieldsBuilder('artists');

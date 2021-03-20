@@ -1,15 +1,18 @@
-<div class="flex justify-center bg-white">
+<div class="flex relative justify-center bg-white">
+  <div id="fondo-slider" class="bg-black w-100 md:w-3/4 absolute"></div>
   <div class="glide md:w-3/4">
     <div data-glide-el="track" class="glide__track">
       <ul class="glide__slides">
+        @foreach ($slider as $slide)
         <li class="glide__slide">
-          <div class="fondo">
-            a
+          <div class="prod w-100">
+            <img src="{!! $slide['img']['url'] !!}" srcset="{!! $slide['srcset'] !!}}" sizes="(max-width: 640px) 100vw, 80vw", alt="">
           </div>
         </li>
-        <li class="glide__slide">b</li>
-        <li class="glide__slide">c</li>
+        @endforeach
       </ul>
     </div>
   </div>
 </div>
+
+@dump($slider)

@@ -7,6 +7,8 @@ $(document).ready(() => {
     var glide = new Glide('.glide', {
       type: 'carousel',
       autoplay: 5000,
+      animationDuration: 1000,
+      animationTimingFunc: 'linear',
       gap: 0,
     })
     glide.mount({ Controls, Autoplay, Keyboard });
