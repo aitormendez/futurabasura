@@ -4,6 +4,7 @@
 import 'jquery';
 import anime from 'animejs';
 import Scrambler from 'scrambling-text';
+import './slider.js';
 
 $(document).ready(() => {
 
@@ -63,9 +64,6 @@ $(document).ready(() => {
     });
   })
 
-});
-
-
   // scramble text en brand
   // https://github.com/sogoagain/scrambling-text-js
   // ---------------------------------------------------------
@@ -83,3 +81,8 @@ $(document).ready(() => {
     i++;
   }
   setTimeout(printText, 10000);
+
+});
+
+
+
