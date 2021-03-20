@@ -14,7 +14,7 @@ class Artist extends Field
      */
     public function fields()
     {
-        $artist = new FieldsBuilder('example');
+        $artist = new FieldsBuilder('artists');
 
         $artist
             ->setLocation('taxonomy', '==', 'artist');
