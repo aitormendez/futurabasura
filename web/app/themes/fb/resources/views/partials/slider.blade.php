@@ -1,3 +1,5 @@
+@php $count = count($slider); @endphp
+
 <div class="flex relative justify-center bg-white">
   <div id="fondo-slider" class="bg-black bg-cover w-100 md:w-3/4 absolute"></div>
   <div class="glide md:w-3/4">
@@ -12,5 +14,29 @@
         @endforeach
       </ul>
     </div>
+
+    <div class="glide__arrows d-none d-sm-block" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+        ←
+      </button>
+      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+        →
+      </button>
+    </div>
+
+    <div class="glide__bullets d-none d-sm-block" data-glide-el="controls[nav]">
+      @for ($i = 0; $i < $count; $i++)
+        <button class="glide__bullet" data-glide-dir="={{ $i }}">
+          <div class="cruz-wrap">
+            <div class="cruz">
+              <div class="cruz1"></div>
+              <div class="cruz2"></div>
+              <div class="cruz3"></div>
+            </div>
+          </div>
+        </button>
+      @endfor
+    </div>
+
   </div>
 </div>
