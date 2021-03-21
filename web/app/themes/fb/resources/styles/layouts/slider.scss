@@ -120,4 +120,19 @@ $glide-modifier-separator: '--' !default;
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
   }
+
+  a.prod {
+    .bg-hover {
+      visibility: hidden;
+      width: 100%;
+    }
+
+    &:hover .bg-hover {
+      visibility: visible;
+    }
+
+    .datos {
+      width: 25%;
+    }
+  }
 }
