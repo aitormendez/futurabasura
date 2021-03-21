@@ -45,10 +45,12 @@ class Slider extends Composer
 
         $array = array_map(function ($post) {
             $img = get_field('img_producto', $post->ID);
+            $formato = get_field('formato', $post->ID);
+
             return [
                'img'     => $img,
                'srcset'  => wp_get_attachment_image_srcset($img['ID']),
-               'formato' => get_field('formato', $post->ID) ,
+               'formato' => $formato,
             ];
         }, $posts);
 

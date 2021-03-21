@@ -34,9 +34,17 @@ add_action('wp_enqueue_scripts', function () {
         };
     }
 
+    $fondos = [
+        'f50x70v' => get_field('fondo_50x70v', 'option')['url'],
+        'f50x70h' => get_field('fondo_50x70h', 'option')['url'],
+        'f61x91v' => get_field('fondo_61x91v', 'option')['url'],
+        'f61x91h' => get_field('fondo_61x91h', 'option')['url'],
+    ];
+
     $datos = array(
         'homeUrl' => get_bloginfo( 'url' ),
         'frases' => $frases_array,
+        'fondos' => $fondos,
     );
 
     wp_localize_script('sage/app.js', 'fb', $datos);
