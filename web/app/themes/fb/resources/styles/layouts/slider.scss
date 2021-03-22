@@ -97,8 +97,7 @@ $glide-modifier-separator: '--' !default;
       outline: none;
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       background-color: theme('colors.allo');
     }
 
