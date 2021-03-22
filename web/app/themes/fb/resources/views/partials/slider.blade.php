@@ -1,7 +1,7 @@
 @php $count = count($slider); @endphp
 
 <div class="flex relative justify-center bg-white">
-  <div id="fondo-slider" class="bg-cover w-100 md:w-3/4 absolute"></div>
+  <div id="fondo-slider" class="bg-cover w-screen md:w-3/4 absolute"></div>
   <div class="glide md:w-3/4">
     <div data-glide-el="track" class="glide__track">
       <ul class="glide__slides">
@@ -16,7 +16,7 @@
                 <p class="text-black font-bold tracking-widest mb-4">{!! $slide['regular_price'] !!} €</p>
               </div>
             </div>
-            <img class="relative" src="{!! $slide['img']['url'] !!}" srcset="{!! $slide['srcset'] !!}" sizes="(max-width: 640px) 100vw, 80vw", alt="">
+            <img class="relative" src="{!! $slide['img']['url'] !!}" srcset="{!! $slide['srcset'] !!}" sizes="(max-width: 640px) 100vw, 80vw" alt="">
           </a>
         </li>
         @endforeach

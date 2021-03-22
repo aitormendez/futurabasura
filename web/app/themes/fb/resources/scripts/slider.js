@@ -9,7 +9,7 @@ $(document).ready(() => {
   if (viewportWidth >= 640) {
     var glide = new Glide('.glide', {
       type: 'carousel',
-      autoplay: false,
+      autoplay: 10000,
       animationDuration: 1000,
       animationTimingFunc: 'linear',
       gap: 0,
