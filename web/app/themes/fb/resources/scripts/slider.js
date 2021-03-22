@@ -6,10 +6,10 @@ $(document).ready(() => {
       fondo = document.getElementById('fondo-slider');
       console.log(fb.fondos.f50x70v);
 
-  if (viewportWidth >= 640) {
+  if (viewportWidth >= 0) {
     var glide = new Glide('.glide', {
       type: 'carousel',
-      autoplay: 10000,
+      autoplay: false,
       animationDuration: 1000,
       animationTimingFunc: 'linear',
       gap: 0,

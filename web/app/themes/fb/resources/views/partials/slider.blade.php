@@ -1,13 +1,13 @@
 @php $count = count($slider); @endphp
 
 <div class="flex relative justify-center bg-white">
-  <div id="fondo-slider" class="bg-cover w-screen md:w-3/4 absolute"></div>
-  <div class="glide md:w-3/4">
+  <div id="fondo-slider" class="bg-cover w-screen sm:w-3/4 absolute"></div>
+  <div class="glide w-screen sm:w-3/4">
     <div data-glide-el="track" class="glide__track">
       <ul class="glide__slides">
         @foreach ($slider as $slide)
         <li class="glide__slide" formato="{!! $slide['formato'] !!}">
-          <a href="{!! $slide['url'] !!}" class="prod relative w-100 block">
+          <a href="{!! $slide['url'] !!}" class="prod relative block">
             <div class="bg-hover bg-white top-0 bottom-0 absolute p-8 uppercase">
               <div class="datos leading-tight">
                 <h2 class="text-black font-bold tracking-widest mb-4">{!! $slide['nombre'] !!}</h2>
