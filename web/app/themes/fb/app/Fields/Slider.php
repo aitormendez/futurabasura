@@ -32,12 +32,10 @@ class Slider extends Field
                 'return_format' => 'array',
                 'preview_size' => 'thumbnail',
                 'library' => 'all',
-                'min_width' => '',
-                'min_height' => '',
-                'min_size' => '',
-                'max_width' => '',
-                'max_height' => '',
-                'max_size' => '',
+                'min_width' => '2000',
+                'min_height' => '1135',
+                'max_width' => '2000',
+                'max_height' => '1135',
                 'mime_types' => 'png',
             ])
                 ->conditional('mostrar_en_slider', '==', 1)
