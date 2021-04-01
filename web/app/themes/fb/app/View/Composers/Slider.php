@@ -36,10 +36,12 @@ class Slider extends Composer
     {
         $posts = get_posts([
             'post_type'		=> 'product',
+            'posts_per_page'	=> -1,
             'meta_query'	=> [
-                'key'	 	=> 'mostrar_en_slider',
-                'value'	  	=> 1,
-                'compare' 	=> '=',
+                [
+                    'key'	 	=> 'mostrar_en_slider',
+                    'value'	  	=> 1,
+                ]
             ]
         ]);
 
@@ -59,22 +61,32 @@ class Slider extends Composer
 
             $nombre = $post->post_title;
             $permalink = get_permalink($post->ID);
-            $artist = get_the_terms($post->ID, 'artist')[0]->name;
+            $artist = get_the_terms($post->ID, 'artist');
             $product = wc_get_product($post->ID);
             $regular_price = $product->get_regular_price();
 
-            return [
-               'img'            => $img,
-               'srcset'         => wp_get_attachment_image_srcset($img['ID']),
-               'formato'        => $formato,
-               'post'           => $post,
-               'product'        => $product,
-               'nombre'         => $nombre,
-               'url'            => $permalink,
-               'formato_humano' => $formato_humano,
-               'artist' => $artist,
-               'regular_price' => $regular_price,
+            $output = [
+                'post_id'        => $post->ID,
+                'formato'        => $formato,
+                'post'           => $post,
+                'product'        => $product,
+                'nombre'         => $nombre,
+                'url'            => $permalink,
+                'formato_humano' => $formato_humano,
+                'regular_price' => $regular_price,
             ];
+
+            if ($img) {
+                 $output['img'] = $img;
+                 $output['srcset'] = wp_get_attachment_image_srcset($img['ID']);
+            }
+
+            if ($artist) {
+                $output['artist'] = $artist[0]->name;
+            }
+
+
+            return $output;
         }, $posts);
 
         return $array;
