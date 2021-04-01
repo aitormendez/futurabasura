@@ -3,8 +3,9 @@ import Glide, { Controls, Autoplay, Keyboard } from '@glidejs/glide/dist/glide.m
 $(document).ready(() => {
 
   let viewportWidth = $(window).width(),
-      fondo = document.getElementById('fondo-slider');
-      console.log(fb.fondos.f50x70v);
+      fondo = document.getElementById('fondo-slider'),
+      slides = document.querySelectorAll('.glide__slide');
+      console.log(slides);
 
   if (viewportWidth >= 0) {
     var glide = new Glide('.glide', {
@@ -16,7 +17,10 @@ $(document).ready(() => {
     })
 
     function setBg() {
-      let formato = document.querySelectorAll(`.glide__slide:nth-of-type(${glide.index + 1})`).[0].getAttribute('formato');
+      let formato = slides[glide.index].getAttribute('formato');
+
+      console.log(glide.index);
+      console.log(formato);
 
       if ( formato == '50x70v') {
         fondo.style.backgroundImage = `url(${fb.fondos.f50x70v})`;
@@ -26,8 +30,8 @@ $(document).ready(() => {
         fondo.style.backgroundImage = `url(${fb.fondos.f50x70h})`;
       }
 
-      if ( formato == '61x91h') {
-        fondo.style.backgroundImage = `url(${fb.fondos.f61x91h})`;
+      if ( formato == '61x91v') {
+        fondo.style.backgroundImage = `url(${fb.fondos.f61x91v})`;
       }
 
       if ( formato == '61x91h') {
