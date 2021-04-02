@@ -71,7 +71,7 @@ return [
     */
 
     'block' => [
-        // 'sage/accordion',
+        'sage/accordion',
     ],
 
     /*
@@ -85,10 +85,10 @@ return [
     */
 
     'categories' => [
-        // 'cta' => [
-        //     'title' => 'Call to Action',
-        //     'icon' => 'star-filled',
-        // ],
+        'cta' => [
+            'title' => 'Call to Action',
+            'icon' => 'star-filled',
+        ],
     ],
 
     /*
@@ -132,7 +132,7 @@ return [
     */
 
     'menu' => [
-        // 'gutenberg',
+        'gutenberg',
     ],
 
 ];

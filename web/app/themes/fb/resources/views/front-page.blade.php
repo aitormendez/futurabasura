@@ -12,6 +12,16 @@
 
   @include('partials.slider')
 
+  @query([
+    'post_type' => 'post'
+  ])
+
+  <section class="posts prose">
+    @posts
+      @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
+    @endposts
+  </section>
+
   @while(have_posts()) @php(the_post())
     @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
   @endwhile
