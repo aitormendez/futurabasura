@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'wp-admin.$role|$username' => [
+    'wp-admin.all' => [
         'posts',
+        'comments',
     ]
 ];
