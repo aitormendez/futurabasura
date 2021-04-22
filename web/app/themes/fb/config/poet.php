@@ -29,6 +29,26 @@ return [
                   ),
             ],
         ],
+        'story' => [
+            'enter_title_here' => 'Título da la noticia',
+            'menu_icon' => 'dashicons-megaphone',
+            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+            'show_in_rest' => true,
+            'has_archive' => true,
+            'labels' => [
+                'singular' => __('Story', 'sage'),
+                'plural' => __('Stories', 'sage'),
+            ],
+            // 'admin_cols'   => [
+            //     'artist' => [
+            //         'taxonomy' => 'artist'
+            //     ],
+            //     'slider' => array(
+            //         'title'    => 'Slider',
+            //         'meta_key' => 'mostrar_en_slider',
+            //       ),
+            // ],
+        ],
     ],
 
     /*
