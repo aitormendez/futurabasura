@@ -199,6 +199,14 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
      */
     add_theme_support('customize-selective-refresh-widgets');
+
+    /**
+     * Soporte para Woocommerce.
+     * @link https://docs.woocommerce.com/document/woocommerce-theme-developer-handbook/
+     */
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
 }, 20);
 
 /**
