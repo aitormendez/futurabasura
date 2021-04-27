@@ -14,7 +14,7 @@ require('@tinypixelco/laravel-mix-wp-blocks');
 
 mix
   .setPublicPath('./public')
-  .browserSync('futurabasura.test');
+  .browserSync('https://futurabasura.test');
 
 mix
   .sass('resources/styles/app.scss', 'styles')
