@@ -16,7 +16,11 @@ add_filter('excerpt_more', function () {
 });
 
 
-//Register taxonomy API for WC
+/**
+ * Register taxonomy API for WC
+ *
+ * @link https://stackoverflow.com/a/62681137/2986401
+ */
 add_action( 'rest_api_init', function () {
     register_rest_field('product', "artist", array(
         'get_callback'    => __NAMESPACE__ . '\\product_get_callback',
@@ -25,9 +29,11 @@ add_action( 'rest_api_init', function () {
     ));
 } );
 
-
-
-//Get Taxonomy record in wc REST API
+/**
+ * Get Taxonomy record in wc REST API
+ *
+ * @link https://stackoverflow.com/a/62681137/2986401
+ */
 function product_get_callback($post, $attr, $request, $object_type)
 {
     $terms = array();
