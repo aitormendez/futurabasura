@@ -33,6 +33,7 @@ add_action( 'rest_api_init', function () {
  * Get Taxonomy record in wc REST API
  *
  * @link https://stackoverflow.com/a/62681137/2986401
+ * @return array
  */
 function product_get_callback($post, $attr, $request, $object_type)
 {
