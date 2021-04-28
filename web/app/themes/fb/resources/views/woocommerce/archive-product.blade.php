@@ -38,8 +38,9 @@
              */
             do_action( 'woocommerce_archive_description' );
         @endphp
-    </header>
 
+    </header>
+    {!! do_shortcode('[product_tax_dropdown]') !!}
     @if ( woocommerce_product_loop() )
 
         @php

@@ -45,6 +45,7 @@ add_action('wp_enqueue_scripts', function () {
         'homeUrl' => get_bloginfo( 'url' ),
         'frases' => $frases_array,
         'fondos' => $fondos,
+        'homeUrl' => get_bloginfo( 'url' ),
     );
 
     wp_localize_script('sage/app.js', 'fb', $datos);

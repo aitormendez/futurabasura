@@ -5,6 +5,7 @@ import 'jquery';
 import anime from 'animejs';
 import Scrambler from 'scrambling-text';
 import './slider.js';
+import './shop.js';
 
 $(document).ready(() => {
 
