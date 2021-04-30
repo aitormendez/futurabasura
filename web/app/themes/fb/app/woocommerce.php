@@ -7,7 +7,7 @@
  * @link https://stackoverflow.com/questions/56120607/make-a-dropdown-for-a-woocommerce-taxonomy-like-product-tags
  */
 
-add_shortcode( 'product_tax_dropdown', function( $atts ) {
+add_shortcode( 'product_tax_artist_dropdown', function( $atts ) {
     // Attributes
     $atts = shortcode_atts(
         [
@@ -17,7 +17,7 @@ add_shortcode( 'product_tax_dropdown', function( $atts ) {
         'taxonomy'     => 'artist',
         ],
         $atts,
-        'product_tax_dropdown'
+        'product_tax_artist_dropdown'
     );
 
     global $wp_query;
@@ -41,3 +41,9 @@ add_shortcode( 'product_tax_dropdown', function( $atts ) {
      ] );
     return ob_get_clean();
 } );
+
+add_action( 'woocommerce_before_shop_loop', function() {
+    echo '<form class="fb_artist-ordering woocommerce-ordering">';
+    echo do_shortcode('[product_tax_artist_dropdown]');
+    echo '</form>';
+}, 20 );
