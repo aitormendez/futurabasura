@@ -12,6 +12,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      letterSpacing: {
+        max: '.25em',
+      },
       fontFamily: {
         'sans': ['arial', 'sans-serif'],
         'serif': ['times-new-roman', 'serif'],
