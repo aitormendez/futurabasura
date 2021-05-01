@@ -1,0 +1,41 @@
+body.artists {
+  .article {
+    .avatar {
+      img {
+        max-width: 12vw;
+      }
+    }
+
+    .productos {
+      align-self: flex-start;
+
+      img {
+        display: block;
+        max-width: 7vw;
+        max-height: 7vw;
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+
+  @screen md {
+    .article {
+      .h2 {
+
+      }
+
+      .bio {
+
+      }
+
+      .avatar {
+
+      }
+
+      .productos {
+
+      }
+    }
+  }
+}
