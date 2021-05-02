@@ -11,7 +11,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 <li class="producto inline-block">
   <a href="{!! $producto['url'] !!}" class="block relative">
     <img src="{!! $producto['img_url'] !!}" alt="{!! $producto['title'] !!}" srcset="{!! $producto['img_srcset'] !!}" sizes="(max-width: 768px) 100vw, 25vw" class="block">
-    <div class="hover bg-negro-fb absolute inset-0 p-4 uppercase text-white tracking-widest font-bold">
+    <div class="hover md:bg-negro-fb md:absolute inset-0 p-4 uppercase md:text-white tracking-widest font-bold">
       <p class="mb-4">{{ $producto['title'] }}</p>
       <p class="mb-4">{{ $producto['artist'] }}</p>
       @if ($producto['has_format'])
