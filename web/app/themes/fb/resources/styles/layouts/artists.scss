@@ -36,6 +36,15 @@ body.artists {
       .productos {
 
       }
+
+      &:hover {
+        background-color: #000;
+        color: #fff;
+
+        img {
+          filter: grayscale(100%);
+        }
+      }
     }
   }
 }
