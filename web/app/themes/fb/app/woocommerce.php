@@ -57,3 +57,8 @@ add_action( 'woocommerce_before_shop_loop', function() {
  add_filter('woocommerce_shop_loop_item_title', function() {
 
  });
+
+/**
+ * Eliminar estilos WC.
+ */
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
