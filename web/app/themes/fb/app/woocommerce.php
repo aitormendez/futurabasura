@@ -73,14 +73,9 @@ add_action( 'woocommerce_before_shop_loop', function() {
 
  });
 
-<<<<<<< HEAD
 /**
  * Eliminar estilos WC.
  */
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 
-=======
-
- add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
->>>>>>> 0086c2e132d5b8d3f2fae03a7d85223d5f255bef
