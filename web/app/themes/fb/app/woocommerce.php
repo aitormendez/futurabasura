@@ -42,11 +42,26 @@ add_shortcode( 'product_tax_artist_dropdown', function( $atts ) {
     return ob_get_clean();
 } );
 
+/**
+ * Rodear filtros de la tienda con un div. inicio.
+ */
+add_action( 'woocommerce_before_shop_loop', function() {
+    echo '<div class="filtros flex justify-center flex-wrap p-6">';
+}, 20 );
+
+
 add_action( 'woocommerce_before_shop_loop', function() {
     echo '<form class="fb_artist-ordering woocommerce-ordering">';
     echo do_shortcode('[product_tax_artist_dropdown]');
     echo '</form>';
 }, 20 );
+
+/**
+ * Rodear filtros de la tienda con un div. fin
+ */
+add_action( 'woocommerce_before_shop_loop', function() {
+    echo '</div>';
+}, 30 );
 
 
 /**
@@ -62,3 +77,5 @@ add_action( 'woocommerce_before_shop_loop', function() {
  * Eliminar estilos WC.
  */
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
+
