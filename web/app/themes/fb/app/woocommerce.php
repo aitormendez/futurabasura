@@ -2,7 +2,7 @@
 
 
 /**
- * Add shortcode con desplegable de artistas.
+ * Shortcode con desplegable de artistas.
  *
  * @link https://stackoverflow.com/questions/56120607/make-a-dropdown-for-a-woocommerce-taxonomy-like-product-tags
  */
@@ -47,3 +47,13 @@ add_action( 'woocommerce_before_shop_loop', function() {
     echo do_shortcode('[product_tax_artist_dropdown]');
     echo '</form>';
 }, 20 );
+
+
+/**
+ * pruebas product loop.
+ *
+ */
+
+ add_filter('woocommerce_shop_loop_item_title', function() {
+
+ });

@@ -15,7 +15,7 @@
 
       <div class="avatar flex items-center justify-center md:w-1/6 md:pt-6"">
         @if ($artist['avatar'])
-        <img src="{{ $artist['avatar']['url'] }}" srcset="{{ $artist['srcset'] }}" sizes="(max-width: 791px) 80vw, 20vw" alt="{{ $artist['name'] }}" class="rounded-full">
+        <img src="{{ $artist['avatar']['url'] }}" srcset="{{ $artist['srcset'] }}" sizes="(max-width: 768px) 80vw, 20vw" alt="{{ $artist['name'] }}" class="rounded-full">
         @endif
       </div>
 

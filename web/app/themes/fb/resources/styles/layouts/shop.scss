@@ -1,0 +1,31 @@
+.post-type-archive-product {
+  .main {
+    background-color: #fff;
+  }
+
+  @screen md {
+    .producto {
+      img {
+        width: auto;
+        height: auto;
+        max-width: 25vw;
+        max-height: 25vw;
+      }
+
+      .hover {
+        opacity: 0;
+        transition: opacity 0.5s;
+
+        p {
+          font-size: 1vw;
+        }
+      }
+
+      &:hover {
+        .hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
