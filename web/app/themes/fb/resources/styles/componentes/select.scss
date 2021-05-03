@@ -2,6 +2,7 @@
   text-transform: uppercase;
   color: black;
   letter-spacing: 0.2em;
+  background-color: transparent;
 
   .select2-results > .select2-results__options {
     max-height: none;
@@ -13,18 +14,27 @@
     border: none;
   }
 
-  .select2-selection,
-  .select2-results__option {
+  .select2-selection {
     border: none;
     text-align: center;
-    padding: 0.5em 2em;
+    background-color: transparent;
     line-height: 1.2em;
+    border-radius: 0;
+
+    &__rendered {
+      color: black !important;
+    }
   }
 
-  .select2-results__option--highlighted {
-    background-color: #fff !important;
-    color: blue !important;
+  .select2-results__option {
+    text-align: center;
+
+    &--highlighted {
+      background-color: #fff !important;
+      color: blue !important;
+    }
   }
+
 
   .select2-results__option--selected {
     background-color: #fff !important;
