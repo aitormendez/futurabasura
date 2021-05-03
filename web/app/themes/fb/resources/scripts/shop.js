@@ -5,9 +5,9 @@ $(document).ready(() => {
       function onProductTaxChange() {
           if ( $(select).val() !=='' ) {
               location.href = fb.homeUrl+ '/artists/'+$(select).val();
+          } else {
+            location.href = fb.homeUrl+ '/shop/';
           }
-          console.log($(select).val());
-          console.log(select);
       }
       $(select).change( onProductTaxChange );
 
