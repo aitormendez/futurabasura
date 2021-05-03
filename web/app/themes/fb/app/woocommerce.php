@@ -46,7 +46,7 @@ add_shortcode( 'product_tax_artist_dropdown', function( $atts ) {
  * Rodear filtros de la tienda con un div. inicio.
  */
 add_action( 'woocommerce_before_shop_loop', function() {
-    echo '<div class="filtros flex justify-center flex-wrap p-6">';
+    echo '<div class="filtros relative flex justify-center flex-wrap p-6">';
 }, 20 );
 
 
@@ -60,7 +60,7 @@ add_action( 'woocommerce_before_shop_loop', function() {
  * Rodear filtros de la tienda con un div. fin
  */
 add_action( 'woocommerce_before_shop_loop', function() {
-    echo '</div>';
+    echo '</div><div id="desplegable" class="relative"></div>';
 }, 30 );
 
 

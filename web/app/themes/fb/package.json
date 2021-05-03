@@ -43,6 +43,7 @@
     "@glidejs/glide": "^3.4.1",
     "animejs": "^3.2.1",
     "jquery": "^3.5.1",
-    "scrambling-text": "^1.0.4"
+    "scrambling-text": "^1.0.4",
+    "select2": "^4.1.0-rc.0"
   }
 }
