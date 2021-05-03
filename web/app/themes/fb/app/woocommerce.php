@@ -43,10 +43,10 @@ add_shortcode( 'product_tax_artist_dropdown', function( $atts ) {
 } );
 
 /**
- * Rodear filtros de la tienda con un div. inicio.
+ * Rodear filtros de la tienda con un div.filtros -- inicio.
  */
 add_action( 'woocommerce_before_shop_loop', function() {
-    echo '<div class="filtros relative flex justify-center flex-wrap p-6">';
+    echo '<div class="filtros relative flex justify-center flex-wrap p-6 md:pt-12 md:pb-20">';
 }, 20 );
 
 
@@ -57,7 +57,7 @@ add_action( 'woocommerce_before_shop_loop', function() {
 }, 20 );
 
 /**
- * Rodear filtros de la tienda con un div. fin
+ * Rodear filtros de la tienda con un div.filtros -- fin
  */
 add_action( 'woocommerce_before_shop_loop', function() {
     echo '</div><div id="desplegable" class="relative"></div>';
