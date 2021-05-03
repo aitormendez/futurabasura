@@ -20,27 +20,6 @@
 
 @section('content')
 
-    <header class="woocommerce-products-header">
-
-        @if ( apply_filters( 'woocommerce_show_page_title', true ) )
-
-            <h1 class="woocommerce-products-header__title page-title">@php woocommerce_page_title(); @endphp</h1>
-
-        @endif
-
-
-        @php
-            /**
-             * Hook: woocommerce_archive_description.
-             *
-             * @hooked woocommerce_taxonomy_archive_description - 10
-             * @hooked woocommerce_product_archive_description - 10
-             */
-            do_action( 'woocommerce_archive_description' );
-        @endphp
-
-    </header>
-
     @if ( woocommerce_product_loop() )
 
         @php
