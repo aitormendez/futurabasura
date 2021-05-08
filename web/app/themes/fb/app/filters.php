@@ -16,7 +16,9 @@ add_filter('excerpt_more', function () {
 });
 
 
-
+/**
+ * Añadir la imagen del artista a una columna de la taxonomía en el editor.
+ */
 add_filter('manage_artist_custom_column', function ($content,$column_name,$term_id){
     $term = get_term($term_id, 'artist');
     $avatar = get_field('artist_avatar', $term);
