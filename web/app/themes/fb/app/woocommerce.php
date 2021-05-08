@@ -83,6 +83,16 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
  */
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 
+/**
+ * Eliminar "Sale!".
+ */
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+
+
+/**
+ * Eliminar breadcrumb.
+ */
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 
 
 /**
