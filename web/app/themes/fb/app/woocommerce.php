@@ -93,7 +93,6 @@ remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_pr
  */
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
 
-
 /**
  * Eliminar breadcrumb y wraper divs.
  */
@@ -111,5 +110,15 @@ add_action( 'after_setup_theme', function () {
     remove_theme_support( 'wc-product-gallery-zoom' );
     remove_theme_support( 'wc-product-gallery-lightbox' );
 }, 20 );
+
+
+
+/**
+ * Eliminar reviews de single product.
+ */
+add_filter( 'woocommerce_product_tabs', function ($tabs) {
+    unset($tabs['reviews']);
+    return $tabs;
+}, 98 );
 
 
