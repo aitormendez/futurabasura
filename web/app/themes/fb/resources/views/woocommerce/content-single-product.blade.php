@@ -31,10 +31,10 @@ do_action( 'woocommerce_before_single_product' );
   {!! get_the_password_form() !!}
   @php return; @endphp
 @endif
+@dump($galeria)
 
 
-
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'flex flex-wrap', $product ); ?>>
 
   @php
 	/**
@@ -47,22 +47,25 @@ do_action( 'woocommerce_before_single_product' );
 	@endphp
 
 
-@dump($galeria)
 
-<div class="glide">
-  <div class="glide__track" data-glide-el="track">
-    <ul class="glide__slides">
-      <li class="glide__slide">0</li>
-      <li class="glide__slide">1</li>
-      <li class="glide__slide">2</li>
-    </ul>
+
+  <div id="glide" class="glide md:order-2 md:w-1/2">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+      @foreach ($galeria as $item)
+      <li class="glide__slide">
+        <img src="{!! $item['att_url'] !!}" srcset="{!! $item['att_srcset'] !!}" @if ($item['has_alt']) alt="{!! $item['alt'][0] !!}" @endif sizes="(max-width: 792px) 100%, 50%">
+      </li>
+      @endforeach
+      </ul>
+    </div>
+    <div id="indice" class="absolute w-20 text-center p-3 bg-white right-0 bottom-0"></div>
   </div>
-</div>
 
 
 
 
-	<div class="summary entry-summary">
+	<div class="summary entry-summary md:w-1/2">
 		@php
 		/**
 		 * Hook: woocommerce_single_product_summary.

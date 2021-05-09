@@ -20,9 +20,6 @@ $(document).ready(() => {
       function setBg() {
         let formato = slides[glide.index].getAttribute('formato');
 
-        console.log(glide.index);
-        console.log(formato);
-
         if ( formato == '50x70v') {
           fondo.style.backgroundImage = `url(${fb.fondos.f50x70v})`;
         }
