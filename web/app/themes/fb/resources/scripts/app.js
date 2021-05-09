@@ -7,6 +7,7 @@ import Scrambler from 'scrambling-text';
 import './slider.js';
 import './shop.js';
 import './select2.js';
+import './singleProduct.js';
 
 $(document).ready(() => {
 

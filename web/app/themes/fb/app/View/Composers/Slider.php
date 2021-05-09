@@ -73,7 +73,7 @@ class Slider extends Composer
                 'nombre'         => $nombre,
                 'url'            => $permalink,
                 'formato_humano' => $formato_humano,
-                'regular_price' => $regular_price,
+                'regular_price'  => $regular_price,
             ];
 
             if ($img) {

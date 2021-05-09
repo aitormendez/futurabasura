@@ -46,6 +46,22 @@ do_action( 'woocommerce_before_single_product' );
 	do_action( 'woocommerce_before_single_product_summary' );
 	@endphp
 
+
+@dump($galeria)
+
+<div class="glide">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      <li class="glide__slide">0</li>
+      <li class="glide__slide">1</li>
+      <li class="glide__slide">2</li>
+    </ul>
+  </div>
+</div>
+
+
+
+
 	<div class="summary entry-summary">
 		@php
 		/**
@@ -76,4 +92,4 @@ do_action( 'woocommerce_before_single_product' );
 	@endphp
 </div>
 
-@php do_action( 'woocommerce_after_single_product' ); @php
+@php do_action( 'woocommerce_after_single_product' ); @endphp
