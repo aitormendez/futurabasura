@@ -16,6 +16,7 @@ class SingleProduct extends Composer
             'galeria' => $this->galeria(),
             'artista' => $this->artista(),
             'precio' => $this->precio(),
+            'variaciones' => $this->variaciones(),
         ];
     }
 
@@ -74,5 +75,49 @@ class SingleProduct extends Composer
         return $output;
 
     }
+
+    public function variaciones()
+    {
+        global $product;
+        $product_type = $product->get_type();
+
+        if ($product_type == 'variable') {
+
+            $product_variations_list = $product->get_available_variations();
+
+            $output = [];
+
+            foreach ($product_variations_list as $idx => $variation) {
+                $variation_id = $variation["variation_id"];
+                $variable_product = wc_get_product($variation_id);
+                $variation_obj = wc_get_product( $variation_id );
+
+                $output['variation_' . $idx] = [
+                    'product_type'  => $product_type,
+                    'variation_id'  => $variation_id,
+                    'variation_obj' => $variation_obj,
+                    'size_slug'     => implode(', ', $variation["attributes"]),
+                    'size'          => $variation_obj->get_attribute( 'format' ),
+                    'regular_price' => $variable_product->get_regular_price(),
+                    'sale_price'    => $variable_product->get_sale_price(),
+                ];
+            }
+
+            return $output;
+
+        } else {
+
+            $output = [];
+            $output[0] = [
+                'product_type'  => $product_type,
+            ];
+
+            return $output;
+        }
+
+
+    }
+
+
 
 }

@@ -32,6 +32,7 @@ do_action( 'woocommerce_before_single_product' );
   @php return; @endphp
 @endif
 @dump($precio)
+@dump($variaciones)
 
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'flex flex-wrap', $product ); ?>>
 
