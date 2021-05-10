@@ -14,7 +14,19 @@ class SingleProduct extends Composer
     {
         return [
             'galeria' => $this->galeria(),
+            'artista' => $this->artista(),
+            'precio' => $this->precio(),
         ];
+    }
+
+    public function artista()
+    {
+        global $post;
+        $artist = get_the_terms($post->ID, 'artist');
+        return [
+            'artista' => $artist[0],
+            'link'    => get_term_link($artist[0]->term_id),
+        ] ;
     }
 
     public function galeria()
@@ -42,6 +54,25 @@ class SingleProduct extends Composer
         }, $attachment_ids);
 
         return $output;
+    }
+
+    public function precio()
+    {
+        global $product;
+
+        $output = [
+            'product' => $product,
+            'regular_price' => $product->get_regular_price(),
+            'is_on_sale' => false,
+        ];
+
+        if ( $product->is_on_sale() )  {
+            $output['is_on_sale'] = true;
+            $output['sale_price'] = $product->get_sale_price();
+        }
+
+        return $output;
+
     }
 
 }
