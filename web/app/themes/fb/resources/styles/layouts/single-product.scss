@@ -8,6 +8,15 @@
       }
     }
 
+    .ftbs_variationsTableRowColumn {
+      display: flex;
+      align-items: center;
+    }
+
+    .ftbs_variationsTableRowColumn_quantityInput {
+      width: 4rem;
+    }
+
     .single_add_to_cart_button {
       display: block;
       width: 100%;

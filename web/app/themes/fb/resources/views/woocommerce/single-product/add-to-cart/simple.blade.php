@@ -38,7 +38,7 @@ if ( ! $product->is_purchasable() ) {
 
 		@php do_action( 'woocommerce_before_add_to_cart_button' ) @endphp
 
-    <div style="/* display: none; */">
+    <div style="display: none;">
       @php
         woocommerce_quantity_input([
           'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
@@ -51,24 +51,24 @@ if ( ! $product->is_purchasable() ) {
       @php do_action( 'woocommerce_after_add_to_cart_quantity' ) @endphp
 
       {{-- tabla nueva --}}
-      <div class="ftbs_variationsTableContainer">
-        <div class="ftbs_variationsTable">
-          <div id="ftbs_variationsTableRow_0" class="ftbs_variationsTableRow ftbs_variationsTableRowFirst" >
-            <div class="ftbs_variationsTableRowPadContainer">
-              <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_radio">
-                <input type="radio" name="attribute_pa_medidas" value="" checked="checked"  />
-              </div>
-              <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_size">
-                <span class="ftbsFontStyle4_blackSoft">{!! $variaciones[0]['size'] !!} </span>
-              </div>
-              <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_price">
-                <span class="ftbsFontStyle4_blackSoft">{!! $precio['price'] !!}. <span class="woocommerce_price_euro_letter">EUR</span><span class="woocommerce_price_euro_symbol">€</span></span>
-              </div>
-              <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_quantity">
-                <div id="ftbs_variationsTableRowColumn_quantityInput_add" class="cursor-pointer">&plus;</div>
-                <input class="ftbs_variationsTableRowColumn_quantityInput ftbsFontStyle2_blue" type="text" value="1"/>
-                <div id="ftbs_variationsTableRowColumn_quantityInput_remove" class="cursor-pointer">&minus;</div>
-              </div>
+      <div class="ftbs_variationsTable">
+        <div id="ftbs_variationsTableRow_0" class="ftbs_variationsTableRow ftbs_variationsTableRowFirst" >
+          <div class="ftbs_variationsTableRowPadContainer flex justify-between border border-black mb-6">
+            <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_radio invisible overflow-hidden w-0">
+              <input type="radio" name="attribute_pa_medidas" value="" checked="checked"  />
+            </div>
+            <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_size px-4">
+              <span class="ftbsFontStyle4_blackSoft">{!! $variaciones[0]['size'] !!} </span>
+            </div>
+            @if ($precio['is_on_sale'])
+              <div class="price-on-sale text-white bg-red-600 px-4 flex items-center"><del>{{ $precio['regular_price'] }}</del> <del class="woocommerce_price_euro_letter block">&nbsp;EUR</del></div>
+            @endif
+            <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_price px-4">{!! $precio['price'] !!} &nbsp;EUR<span class="invisible">€</span></span>
+            </div>
+            <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_quantity relative">
+              <div id="ftbs_variationsTableRowColumn_quantityInput_add" class="cursor-pointer absolute leading-none top-0 right-0 py-1.5 px-2 select-none hover:text-azul text-center">&plus;</div>
+              <input class="ftbs_variationsTableRowColumn_quantityInput text-azul font-bold h-full block p-4" type="text" value="1"/>
+              <div id="ftbs_variationsTableRowColumn_quantityInput_remove" class="cursor-pointer absolute leading-none bottom-0 right-0 py-1.5 px-2 select-none hover:text-azul">&minus;</div>
             </div>
           </div>
         </div>
