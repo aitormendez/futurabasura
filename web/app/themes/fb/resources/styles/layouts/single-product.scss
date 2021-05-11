@@ -28,4 +28,27 @@
     }
   }
 
+  @screen md {
+    .entry-summary {
+      padding: 0 3vw;
+    }
+  }
+
+  @screen lg {
+    .entry-summary {
+      padding: 0 5vw;
+    }
+  }
+
+  @screen xl {
+    .entry-summary {
+      padding: 0 7vw;
+    }
+
+  @screen xl {
+    .entry-summary {
+      padding: 0 9vw;
+    }
+  }
+
 }

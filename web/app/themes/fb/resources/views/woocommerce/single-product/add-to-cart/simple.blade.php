@@ -53,12 +53,12 @@ if ( ! $product->is_purchasable() ) {
       {{-- tabla nueva --}}
       <div class="ftbs_variationsTable">
         <div id="ftbs_variationsTableRow_0" class="ftbs_variationsTableRow ftbs_variationsTableRowFirst" >
-          <div class="ftbs_variationsTableRowPadContainer flex justify-between border border-black mb-6">
+          <div class="ftbs_variationsTableRowPadContainer flex justify-between border border-black mb-6 text-sm">
             <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_radio invisible overflow-hidden w-0">
               <input type="radio" name="attribute_pa_medidas" value="" checked="checked"  />
             </div>
             <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_size px-4">
-              <span class="ftbsFontStyle4_blackSoft">{!! $variaciones[0]['size'] !!} </span>
+              <span class="ftbsFontStyle4_blackSoft">{!! $variaciones[0]['size'] !!} CM</span>
             </div>
             @if ($precio['is_on_sale'])
               <div class="price-on-sale text-white bg-red-600 px-4 flex items-center"><del>{{ $precio['regular_price'] }}</del> <del class="woocommerce_price_euro_letter block">&nbsp;EUR</del></div>
