@@ -8,6 +8,7 @@ class SingleProduct extends Composer
 {
     protected static $views = [
         'woocommerce.content-single-product',
+        'woocommerce.single-product.add-to-cart.simple',
     ];
 
     public function with()
@@ -62,9 +63,10 @@ class SingleProduct extends Composer
         global $product;
 
         $output = [
-            'product' => $product,
+            'product'       => $product,
+            'price' => $product->get_price(),
             'regular_price' => $product->get_regular_price(),
-            'is_on_sale' => false,
+            'is_on_sale'    => false,
         ];
 
         if ( $product->is_on_sale() )  {
@@ -109,12 +111,12 @@ class SingleProduct extends Composer
 
             $output = [];
             $output[0] = [
-                'product_type'  => $product_type,
+                'product_type' => $product_type,
+                'size'         => $product->get_attribute('format'),
             ];
 
             return $output;
         }
-
 
     }
 

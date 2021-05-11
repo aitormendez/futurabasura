@@ -1,5 +1,7 @@
 import 'select2';
 
+// esto sirve para sustituir los filtros (inputs dropdown) en archivo de producto
+
 $(document).ready(() => {
   let
     w = window.innerWidth,
