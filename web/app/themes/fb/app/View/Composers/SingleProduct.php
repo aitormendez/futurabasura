@@ -9,6 +9,7 @@ class SingleProduct extends Composer
     protected static $views = [
         'woocommerce.content-single-product',
         'woocommerce.single-product.add-to-cart.simple',
+        'woocommerce.single-product.add-to-cart.variable',
     ];
 
     public function with()
@@ -94,13 +95,15 @@ class SingleProduct extends Composer
                 $variable_product = wc_get_product($variation_id);
                 $variation_obj = wc_get_product( $variation_id );
 
-                $output['variation_' . $idx] = [
+                $output[$idx] = [
                     'product_type'  => $product_type,
                     'variation_id'  => $variation_id,
                     'variation_obj' => $variation_obj,
                     'size_slug'     => implode(', ', $variation["attributes"]),
                     'size'          => $variation_obj->get_attribute( 'format' ),
+                    'price'         => $variable_product->get_price(),
                     'regular_price' => $variable_product->get_regular_price(),
+                    'is_on_sale'    => $variation_obj->is_on_sale(),
                     'sale_price'    => $variable_product->get_sale_price(),
                 ];
             }

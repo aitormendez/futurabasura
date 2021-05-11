@@ -59,6 +59,57 @@ do_action( 'woocommerce_before_add_to_cart_form' );
 			</tbody>
 		</table>
 
+      {{-- tabla nueva --}}
+      <div class="ftbs_variationsTableContainer">
+        @php
+          // $product_variations_list = $product->get_available_variations();
+          // $product_variations_list = array_reverse($product_variations_list);
+        @endphp
+
+        @foreach($variaciones as $idx => $variation)
+          @php
+            // $variation_id = $variation["variation_id"];
+            // $variation_obj = wc_get_product( $variation_id );
+            // $size_slug = implode(', ', $variation["attributes"]);
+            // $size = $variation_obj->get_attribute( 'format' );
+            // $price = $variation_obj->regular_price;
+          @endphp
+
+          <div id="ftbs_variationsTableRow_<?php echo $idx; ?>" class="ftbs_variationsTableRow {{ ($idx===0)?'ftbs_variationsTableRowFirst':'ftbs_variationsTableRow_unselected' }}" onclick='ftbs_clickOnProductVariationRow(this);' attributename='attribute_pa_format' attributevalue='{!! $variation['size_slug'] !!}'>
+            <!-- data-attribute_name="attribute_pa_format"  value="{!! $variation['size_slug'] !!}"-->
+            <div class="ftbs_variationsTableRowPadContainer @if ($idx!==0) ftbs_variationsTableRowPadContainer_inactive @endif">
+
+              <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_radio">
+                <input id="ftbs_variationsTableRowColumn_radioInput_{{ $idx }}" class="ftbs_variationsTableRowColumn_radioInput" type="radio" @if ($idx===0) name="attribute_pa_format" @endif variation_id="{!! $variation["variation_id"] !!}" value="{!! $variation['size_slug'] !!}" onchange='ftbs_singleProductAttributeInteraction(this);' {!!($idx===0)?'checked="checked"':'' !!} />
+              </div>
+
+              <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_size">
+                <span class="ftbsFontStyle4_blackSoft">{!! $variation["size"] !!}</span>
+              </div>
+
+              <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_price">
+                <span class="ftbsFontStyle4_blackSoft">{!! $variation["price"] !!}<span class="woocommerce_price_euro_letter">&nbsp;EUR</span><span class="woocommerce_price_euro_symbol invisible">€</span></span>
+              </div>
+
+              <div id="ftbs_variationsTableRowColumn_quantity_{{ $idx }}" class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_quantity">
+                @if ($idx===0)
+                  <div id="ftbs_variationsTableRowColumn_quantityInput_add" onclick='ftbs_product_quantity_increase();'>&plus;</div>
+                  <input id="ftbs_variationsTableRowColumn_quantityInput" class="ftbs_variationsTableRowColumn_quantityInput ftbsFontStyle2_blue" onchange='ftbs_singleProductQuantityInteraction(this);' type="text" value="1" />
+                  <div id="ftbs_variationsTableRowColumn_quantityInput_remove" onclick='ftbs_product_quantity_decrease();'>&minus;</div>
+                @else
+                  <div class="ftbs_variationsTableRowColumn_quantityInput_add_inactive">&plus;</div>
+                  <input class="ftbs_variationsTableRowColumn_quantityInput_inactive ftbs_variationsTableRowColumn_quantityInput" value="" />
+                  <div class="ftbs_variationsTableRowColumn_quantityInput_remove_inactive">&minus;</div>
+                @endif
+              </div>
+
+            </div>
+          </div>
+        @endforeach
+      </div>
+
+      {{-- termina tabla nueva --}}
+
 		<div class="single_variation_wrap">
 			<?php
 				/**
@@ -81,7 +132,7 @@ do_action( 'woocommerce_before_add_to_cart_form' );
 				do_action( 'woocommerce_after_single_variation' );
 			?>
 		</div>
-    @endif
+  @endif
 
 	<?php do_action( 'woocommerce_after_variations_form' ); ?>
 </form>
