@@ -29,6 +29,8 @@ do_action( 'woocommerce_before_add_to_cart_form' );
 
 @endphp
 
+{{$product->get_type()}}
+
 <form class="variations_form cart" action="{{ apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) }}" method="post" enctype='multipart/form-data' data-product_id="<?php echo absint( $product->get_id() ); ?>" data-product_variations="<?php echo $variations_attr; // WPCS: XSS ok. ?>">
 	@php do_action( 'woocommerce_before_variations_form' ) @endphp
 
