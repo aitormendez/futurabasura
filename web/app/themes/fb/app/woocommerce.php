@@ -129,3 +129,21 @@ add_filter( 'woocommerce_product_tabs', function ($tabs) {
     unset($tabs['reviews']);
     return $tabs;
 }, 98 );
+
+
+/**
+ * Añadir clase simple/variable/etc en body de single-product.
+ */
+
+add_action( 'template_redirect', 'template_redirect_action' );
+function template_redirect_action() {
+    if ( ! is_admin() && is_product() ) {
+        add_filter( 'body_class', function ( $classes ) {
+            global $post;
+            $product = wc_get_product( $post->ID );
+            $tipo    = $product->get_type();
+
+            return array_merge( $classes, array( $tipo ) );
+        } );
+    }
+}
