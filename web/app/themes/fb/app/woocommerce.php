@@ -123,13 +123,13 @@ add_action( 'after_setup_theme', function () {
 
 
 /**
- * Eliminar reviews de single product.
+ * Eliminar reviews de single product y additional information tab.
  */
 add_filter( 'woocommerce_product_tabs', function ($tabs) {
     unset($tabs['reviews']);
+    unset( $tabs['additional_information'] );
     return $tabs;
 }, 98 );
-
 
 /**
  * Añadir clase simple/variable/etc en body de single-product.

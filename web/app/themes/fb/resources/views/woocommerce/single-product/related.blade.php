@@ -34,6 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		@php woocommerce_product_loop_start() @endphp
       @foreach ( $related_products as $related_product )
+      {{-- @dump($related_product) --}}
         @php
           $post_object = get_post( $related_product->get_id() );
 
