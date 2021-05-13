@@ -9,7 +9,6 @@ $(document).ready(() => {
     let
       btnAdd = $('#ftbs_variationsTableRowColumn_quantityInput_add'),
       btnRemove = $('#ftbs_variationsTableRowColumn_quantityInput_remove');
-      console.log(btnAdd);
 
     function ftbs_product_quantity_increase(){
       var input = $(".ftbs_variationsTableRowColumn_quantityInput:not(.ftbs_variationsTableRowColumn_quantityInput_inactive)").val();

@@ -9,7 +9,6 @@ $(document).ready(() => {
     g = document.getElementById('glide'),
     s = g.getElementsByClassName('glide__slide'),
     i= document.getElementById('indice');
-    console.log(s.length);
 
     var glide = new Glide('.glide', {
       type: 'carousel',
@@ -40,4 +39,5 @@ $(document).ready(() => {
     g.addEventListener('click', avanza);
 
   }
+
 });

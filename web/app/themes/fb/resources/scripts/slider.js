@@ -6,7 +6,6 @@ $(document).ready(() => {
     let viewportWidth = $(window).width(),
       fondo = document.getElementById('fondo-slider'),
       slides = document.querySelectorAll('.glide__slide');
-      console.log(slides);
 
     if (viewportWidth >= 0) {
       var glide = new Glide('.glide', {

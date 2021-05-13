@@ -29,8 +29,6 @@ do_action( 'woocommerce_before_add_to_cart_form' );
 
 @endphp
 
-{{$product->get_type()}}
-
 <form class="variations_form cart" action="{{ apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) }}" method="post" enctype='multipart/form-data' data-product_id="<?php echo absint( $product->get_id() ); ?>" data-product_variations="<?php echo $variations_attr; // WPCS: XSS ok. ?>">
 	@php do_action( 'woocommerce_before_variations_form' ) @endphp
 
@@ -69,20 +67,12 @@ do_action( 'woocommerce_before_add_to_cart_form' );
         @endphp
 
         @foreach($variaciones as $idx => $variation)
-          @php
-            // $variation_id = $variation["variation_id"];
-            // $variation_obj = wc_get_product( $variation_id );
-            // $size_slug = implode(', ', $variation["attributes"]);
-            // $size = $variation_obj->get_attribute( 'format' );
-            // $price = $variation_obj->regular_price;
-          @endphp
-
-          <div id="ftbs_variationsTableRow_<?php echo $idx; ?>" class="ftbs_variationsTableRow {{ ($idx===0)?'ftbs_variationsTableRowFirst':'ftbs_variationsTableRow_unselected' }}" onclick='ftbs_clickOnProductVariationRow(this);' attributename='attribute_pa_format' attributevalue='{!! $variation['size_slug'] !!}'>
+          <div id="ftbs_variationsTableRow_<?php echo $idx; ?>" class="ftbs_variationsTableRow ftbs_variationsTableRow {{ ($idx===0)?'ftbs_variationsTableRowFirst':'ftbs_variationsTableRow_unselected' }}" attributename='attribute_pa_format' attributevalue='{!! $variation['size_slug'] !!}'>
             <!-- data-attribute_name="attribute_pa_format"  value="{!! $variation['size_slug'] !!}"-->
             <div class="ftbs_variationsTableRowPadContainer @if ($idx!==0) ftbs_variationsTableRowPadContainer_inactive @endif">
 
               <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_radio">
-                <input id="ftbs_variationsTableRowColumn_radioInput_{{ $idx }}" class="ftbs_variationsTableRowColumn_radioInput" type="radio" @if ($idx===0) name="attribute_pa_format" @endif variation_id="{!! $variation["variation_id"] !!}" value="{!! $variation['size_slug'] !!}" onchange='ftbs_singleProductAttributeInteraction(this);' {!!($idx===0)?'checked="checked"':'' !!} />
+                <input id="ftbs_variationsTableRowColumn_radioInput_{{ $idx }}" class="ftbs_variationsTableRowColumn_radioInput" type="radio" @if ($idx===0) name="attribute_pa_format" @endif variation_id="{!! $variation["variation_id"] !!}" value="{!! $variation['size_slug'] !!}" {!!($idx===0)?'checked="checked"':'' !!} />
               </div>
 
               <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_size">
@@ -95,9 +85,9 @@ do_action( 'woocommerce_before_add_to_cart_form' );
 
               <div id="ftbs_variationsTableRowColumn_quantity_{{ $idx }}" class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_quantity">
                 @if ($idx===0)
-                  <div id="ftbs_variationsTableRowColumn_quantityInput_add" onclick='ftbs_product_quantity_increase();'>&plus;</div>
-                  <input id="ftbs_variationsTableRowColumn_quantityInput" class="ftbs_variationsTableRowColumn_quantityInput ftbsFontStyle2_blue" onchange='ftbs_singleProductQuantityInteraction(this);' type="text" value="1" />
-                  <div id="ftbs_variationsTableRowColumn_quantityInput_remove" onclick='ftbs_product_quantity_decrease();'>&minus;</div>
+                  <div id="ftbs_variationsTableRowColumn_quantityInput_add" class="ftbs_variationsTableRowColumn_quantityInput_add">&plus;</div>
+                  <input id="ftbs_variationsTableRowColumn_quantityInput" class="ftbs_variationsTableRowColumn_quantityInput" type="text" value="1" />
+                  <div id="ftbs_variationsTableRowColumn_quantityInput_remove" class="ftbs_variationsTableRowColumn_quantityInput_remove">&minus;</div>
                 @else
                   <div class="ftbs_variationsTableRowColumn_quantityInput_add_inactive">&plus;</div>
                   <input class="ftbs_variationsTableRowColumn_quantityInput_inactive ftbs_variationsTableRowColumn_quantityInput" value="" />

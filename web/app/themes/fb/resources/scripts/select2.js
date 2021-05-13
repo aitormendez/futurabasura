@@ -7,7 +7,6 @@ $(document).ready(() => {
     w = window.innerWidth,
     selectWidth = ''
     ;
-  console.log(w);
   if (w < 791) {
     selectWidth = '80vw';
   } else {
