@@ -1,4 +1,7 @@
-import Glide, { Controls, Autoplay, Keyboard } from '@glidejs/glide/dist/glide.modular.esm';
+import {
+  ftbs_product_quantity_increase,
+  ftbs_product_quantity_decrease
+ } from './exports.js';
 
 $(document).ready(() => {
   if (document.body.classList.contains('simple')) {
@@ -9,18 +12,6 @@ $(document).ready(() => {
     let
       btnAdd = $('#ftbs_variationsTableRowColumn_quantityInput_add'),
       btnRemove = $('#ftbs_variationsTableRowColumn_quantityInput_remove');
-
-    function ftbs_product_quantity_increase(){
-      var input = $(".ftbs_variationsTableRowColumn_quantityInput:not(.ftbs_variationsTableRowColumn_quantityInput_inactive)").val();
-      $(".ftbs_variationsTableRowColumn_quantityInput:not(.ftbs_variationsTableRowColumn_quantityInput_inactive)").val(++input)
-      $('input[name="quantity"]').val(input)
-    }
-
-    function ftbs_product_quantity_decrease(){
-      var input = $(".ftbs_variationsTableRowColumn_quantityInput:not(.ftbs_variationsTableRowColumn_quantityInput_inactive)").val();
-      $(".ftbs_variationsTableRowColumn_quantityInput:not(.ftbs_variationsTableRowColumn_quantityInput_inactive)").val(((--input)>0)?input:1);
-      $('input[name="quantity"]').val(((input)>0)?input:1);
-    }
 
     btnAdd.click(function(){
       ftbs_product_quantity_increase();

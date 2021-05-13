@@ -1,4 +1,7 @@
-import Glide, { Controls, Autoplay, Keyboard } from '@glidejs/glide/dist/glide.modular.esm';
+import {
+  ftbs_product_quantity_increase,
+  ftbs_product_quantity_decrease
+ } from './exports.js';
 
 $(document).ready(() => {
   if (document.body.classList.contains('variable')) {
@@ -21,7 +24,6 @@ $(document).ready(() => {
       let
         inputId = this.id,
         idNumber = inputId.split("_")[3],
-        value = this.value,
         size = $("#ftbs_variationsTableRow_"+idNumber).attr("attributevalue");
 
       console.log('inputid: ' + inputId);
@@ -101,18 +103,6 @@ $(document).ready(() => {
       if($("#ftbs_variationsTableRowColumn_quantity_"+id).find("#ftbs_variationsTableRowColumn_quantityInput").length){return false;}
       $("#ftbs_variationsTableRowColumn_radioInput_"+id).prop("checked", true);
       $("#ftbs_variationsTableRowColumn_radioInput_"+id).trigger("change");
-    }
-
-    function ftbs_product_quantity_increase(){
-      var input = $(".ftbs_variationsTableRowColumn_quantityInput:not(.ftbs_variationsTableRowColumn_quantityInput_inactive)").val();
-      $(".ftbs_variationsTableRowColumn_quantityInput:not(.ftbs_variationsTableRowColumn_quantityInput_inactive)").val(++input)
-      $('input[name="quantity"]').val(input)
-    }
-
-    function ftbs_product_quantity_decrease(){
-      var input = $(".ftbs_variationsTableRowColumn_quantityInput:not(.ftbs_variationsTableRowColumn_quantityInput_inactive)").val();
-      $(".ftbs_variationsTableRowColumn_quantityInput:not(.ftbs_variationsTableRowColumn_quantityInput_inactive)").val(((--input)>0)?input:1);
-      $('input[name="quantity"]').val(((input)>0)?input:1);
     }
 
     for (var i = 0 ; i < quantityInputsAdd.length; i++) {
