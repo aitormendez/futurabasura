@@ -1,4 +1,4 @@
-<?php
+@php
 /**
  * Related Products
  *
@@ -18,37 +18,34 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+@endphp
 
-if ( $related_products ) : ?>
+@if ( $related_products )
 
 	<section class="order-3 related products">
 
-		<?php
+		@php
 		$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Related products', 'woocommerce' ) );
+    @endphp
 
-		if ( $heading ) :
-			?>
-			<h2><?php echo esc_html( $heading ); ?></h2>
-		<?php endif; ?>
+		@if ( $heading )
+			<h2>{{ $heading }}</h2>
+		@endif
 
-		<?php woocommerce_product_loop_start(); ?>
+		@php woocommerce_product_loop_start() @endphp
+      @foreach ( $related_products as $related_product )
+        @php
+          $post_object = get_post( $related_product->get_id() );
 
-			<?php foreach ( $related_products as $related_product ) : ?>
+          setup_postdata( $GLOBALS['post'] =& $post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
 
-					<?php
-					$post_object = get_post( $related_product->get_id() );
+          wc_get_template_part( 'content', 'product' );
+        @endphp
+      @endforeach
 
-					setup_postdata( $GLOBALS['post'] =& $post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
-
-					wc_get_template_part( 'content', 'product' );
-					?>
-
-			<?php endforeach; ?>
-
-		<?php woocommerce_product_loop_end(); ?>
+		@php woocommerce_product_loop_end() @endphp
 
 	</section>
-	<?php
-endif;
+@endif
 
-wp_reset_postdata();
+@php wp_reset_postdata() @endphp
