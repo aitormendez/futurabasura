@@ -22,26 +22,56 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 @if ( $related_products )
 
-	<section class="order-3 related products">
+	<section class="order-3 related products w-full mt-40">
 
 		@php
-		$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Related products', 'woocommerce' ) );
+		$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'YOU MAY BE INTERESTED', 'woocommerce' ) );
     @endphp
 
 		@if ( $heading )
-			<h2>{{ $heading }}</h2>
+			<h2 class="m-6 tracking-widest font-bold">{{ $heading }}</h2>
 		@endif
 
 		@php woocommerce_product_loop_start() @endphp
       @foreach ( $related_products as $related_product )
-      {{-- @dump($related_product) --}}
         @php
-          $post_object = get_post( $related_product->get_id() );
+          $product_id = $related_product->get_id();
+          $product_title = $related_product->get_title();
+          $product_permalink = $related_product->get_permalink();
+          $post_object = get_post( $product_id );
+          $attachment_ids = $related_product->get_gallery_image_ids();
+          $artist = get_the_terms($product_id, 'artist');
 
-          setup_postdata( $GLOBALS['post'] =& $post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
+          $output = array_map( function( $att_id ) {
+            $meta = get_post_meta( $att_id );
+            $array = [
+                'att_url'    => wp_get_attachment_url( $att_id ),
+                'att_srcset' => wp_get_attachment_image_srcset( $att_id ),
+                'has_alt'    => false,
+                'meta'       => $meta,
+            ];
+            if (array_key_exists('_wp_attachment_image_alt', $meta)) {
+                $array['has_alt'] = true;
+                $array['alt'] = $meta['_wp_attachment_image_alt'];
+            }
+            return $array;
+          }, $attachment_ids);
 
-          wc_get_template_part( 'content', 'product' );
         @endphp
+
+        <h3 class="px-6 py-1 bg-white"><a href="{{ $product_permalink }}">{{ $product_title }} by {{$artist['0']->name}}</a></h3>
+        <div id="glide-{{ $product_id }}" class="glide g-related">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+            @foreach ($output as $item)
+            <li class="glide__slide">
+              <img class="block" src="{!! $item['att_url'] !!}" srcset="{!! $item['att_srcset'] !!}" @if ($item['has_alt']) alt="{!! $item['alt'][0] !!}" @endif sizes="(max-width: 792px) 100%, 20%">
+            </li>
+            @endforeach
+            </ul>
+          </div>
+        </div>
+
       @endforeach
 
 		@php woocommerce_product_loop_end() @endphp

@@ -47,11 +47,11 @@ do_action( 'woocommerce_before_single_product' );
 
 
 
-  <div id="glide" class="glide md:order-2 md:w-1/2">
+  <div id="glide" class="g-gallery relative md:order-2 md:w-1/2">
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides">
       @foreach ($galeria as $item)
-      <li class="glide__slide">
+      <li class="glide__slide slide">
         <img src="{!! $item['att_url'] !!}" srcset="{!! $item['att_srcset'] !!}" @if ($item['has_alt']) alt="{!! $item['alt'][0] !!}" @endif sizes="(max-width: 792px) 100%, 50%">
       </li>
       @endforeach

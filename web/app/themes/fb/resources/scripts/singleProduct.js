@@ -7,10 +7,10 @@ $(document).ready(() => {
     // ----------------------------------------------------
     let
     g = document.getElementById('glide'),
-    s = g.getElementsByClassName('glide__slide'),
+    s = g.getElementsByClassName('slide'),
     i= document.getElementById('indice');
 
-    var glide = new Glide('.glide', {
+    var glide = new Glide('.g-gallery', {
       type: 'carousel',
       autoplay: false,
       animationDuration: 0,
@@ -37,6 +37,36 @@ $(document).ready(() => {
     }
 
     g.addEventListener('click', avanza);
+
+
+
+    // galería de imágenes con Glide para productos relacionados
+    // ----------------------------------------------------
+
+
+    $('.g-related').each(function(){
+      let gid = '#' + this.id;
+      console.log(gid);
+
+      let dur = Math.floor((Math.random() * 10000) + 1000);
+
+      new Glide(gid, {
+        type: 'carousel',
+        autoplay: 10,
+        animationDuration: dur,
+        animationTimingFunc: 'linear',
+        hoverpause: true,
+        perView: 5,
+        breakpoints: {
+          1024: {
+            perView: 5,
+          },
+          600: {
+            perView: 1,
+          },
+        },
+      }).mount({ Controls, Autoplay, Keyboard })
+    });
 
   }
 

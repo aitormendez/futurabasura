@@ -40,7 +40,6 @@ a {
 
 body:not(.home):not(.cart) {
   .main{
-    @apply px-6;
     @apply bg-gray-200;
   }
 }
