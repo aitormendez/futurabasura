@@ -47,17 +47,19 @@ do_action( 'woocommerce_before_single_product' );
 
 
 
-  <div id="glide" class="g-gallery relative md:order-2 md:w-1/2">
-    <div class="glide__track" data-glide-el="track">
-      <ul class="glide__slides">
-      @foreach ($galeria as $item)
-      <li class="glide__slide slide">
-        <img src="{!! $item['att_url'] !!}" srcset="{!! $item['att_srcset'] !!}" @if ($item['has_alt']) alt="{!! $item['alt'][0] !!}" @endif sizes="(max-width: 792px) 100%, 50%">
-      </li>
-      @endforeach
-      </ul>
+  <div class="glide-wrap w-full md:w-1/2 md:order-2">
+    <div id="glide" class="g-gallery relative">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+        @foreach ($galeria as $item)
+        <li class="glide__slide slide">
+          <img src="{!! $item['att_url'] !!}" srcset="{!! $item['att_srcset'] !!}" @if ($item['has_alt']) alt="{!! $item['alt'][0] !!}" @endif sizes="(max-width: 792px) 100%, 50%">
+        </li>
+        @endforeach
+        </ul>
+      </div>
+      <div id="indice" class="absolute w-20 text-center p-3 bg-white right-0 bottom-0"></div>
     </div>
-    <div id="indice" class="absolute w-20 text-center p-3 bg-white right-0 bottom-0"></div>
   </div>
 
 

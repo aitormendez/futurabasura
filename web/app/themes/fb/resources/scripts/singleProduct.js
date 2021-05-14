@@ -44,29 +44,29 @@ $(document).ready(() => {
     // ----------------------------------------------------
 
 
-    $('.g-related').each(function(){
-      let gid = '#' + this.id;
-      console.log(gid);
+    // $('.g-related').each(function(){
+    //   let gid = '#' + this.id;
+    //   console.log(gid);
 
-      let dur = Math.floor((Math.random() * 10000) + 1000);
+    //   let dur = Math.floor((Math.random() * 10000) + 1000);
 
-      new Glide(gid, {
-        type: 'carousel',
-        autoplay: 10,
-        animationDuration: dur,
-        animationTimingFunc: 'linear',
-        hoverpause: true,
-        perView: 5,
-        breakpoints: {
-          1024: {
-            perView: 5,
-          },
-          600: {
-            perView: 1,
-          },
-        },
-      }).mount({ Controls, Autoplay, Keyboard })
-    });
+    //   new Glide(gid, {
+    //     type: 'carousel',
+    //     autoplay: 10,
+    //     animationDuration: dur,
+    //     animationTimingFunc: 'linear',
+    //     hoverpause: true,
+    //     perView: 5,
+    //     breakpoints: {
+    //       1024: {
+    //         perView: 5,
+    //       },
+    //       600: {
+    //         perView: 1,
+    //       },
+    //     },
+    //   }).mount({ Controls, Autoplay, Keyboard })
+    // });
 
   }
 
