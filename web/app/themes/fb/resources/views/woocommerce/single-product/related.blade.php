@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     @foreach ($artista['rand_products'] as $product)
       <h3 class="px-6 py-1 bg-white"><a href="{{ $product['permalink'] }}">{{ $product['title'] }} by {{ $artista['artista']->name }}</a></h3>
 
-      <div id="glide-{{ $product['product_id'] }}" class="glide g-related">
+      <div id="glide-{{ $product['product_id'] }}-art" class="glide g-by-artist">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
           @foreach ($product['product_gallery'] as $img)
@@ -78,7 +78,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         @endphp
 
         <h3 class="px-6 py-1 bg-white"><a href="{{ $product_permalink }}">{{ $product_title }} by {{$artist['0']->name}}</a></h3>
-        <div id="glide-{{ $product_id }}" class="glide g-related">
+        <div id="glide-{{ $product_id }}-rel" class="glide g-related g-related-{{ $product_id }}">
           <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
             @foreach ($output as $item)

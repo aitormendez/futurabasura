@@ -1,4 +1,4 @@
-import Glide, { Controls, Autoplay, Keyboard } from '@glidejs/glide/dist/glide.modular.esm';
+import Glide, { Controls, Autoplay, Keyboard, Breakpoints } from '@glidejs/glide/dist/glide.modular.esm';
 
 $(document).ready(() => {
   if (document.body.classList.contains('single-product')) {
@@ -41,31 +41,73 @@ $(document).ready(() => {
 
 
     // galería de imágenes con Glide para productos relacionados
+    // del mismo artista
     // ----------------------------------------------------
 
 
-    let slides = document.getElementsByClassName('g-related');
+    let slidesA = document.getElementsByClassName('g-by-artist');
 
-    for (const c of slides) {
+    for (const c of slidesA) {
       let gid = '#' + c.id;
       let dur = Math.floor((Math.random() * 10000) + 1000);
+      console.log(gid);
 
       new Glide(gid, {
         type: 'carousel',
         autoplay: 10,
         animationDuration: dur,
         animationTimingFunc: 'linear',
-        hoverpause: true,
-        perView: 5,
+        perView: 6,
         breakpoints: {
+          1280: {
+            perView: 5,
+          },
           1024: {
             perView: 4,
           },
-          600: {
+          768: {
             perView: 3,
           },
+          640: {
+            perView: 2,
+          },
         },
-      }).mount({ Autoplay })
+      }).mount({ Autoplay, Breakpoints })
+    }
+
+    // galería de imágenes con Glide para productos relacionados
+    // ----------------------------------------------------
+
+
+    let slides = document.getElementsByClassName('g-related');
+
+    for (const c of slides) {
+      let list = '.g-related-' + c.classList;
+      let clase = '.' + list.split(' ').slice(2).toString();
+      console.log(clase);
+      let dur = Math.floor((Math.random() * 10000) + 1000);
+
+      new Glide( clase, {
+        type: 'carousel',
+        autoplay: 10,
+        animationDuration: dur,
+        animationTimingFunc: 'linear',
+        perView: 5,
+        breakpoints: {
+          1280: {
+            perView: 5,
+          },
+          1024: {
+            perView: 4,
+          },
+          768: {
+            perView: 3,
+          },
+          640: {
+            perView: 2,
+          },
+        },
+      }).mount({ Autoplay, Breakpoints })
     }
 
   }
