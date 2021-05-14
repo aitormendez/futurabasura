@@ -10,6 +10,7 @@ class SingleProduct extends Composer
         'woocommerce.content-single-product',
         'woocommerce.single-product.add-to-cart.simple',
         'woocommerce.single-product.add-to-cart.variable',
+        'woocommerce.single-product.related',
     ];
 
     public function with()
@@ -26,9 +27,57 @@ class SingleProduct extends Composer
     {
         global $post;
         $artist = get_the_terms($post->ID, 'artist');
+        $rand_posts = get_posts([
+            'post_type' => 'product',
+            'orderby' => 'rand',
+            'tax_query' => [
+                [
+                    'taxonomy' => 'artist',
+                    'field'    => 'term_id',
+                    'terms'     => $artist[0]->term_id
+                ]
+            ],
+        ]);
+
+        $rand_products_galleries = array_map( function( $post ) {
+            $product = wc_get_product($post);
+            $attachment_ids = $product->get_gallery_image_ids();
+
+
+            $product_gallery = array_map( function( $att_id ) {
+
+                $meta = get_post_meta( $att_id );
+
+                $array =  [
+                    'att_url'    => wp_get_attachment_url( $att_id ),
+                    'att_srcset' => wp_get_attachment_image_srcset( $att_id ),
+                    'has_alt'    => false,
+                ];
+
+                if (array_key_exists('_wp_attachment_image_alt', $meta)) {
+                    $array['has_alt'] = true;
+                    $array['alt'] = $meta['_wp_attachment_image_alt'];
+                }
+
+                return $array;
+
+            }, $attachment_ids);
+
+            return [
+                'product'         => $product,
+                'product_id'      => $product->get_id(),
+                'permalink'       => get_permalink( $product->get_id() ),
+                'title'           => $product->get_title(),
+                'product_gallery' => $product_gallery,
+            ];
+
+        }, $rand_posts);
+
+
         return [
-            'artista' => $artist[0],
-            'link'    => get_term_link($artist[0]->term_id),
+            'artista'       => $artist[0],
+            'link'          => get_term_link($artist[0]->term_id),
+            'rand_products' => $rand_products_galleries,
         ] ;
     }
 

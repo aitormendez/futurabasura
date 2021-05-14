@@ -44,8 +44,10 @@ $(document).ready(() => {
     // ----------------------------------------------------
 
 
-    $('.g-related').each(function(){
-      let gid = '#' + this.id;
+    let slides = document.getElementsByClassName('g-related');
+
+    for (const c of slides) {
+      let gid = '#' + c.id;
       let dur = Math.floor((Math.random() * 10000) + 1000);
 
       new Glide(gid, {
@@ -57,14 +59,14 @@ $(document).ready(() => {
         perView: 5,
         breakpoints: {
           1024: {
-            perView: 5,
+            perView: 4,
           },
           600: {
-            perView: 1,
+            perView: 3,
           },
         },
       }).mount({ Autoplay })
-    });
+    }
 
   }
 
