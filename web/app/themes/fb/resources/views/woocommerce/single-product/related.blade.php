@@ -24,23 +24,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<section class="order-3 related products w-full mt-40">
 
-    <h2 class="m-6 tracking-widest font-bold text-center uppercase mt-10">By {{ $artista['artista']->name }}</h2>
+    @if ( $artista['rand_products'])
+      <h2 class="m-6 tracking-widest font-bold text-center uppercase mt-10">By {{ $artista['artista']->name }}</h2>
+      @foreach ($artista['rand_products'] as $product)
+        <h3 class="px-6 py-1 bg-white"><a href="{{ $product['permalink'] }}">{{ $product['title'] }} by {{ $artista['artista']->name }}</a></h3>
 
-    @foreach ($artista['rand_products'] as $product)
-      <h3 class="px-6 py-1 bg-white"><a href="{{ $product['permalink'] }}">{{ $product['title'] }} by {{ $artista['artista']->name }}</a></h3>
-
-      <div id="glide-{{ $product['product_id'] }}-art" class="glide g-by-artist">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-          @foreach ($product['product_gallery'] as $img)
-          <li class="glide__slide">
-            <img class="block" src="{!! $img['att_url'] !!}" srcset="{!! $img['att_srcset'] !!}" @if ($img['has_alt']) alt="{!! $img['alt'][0] !!}" @endif sizes="(max-width: 792px) 100%, 20%">
-          </li>
-          @endforeach
-          </ul>
+        <div id="glide-{{ $product['product_id'] }}-art" class="glide g-by-artist">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+            @foreach ($product['product_gallery'] as $img)
+            <li class="glide__slide">
+              <img class="block" src="{!! $img['att_url'] !!}" srcset="{!! $img['att_srcset'] !!}" @if ($img['has_alt']) alt="{!! $img['alt'][0] !!}" @endif sizes="(max-width: 792px) 100%, 20%">
+            </li>
+            @endforeach
+            </ul>
+          </div>
         </div>
-      </div>
-    @endforeach
+      @endforeach
+    @endif
 
 		@php
 		$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'You may be interested', 'woocommerce' ) );

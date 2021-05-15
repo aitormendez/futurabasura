@@ -23,14 +23,37 @@ class SingleProduct extends Composer
         ];
     }
 
+    public function precio()
+    {
+        global $product;
+
+        $output = [
+            'product'       => $product,
+            'product_id'    => $product->get_id(),
+            'price' => $product->get_price(),
+            'regular_price' => $product->get_regular_price(),
+            'is_on_sale'    => false,
+        ];
+
+        if ( $product->is_on_sale() )  {
+            $output['is_on_sale'] = true;
+            $output['sale_price'] = $product->get_sale_price();
+        }
+
+        return $output;
+
+    }
+
     public function artista()
     {
         global $post;
+        global $product;
         $artist = get_the_terms($post->ID, 'artist');
         $rand_posts = get_posts([
-            'post_type' => 'product',
-            'orderby' => 'rand',
-            'tax_query' => [
+            'post_type'    => 'product',
+            'orderby'      => 'rand',
+            'post__not_in' => [$product->get_id()],
+            'tax_query'    => [
                 [
                     'taxonomy' => 'artist',
                     'field'    => 'term_id',
@@ -39,39 +62,45 @@ class SingleProduct extends Composer
             ],
         ]);
 
-        $rand_products_galleries = array_map( function( $post ) {
-            $product = wc_get_product($post);
-            $attachment_ids = $product->get_gallery_image_ids();
+        if (! empty($rand_posts)) {
+            $rand_products_galleries = array_map( function( $post ) {
+                $product = wc_get_product($post);
+                $attachment_ids = $product->get_gallery_image_ids();
 
 
-            $product_gallery = array_map( function( $att_id ) {
+                $product_gallery = array_map( function( $att_id ) {
 
-                $meta = get_post_meta( $att_id );
+                    $meta = get_post_meta( $att_id );
 
-                $array =  [
-                    'att_url'    => wp_get_attachment_url( $att_id ),
-                    'att_srcset' => wp_get_attachment_image_srcset( $att_id ),
-                    'has_alt'    => false,
+                    $array =  [
+                        'att_url'    => wp_get_attachment_url( $att_id ),
+                        'att_srcset' => wp_get_attachment_image_srcset( $att_id ),
+                        'has_alt'    => false,
+                    ];
+
+                    if (array_key_exists('_wp_attachment_image_alt', $meta)) {
+                        $array['has_alt'] = true;
+                        $array['alt'] = $meta['_wp_attachment_image_alt'];
+                    }
+
+                    return $array;
+
+                }, $attachment_ids);
+
+                return [
+                    'product'         => $product,
+                    'product_id'      => $product->get_id(),
+                    'permalink'       => get_permalink( $product->get_id() ),
+                    'title'           => $product->get_title(),
+                    'product_gallery' => $product_gallery,
                 ];
 
-                if (array_key_exists('_wp_attachment_image_alt', $meta)) {
-                    $array['has_alt'] = true;
-                    $array['alt'] = $meta['_wp_attachment_image_alt'];
-                }
+            }, $rand_posts);
+        } else {
+            $rand_products_galleries = false;
+        }
 
-                return $array;
 
-            }, $attachment_ids);
-
-            return [
-                'product'         => $product,
-                'product_id'      => $product->get_id(),
-                'permalink'       => get_permalink( $product->get_id() ),
-                'title'           => $product->get_title(),
-                'product_gallery' => $product_gallery,
-            ];
-
-        }, $rand_posts);
 
 
         return [
@@ -106,26 +135,6 @@ class SingleProduct extends Composer
         }, $attachment_ids);
 
         return $output;
-    }
-
-    public function precio()
-    {
-        global $product;
-
-        $output = [
-            'product'       => $product,
-            'price' => $product->get_price(),
-            'regular_price' => $product->get_regular_price(),
-            'is_on_sale'    => false,
-        ];
-
-        if ( $product->is_on_sale() )  {
-            $output['is_on_sale'] = true;
-            $output['sale_price'] = $product->get_sale_price();
-        }
-
-        return $output;
-
     }
 
     public function variaciones()
