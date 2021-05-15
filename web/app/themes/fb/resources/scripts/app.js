@@ -10,6 +10,7 @@ import './select2.js';
 import './singleProduct.js';
 import './simpleProduct.js';
 import './variableProduct.js';
+import './frontPage.js';
 
 $(document).ready(() => {
 

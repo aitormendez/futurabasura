@@ -27,6 +27,7 @@ module.exports = {
       },
       backgroundImage: theme => ({
         'fondo': "url('../images/bg.svg')",
+        'punteado': "url('../images/punteado-cupon.svg')",
        }),
     },
   },

@@ -15,12 +15,17 @@
   @query([
     'post_type' => 'post'
   ])
+  @dump($cupones)
 
   <section class="posts prose">
     @posts
       @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
     @endposts
   </section>
+
+  @if (count($cupones) !== 0)
+      @include('partials.cupones')
+  @endif
 
   @while(have_posts()) @php(the_post())
     @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])

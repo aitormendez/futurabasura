@@ -13,7 +13,7 @@ class FrontPage extends Composer
      * @var array
      */
     protected static $views = [
-        'front_page',
+        'front-page',
     ];
 
     /**
@@ -24,7 +24,22 @@ class FrontPage extends Composer
     public function with()
     {
         return [
-            // 'primary_nav' => $this->navigation(),
+            'cupones' => $this->cupones(),
         ];
+    }
+
+    public function cupones()
+    {
+        $cupones_portada = get_posts([
+            'posts_per_page'   => -1,
+            'orderby'          => 'title',
+            'order'            => 'asc',
+            'post_type'        => 'shop_coupon',
+            'post_status'      => 'publish',
+            'meta_key'		   => 'mostrar_cupon_en_portada',
+            'meta_value'	   => true,
+        ]);
+
+        return $cupones_portada;
     }
 }
