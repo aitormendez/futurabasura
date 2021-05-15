@@ -10,12 +10,17 @@
     {!! get_search_form(false) !!}
   @endif
 
+  @if (count($cupones) !== 0)
+    <section>
+      @include('partials.cupones')
+    </section>
+  @endif
+
   @include('partials.slider')
 
   @query([
     'post_type' => 'post'
   ])
-  @dump($cupones)
 
   <section class="posts prose">
     @posts
@@ -23,17 +28,8 @@
     @endposts
   </section>
 
-  @if (count($cupones) !== 0)
-      @include('partials.cupones')
-  @endif
-
   @while(have_posts()) @php(the_post())
     @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
   @endwhile
 
-  {!! get_the_posts_navigation() !!}
-@endsection
-
-@section('sidebar')
-  @include('partials.sidebar')
 @endsection
