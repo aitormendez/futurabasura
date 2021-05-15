@@ -1,3 +1,5 @@
+{{-- Se usa en la portada de la tienda (archivo) --}}
+
 @php
 defined( 'ABSPATH' ) || exit;
 global $product;
@@ -8,7 +10,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 @endphp
 
-<li class="producto inline-block">
+<li class="producto inline-block infinite-scroll-item">
   <a href="{!! $producto['url'] !!}" class="block relative">
     <img src="{!! $producto['img_url'] !!}" alt="{!! $producto['title'] !!}" srcset="{!! $producto['img_srcset'] !!}" sizes="(max-width: 768px) 100vw, 25vw" class="block">
     <div class="hover md:bg-negro-fb md:absolute inset-0 p-4 uppercase md:text-white tracking-widest font-bold">

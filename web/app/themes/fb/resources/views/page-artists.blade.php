@@ -13,7 +13,7 @@
     <a href="{{ $artist['permalink'] }}" role="article" class="article flex flex-wrap md:flex-nowrap p-6 md:pt-0 text-black bg-white mb-6 md:mb-2 justify-between">
       <h2 class="font-bold uppercase tracking-max mb-6 md:pt-6 md:w-1/6 ">{{ $artist['name'] }}</h2>
 
-      <div class="avatar flex items-center justify-center md:w-1/6 md:pt-6"">
+      <div class="avatar flex items-center justify-center md:w-1/6 md:pt-6">
         @if ($artist['avatar'])
         <img src="{{ $artist['avatar']['url'] }}" srcset="{{ $artist['srcset'] }}" sizes="(max-width: 768px) 80vw, 20vw" alt="{{ $artist['name'] }}" class="rounded-full">
         @endif
