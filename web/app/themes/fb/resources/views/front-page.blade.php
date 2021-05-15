@@ -33,3 +33,7 @@
   @endwhile
 
 @endsection
+
+@section('sidebar')
+  @include('partials.sidebar')
+@endsection
