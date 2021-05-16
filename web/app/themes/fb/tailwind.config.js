@@ -37,6 +37,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
+    require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
     plugin(function({ addComponents }) {
       const textos = {

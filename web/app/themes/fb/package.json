@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
+    "@tailwindcss/forms": "^0.3.2",
     "animejs": "^3.2.1",
     "infinite-scroll": "^4.0.1",
     "jquery": "^3.5.1",
