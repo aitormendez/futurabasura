@@ -1,4 +1,4 @@
-<div class="max-w-3xl mx-auto tracking-wide">
+<div class="max-w-3xl p-20 mx-auto tracking-wide bg-white">
   <div class="font-serif prose">@php(the_content())</div>
 </div>
 
