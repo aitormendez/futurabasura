@@ -12,6 +12,13 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: 'auto,'
+          },
+        },
+      },
       letterSpacing: {
         max: '.25em',
       },

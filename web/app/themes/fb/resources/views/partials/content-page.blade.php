@@ -1,5 +1,4 @@
-<div class="max-w-3xl mx-auto">
-  glo{{ WP_ENV}}
+<div class="max-w-3xl mx-auto tracking-wide">
   <div class="font-serif prose">@php(the_content())</div>
 </div>
 
