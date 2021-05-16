@@ -22,10 +22,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 @if ( $related_products )
 
-	<section class="order-3 related products w-full mt-40">
+	<section class="order-3 w-full mt-40 related products">
 
     @if ( $artista['rand_products'])
-      <h2 class="m-6 tracking-widest font-bold text-center uppercase mt-10">By {{ $artista['artista']->name }}</h2>
+      <h2 class="m-6 mt-10 font-bold tracking-widest text-center uppercase">By {{ $artista['artista']->name }}</h2>
       @foreach ($artista['rand_products'] as $product)
         <h3 class="px-6 py-1 bg-white"><a href="{{ $product['permalink'] }}">{{ $product['title'] }} by {{ $artista['artista']->name }}</a></h3>
 
@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     @endphp
 
 		@if ( $heading )
-			<h2 class="m-6 tracking-widest font-bold text-center uppercase mt-40">{{ $heading }}</h2>
+			<h2 class="m-6 mt-40 font-bold tracking-widest text-center uppercase">{{ $heading }}</h2>
 		@endif
 
 		@php woocommerce_product_loop_start() @endphp

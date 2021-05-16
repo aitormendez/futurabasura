@@ -53,21 +53,21 @@ if ( ! $product->is_purchasable() ) {
       {{-- tabla nueva --}}
       <div class="ftbs_variationsTable">
         <div id="ftbs_variationsTableRow_0" class="ftbs_variationsTableRow ftbs_variationsTableRowFirst" >
-          <div class="ftbs_variationsTableRowPadContainer flex justify-between border border-black mb-6 text-sm">
-            <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_radio invisible overflow-hidden w-0">
+          <div class="flex justify-between mb-6 text-sm border border-black ftbs_variationsTableRowPadContainer">
+            <div class="invisible w-0 overflow-hidden ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_radio">
               <input type="radio" name="attribute_pa_medidas" value="" checked="checked"  />
             </div>
-            <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_size px-4">
+            <div class="px-4 ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_size">
               <span class="ftbsFontStyle4_blackSoft">{!! $variaciones[0]['size'] !!} CM</span>
             </div>
             @if ($precio['is_on_sale'])
-              <div class="price-on-sale text-white bg-red-600 px-4 flex items-center"><del>{{ $precio['regular_price'] }}</del> <del class="woocommerce_price_euro_letter block">&nbsp;EUR</del></div>
+              <div class="flex items-center px-4 text-white bg-red-600 price-on-sale"><del>{{ $precio['regular_price'] }}</del> <del class="block woocommerce_price_euro_letter">&nbsp;EUR</del></div>
             @endif
-            <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_price px-4">{!! $precio['price'] !!} &nbsp;EUR<span class="invisible">€</span></span>
+            <div class="px-4 ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_price">{!! $precio['price'] !!} &nbsp;EUR<span class="invisible">€</span></span>
             </div>
-            <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_quantity relative">
+            <div class="relative ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_quantity">
               <div id="ftbs_variationsTableRowColumn_quantityInput_add" class="cursor-pointer absolute leading-none top-0 right-0 py-1.5 px-2 select-none hover:text-azul text-center">&plus;</div>
-              <input class="ftbs_variationsTableRowColumn_quantityInput text-azul font-bold h-full block p-4" type="text" value="1"/>
+              <input class="block h-full p-4 font-bold ftbs_variationsTableRowColumn_quantityInput text-azul" type="text" value="1"/>
               <div id="ftbs_variationsTableRowColumn_quantityInput_remove" class="cursor-pointer absolute leading-none bottom-0 right-0 py-1.5 px-2 select-none hover:text-azul">&minus;</div>
             </div>
           </div>

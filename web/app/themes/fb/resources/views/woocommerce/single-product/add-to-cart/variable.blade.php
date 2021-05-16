@@ -35,7 +35,7 @@ do_action( 'woocommerce_before_add_to_cart_form' );
   @if ( empty( $available_variations ) && false !== $available_variations )
 		<p class="stock out-of-stock"><?php echo esc_html( apply_filters( 'woocommerce_out_of_stock_message', __( 'This product is currently out of stock and unavailable.', 'woocommerce' ) ) ); ?></p>
 	@else
-		<table class="variations invisible" cellspacing="0">
+		<table class="invisible variations" cellspacing="0">
 			<tbody>
 
 
@@ -72,7 +72,7 @@ do_action( 'woocommerce_before_add_to_cart_form' );
             <div class="ftbs_variationsTableRowPadContainer @if ($idx!==0) ftbs_variationsTableRowPadContainer_inactive @endif flex justify-between border mb-6 text-sm">
 
               <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_radio">
-                <input id="ftbs_variationsTableRowColumn_radioInput_{{ $idx }}" class="ftbs_variationsTableRowColumn_radioInput invisible hidden overflow-hidden" type="radio" @if ($idx===0) name="attribute_pa_format" @endif variation_id="{!! $variation["variation_id"] !!}" value="{!! $variation['size_slug'] !!}" {!!($idx===0)?'checked="checked"':'' !!} />
+                <input id="ftbs_variationsTableRowColumn_radioInput_{{ $idx }}" class="invisible hidden overflow-hidden ftbs_variationsTableRowColumn_radioInput" type="radio" @if ($idx===0) name="attribute_pa_format" @endif variation_id="{!! $variation["variation_id"] !!}" value="{!! $variation['size_slug'] !!}" {!!($idx===0)?'checked="checked"':'' !!} />
               </div>
 
               <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_size">
@@ -80,21 +80,21 @@ do_action( 'woocommerce_before_add_to_cart_form' );
               </div>
 
               @if ($variation['is_on_sale'])
-                <div class="price-on-sale text-white bg-red-600 px-4 flex items-center"><del>{{ $variation['regular_price'] }}</del> <del class="woocommerce_price_euro_letter block">&nbsp;EUR</del></div>
+                <div class="flex items-center px-4 text-white bg-red-600 price-on-sale"><del>{{ $variation['regular_price'] }}</del> <del class="block woocommerce_price_euro_letter">&nbsp;EUR</del></div>
               @endif
 
               <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_price">
-                <span class="ftbsFontStyle4_blackSoft">{!! $variation["price"] !!}<span class="woocommerce_price_euro_letter">&nbsp;EUR</span><span class="woocommerce_price_euro_symbol invisible">€</span></span>
+                <span class="ftbsFontStyle4_blackSoft">{!! $variation["price"] !!}<span class="woocommerce_price_euro_letter">&nbsp;EUR</span><span class="invisible woocommerce_price_euro_symbol">€</span></span>
               </div>
 
-              <div id="ftbs_variationsTableRowColumn_quantity_{{ $idx }}" class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_quantity relative">
+              <div id="ftbs_variationsTableRowColumn_quantity_{{ $idx }}" class="relative ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_quantity">
                 @if ($idx===0)
                   <div id="ftbs_variationsTableRowColumn_quantityInput_add" class="ftbs_variationsTableRowColumn_quantityInput_add cursor-pointer absolute leading-none top-0 right-0 py-1.5 px-2 select-none hover:text-azul text-center">&plus;</div>
-                  <input id="ftbs_variationsTableRowColumn_quantityInput" class="ftbs_variationsTableRowColumn_quantityInput text-azul font-bold h-full block p-4" type="text" value="1" />
+                  <input id="ftbs_variationsTableRowColumn_quantityInput" class="block h-full p-4 font-bold ftbs_variationsTableRowColumn_quantityInput text-azul" type="text" value="1" />
                   <div id="ftbs_variationsTableRowColumn_quantityInput_remove" class="ftbs_variationsTableRowColumn_quantityInput_remove cursor-pointer absolute leading-none bottom-0 right-0 py-1.5 px-2 select-none hover:text-azul">&minus;</div>
                 @else
                   <div class="ftbs_variationsTableRowColumn_quantityInput_add_inactive cursor-pointer absolute leading-none top-0 right-0 py-1.5 px-2 select-none hover:text-azul text-center">&plus;</div>
-                  <input class="ftbs_variationsTableRowColumn_quantityInput_inactive ftbs_variationsTableRowColumn_quantityInput text-azul font-bold h-full block p-4" value="" />
+                  <input class="block h-full p-4 font-bold ftbs_variationsTableRowColumn_quantityInput_inactive ftbs_variationsTableRowColumn_quantityInput text-azul" value="" />
                   <div class="ftbs_variationsTableRowColumn_quantityInput_remove_inactive cursor-pointer absolute leading-none bottom-0 right-0 py-1.5 px-2 select-none hover:text-azul">&minus;</div>
                 @endif
               </div>

@@ -47,8 +47,8 @@ do_action( 'woocommerce_before_single_product' );
 
 
 
-  <div class="glide-wrap w-full md:w-1/2 md:order-2">
-    <div id="glide" class="g-gallery relative">
+  <div class="w-full glide-wrap md:w-1/2 md:order-2">
+    <div id="glide" class="relative g-gallery">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
         @foreach ($galeria as $item)
@@ -58,20 +58,20 @@ do_action( 'woocommerce_before_single_product' );
         @endforeach
         </ul>
       </div>
-      <div id="indice" class="absolute w-20 text-center p-3 bg-white right-0 bottom-0"></div>
+      <div id="indice" class="absolute bottom-0 right-0 w-20 p-3 text-center bg-white"></div>
     </div>
   </div>
 
 
 
 
-	<div class="summary entry-summary md:w-1/2 flex flex-col items-center justify-end">
+	<div class="flex flex-col items-center justify-end summary entry-summary md:w-1/2">
 
-    <h2 class="artista uppercase tracking-max mb-6"><a href="{{ $artista['link'] }}">{{ $artista['artista']->name }}</a></h2>
+    <h2 class="mb-6 uppercase artista tracking-max"><a href="{{ $artista['link'] }}">{{ $artista['artista']->name }}</a></h2>
 
-    <h1 class="product_title entry-title mb-6 font-bold tracking-max">{!! get_the_title() !!}</h1>
+    <h1 class="mb-6 font-bold product_title entry-title tracking-max">{!! get_the_title() !!}</h1>
 
-    <div class="excerpt text-center mb-6">{!! $post->post_excerpt !!}</div>
+    <div class="mb-6 text-center excerpt">{!! $post->post_excerpt !!}</div>
 
 
 

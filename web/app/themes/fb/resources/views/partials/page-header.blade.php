@@ -1,3 +1,3 @@
-<div class="page-header p-6">
-  <h1 class="uppercase font-bold tracking-max">{!! $title !!}</h1>
+<div class="p-6 page-header">
+  <h1 class="font-bold uppercase tracking-max">{!! $title !!}</h1>
 </div>

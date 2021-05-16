@@ -1,19 +1,19 @@
 @php $count = count($slider); @endphp
 
-<div class="flex relative justify-center bg-white">
-  <div id="fondo-slider" class="bg-cover w-screen sm:w-3/4 absolute"></div>
-  <div class="glide w-screen sm:w-3/4">
+<div class="relative flex justify-center bg-white">
+  <div id="fondo-slider" class="absolute w-screen bg-cover sm:w-3/4"></div>
+  <div class="w-screen glide sm:w-3/4">
     <div data-glide-el="track" class="glide__track">
       <ul class="glide__slides">
         @foreach ($slider as $slide)
         <li class="glide__slide" formato="{!! $slide['formato'] !!}">
-          <a href="{!! $slide['url'] !!}" class="prod relative block">
-            <div class="bg-hover bg-white top-0 bottom-0 absolute p-8 uppercase">
-              <div class="datos leading-tight">
-                <h2 class="text-black font-bold tracking-widest mb-4">{!! $slide['nombre'] !!}</h2>
-                <p class="text-black font-bold tracking-widest mb-4">{!! $slide['artist'] !!}</p>
-                <p class="text-black font-bold tracking-widest mb-4">{!! $slide['formato_humano'] !!}</p>
-                <p class="text-black font-bold tracking-widest mb-4">{!! $slide['regular_price'] !!} €</p>
+          <a href="{!! $slide['url'] !!}" class="relative block prod">
+            <div class="absolute top-0 bottom-0 p-8 uppercase bg-white bg-hover">
+              <div class="leading-tight datos">
+                <h2 class="mb-4 font-bold tracking-widest text-black">{!! $slide['nombre'] !!}</h2>
+                <p class="mb-4 font-bold tracking-widest text-black">{!! $slide['artist'] !!}</p>
+                <p class="mb-4 font-bold tracking-widest text-black">{!! $slide['formato_humano'] !!}</p>
+                <p class="mb-4 font-bold tracking-widest text-black">{!! $slide['regular_price'] !!} €</p>
               </div>
             </div>
             <img class="relative" src="{!! $slide['img']['url'] !!}" srcset="{!! $slide['srcset'] !!}" sizes="(max-width: 640px) 100vw, 80vw" alt="">

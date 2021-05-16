@@ -22,7 +22,7 @@
     'post_type' => 'post'
   ])
 
-  <section class="posts prose">
+  <section class="prose posts">
     @posts
       @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
     @endposts

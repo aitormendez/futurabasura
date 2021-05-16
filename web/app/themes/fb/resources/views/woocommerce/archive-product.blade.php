@@ -35,7 +35,7 @@
 
             // woocommerce_product_loop_start();
         @endphp
-        <ul class="flex flex-wrap justify-center items-center infinite-scroll-container">
+        <ul class="flex flex-wrap items-center justify-center infinite-scroll-container">
         @if ( wc_get_loop_prop( 'total' ) )
             @while ( have_posts() )
                 @php
