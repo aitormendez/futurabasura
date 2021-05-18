@@ -1,6 +1,6 @@
 @php
 /**
- * Cart Page
+ * Cart Page. NO SE USA. ESTÁ A EFECTOS DE BACKUP
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/cart/cart.php.
  *

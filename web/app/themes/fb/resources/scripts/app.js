@@ -12,6 +12,7 @@ import './singleProduct.js';
 import './simpleProduct.js';
 import './variableProduct.js';
 import './frontPage.js';
+import './cart.js';
 
 $(document).ready(() => {
 

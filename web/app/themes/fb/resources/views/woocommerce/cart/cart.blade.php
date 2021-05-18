@@ -1,5 +1,7 @@
 @php
 /**
+ * ES CART BLADE PERO SUSTITUYENDO LA TABLA HTML POR DIVS
+ *
  * Cart Page
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/cart/cart.php.
@@ -133,6 +135,29 @@ do_action( 'woocommerce_before_cart' );
 					</div>
 				@endif
 			@endforeach
+
+			<?php do_action( 'woocommerce_cart_contents' ); ?>
+
+			<tr>
+				<td colspan="6" class="actions">
+
+					@if ( wc_coupons_enabled() )
+						<div class="coupon">
+							<label for="coupon_code">{{ esc_attr( translate( 'Coupon', 'woocommerce' )) }}</label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="{{ esc_attr( translate( 'Coupon code', 'woocommerce' )) }}>" /> <button type="submit" class="button" name="apply_coupon" value="{{ esc_attr( translate( 'Apply coupon', 'woocommerce' )) }}">{{ esc_attr( translate( 'Apply coupon', 'woocommerce' )) }}</button>
+							@php do_action( 'woocommerce_cart_coupon' ) @endphp
+						</div>
+					@endif
+
+					<button type="submit" class="invisible button" name="update_cart" value="{{ esc_attr( translate( 'Update cart', 'woocommerce' )) }}">{{ esc_attr( translate( 'Update cart', 'woocommerce' )) }}</button>
+
+					@php
+            do_action( 'woocommerce_cart_actions' );
+					  wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' );
+          @endphp
+				</td>
+			</tr>
+
+			@php do_action( 'woocommerce_after_cart_contents' ) @endphp
 
     </div>
   </div>
