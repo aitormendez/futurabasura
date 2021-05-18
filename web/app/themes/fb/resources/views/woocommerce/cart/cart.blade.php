@@ -23,34 +23,34 @@ do_action( 'woocommerce_before_cart' );
 <form class="woocommerce-cart-form" action="{{ wc_get_cart_url() }}" method="post">
 	@php do_action( 'woocommerce_before_cart_table' ) @endphp
 
-	<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
-		<thead>
-			<tr>
-				<th class="product-remove">&nbsp;</th>
-				<th class="product-thumbnail">&nbsp;</th>
-				<th class="product-name">{{ _e( 'Product', 'woocommerce' ) }}</th>
-				<th class="product-price">{{ _e( 'Price', 'woocommerce' ) }}</th>
-				<th class="product-quantity">{{ _e( 'Quantity', 'woocommerce' ) }}</th>
-				<th class="product-subtotal">{{ _e( 'Subtotal', 'woocommerce' ) }}</th>
-			</tr>
-		</thead>
-		<tbody>
-			@php do_action( 'woocommerce_before_cart_contents' ) @endphp
+  {{-- nueva tabla --}}
 
-
-			@foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item )
+  <div class="ticket">
+    <div class="uppercase tk-header">
+      <div class="tk-row">
+        <div class="tk-cell tk-product-remove">&nbsp;</div>
+				<div class="tk-cell tk-product-thumbnail">&nbsp;</div>
+				<div class="tk-cell tk-product-name">{{ _e( 'Product', 'woocommerce' ) }}</div>
+				<div class="tk-cell tk-product-price">{{ _e( 'Price', 'woocommerce' ) }}</div>
+				<div class="tk-cell tk-product-quantity">{{ _e( 'Quantity', 'woocommerce' ) }}</div>
+				<div class="tk-cell tk-product-subtotal">{{ _e( 'Subtotal', 'woocommerce' ) }}</div>
+      </div>
+    </div>
+    <div class="tk-body">
+      @foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item )
         @php
           $_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
           $product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
         @endphp
 
+
 				@if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) )
           @php
 					  $product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 					@endphp
-					<tr class="woocommerce-cart-form__cart-item {{ apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) }}">
+					<div class="tk-row woocommerce-cart-form__cart-item {{ apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) }}">
 
-						<td class="product-remove">
+						<div class="tk-cell product-remove">
                {!! apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 'woocommerce_cart_item_remove_link',
                 sprintf(
@@ -62,102 +62,83 @@ do_action( 'woocommerce_before_cart' );
                 ),
                 $cart_item_key
               ) !!}
-						</td>
+						</div>
 
-						<td class="product-thumbnail">
-						@php
-						  $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
-            @endphp
-
-						@if ( ! $product_permalink )
-							{!! $thumbnail !!}
-						@else
-							@php
-                printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
+						<div class="tk-cell product-thumbnail">
+              @php
+                $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
               @endphp
-            @endif
-						</td>
 
-						<td class="product-name" data-title="{{ esc_attr( translate( 'Product', 'woocommerce' )) }}">
+              @if ( ! $product_permalink )
+                {!! $thumbnail !!}
+              @else
+                @php
+                  printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
+                @endphp
+              @endif
+						</div>
 
-						@if ( ! $product_permalink )
-							{!! wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' ) !!}
-						@else
-							{!! wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) ) !!}
-						@endif
+						<div class="tk-cell product-name" data-title="{{ esc_attr( translate( 'Product', 'woocommerce' )) }}">
 
-						@php do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key ) @endphp
+              @if ( ! $product_permalink )
+                {!! wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' ) !!}
+              @else
+                {!! wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) ) !!}
+              @endif
 
-						{{-- Meta data. --}}
-						{!! wc_get_formatted_cart_item_data( $cart_item ) !!}
+              @php do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key ) @endphp
 
-						{{-- Backorder notification. --}}
-						@if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) )
-							{!! wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) ) !!}
-						@endif
-						</td>
+              {{-- Meta data. --}}
+              {!! wc_get_formatted_cart_item_data( $cart_item ) !!}
 
-						<td class="product-price" data-title="{{ esc_attr( translate( 'Price', 'woocommerce' )) }}">
+              {{-- Backorder notification. --}}
+              @if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) )
+                {!! wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) ) !!}
+              @endif
+						</div>
+
+						<div class="tk-cell product-price" data-title="{{ esc_attr( translate( 'Price', 'woocommerce' )) }}">
 							<?php
 								echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 							?>
-						</td>
+						</div>
 
-						<td class="product-quantity" data-title="{{ esc_attr( translate( 'Quantity', 'woocommerce' )) }}">
-						<?php
-						if ( $_product->is_sold_individually() ) {
-							$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
-						} else {
-							$product_quantity = woocommerce_quantity_input(
-								array(
-									'input_name'   => "cart[{$cart_item_key}][qty]",
-									'input_value'  => $cart_item['quantity'],
-									'max_value'    => $_product->get_max_purchase_quantity(),
-									'min_value'    => '0',
-									'product_name' => $_product->get_name(),
-								),
-								$_product,
-								false
-							);
-						}
+						<div class="tk-cell product-quantity" data-title="{{ esc_attr( translate( 'Quantity', 'woocommerce' )) }}">
+              @if ( $_product->is_sold_individually() )
+                @php
+                  $product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
+                @endphp
+              @else
+                @php
+                  $product_quantity = woocommerce_quantity_input(
+                    array(
+                      'input_name'   => "cart[{$cart_item_key}][qty]",
+                      'input_value'  => $cart_item['quantity'],
+                      'max_value'    => $_product->get_max_purchase_quantity(),
+                      'min_value'    => '0',
+                      'product_name' => $_product->get_name(),
+                    ),
+                    $_product,
+                    false
+                  );
+                @endphp
+              @endif
 
-						echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
-						?>
-						</td>
+              {!! apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ) !!}
+						</div>
 
-						<td class="product-subtotal" data-title="{{ esc_attr( translate( 'Subtotal', 'woocommerce' )) }}">
-							<?php
-								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-							?>
-						</td>
-					</tr>
+						<div class="tk-cell product-subtotal" data-title="{{ esc_attr( translate( 'Subtotal', 'woocommerce' )) }}">
+							{!! apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ) !!}
+						</div>
+					</div>
 				@endif
 			@endforeach
 
-			<?php do_action( 'woocommerce_cart_contents' ); ?>
+    </div>
+  </div>
 
-			<tr>
-				<td colspan="6" class="actions">
+  {{-- termina nueva tabla --}}
 
-					<?php if ( wc_coupons_enabled() ) { ?>
-						<div class="coupon">
-							<label for="coupon_code">{{ esc_attr( translate( 'Coupon', 'woocommerce' )) }}</label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="{{ esc_attr( translate( 'Coupon code', 'woocommerce' )) }}>" /> <button type="submit" class="button" name="apply_coupon" value="{{ esc_attr( translate( 'Apply coupon', 'woocommerce' )) }}">{{ esc_attr( translate( 'Apply coupon', 'woocommerce' )) }}</button>
-							@php do_action( 'woocommerce_cart_coupon' ) @endphp
-						</div>
-					<?php } ?>
-
-					<button type="submit" class="button" name="update_cart" value="{{ esc_attr( translate( 'Update cart', 'woocommerce' )) }}">{{ esc_attr( translate( 'Update cart', 'woocommerce' )) }}</button>
-
-					@php
-            do_action( 'woocommerce_cart_actions' );
-					  wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' );
-          @endphp
-				</td>
-			</tr>
-
-			@php do_action( 'woocommerce_after_cart_contents' ) @endphp
-		</tbody>
-	</table>
 	@php do_action( 'woocommerce_after_cart_table' ) @endphp
 </form>
 
