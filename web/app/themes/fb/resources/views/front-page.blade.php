@@ -1,38 +1,18 @@
 @extends('layouts.app')
 
-@section('content')
+<main id="main" class="py-8 sm:mt-40 main">
+  @section('content')
 
-  @if (! have_posts())
-    <x-alert type="warning">
-      {!! __('Sorry, no results were found.', 'sage') !!}
-    </x-alert>
+    @if (count($cupones) !== 0)
+      <section>
+        @include('partials.cupones')
+      </section>
+    @endif
 
-    {!! get_search_form(false) !!}
-  @endif
+    @include('partials.slider')
 
-  @if (count($cupones) !== 0)
-    <section>
-      @include('partials.cupones')
-    </section>
-  @endif
-
-  @include('partials.slider')
-
-  @query([
-    'post_type' => 'post'
-  ])
-
-  <section class="prose posts">
-    @posts
-      @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
-    @endposts
-  </section>
-
-  @while(have_posts()) @php(the_post())
-    @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
-  @endwhile
-
-@endsection
+  @endsection
+</main>
 
 @section('sidebar')
   @include('partials.sidebar')

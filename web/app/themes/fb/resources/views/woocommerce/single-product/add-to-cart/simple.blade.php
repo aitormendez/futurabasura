@@ -67,7 +67,7 @@ if ( ! $product->is_purchasable() ) {
             </div>
             <div class="relative ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_quantity">
               <div id="ftbs_variationsTableRowColumn_quantityInput_add" class="cursor-pointer absolute leading-none top-0 right-0 py-1.5 px-2 select-none hover:text-azul text-center">&plus;</div>
-              <input class="block h-full p-4 font-bold ftbs_variationsTableRowColumn_quantityInput text-azul" type="text" value="1"/>
+              <input class="block h-full p-4 font-bold border-none ftbs_variationsTableRowColumn_quantityInput text-azul" type="text" value="1"/>
               <div id="ftbs_variationsTableRowColumn_quantityInput_remove" class="cursor-pointer absolute leading-none bottom-0 right-0 py-1.5 px-2 select-none hover:text-azul">&minus;</div>
             </div>
           </div>

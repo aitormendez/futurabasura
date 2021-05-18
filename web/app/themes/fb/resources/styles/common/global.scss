@@ -38,11 +38,11 @@ a {
   height: 100%;
 }
 
-body:not(.home):not(.cart) {
-  .main{
-    @apply bg-gray-200;
-  }
-}
+// body:not(.home):not(.cart) {
+//   .main{
+//     @apply bg-gray-200;
+//   }
+// }
 
 .punteado {
   width: 12px;

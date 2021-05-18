@@ -4,9 +4,9 @@
 
 @include('partials.header')
 
-  <main id="main" class="py-8 sm:mt-40 main">
-    @yield('content')
-  </main>
+
+  @yield('content')
+
 
   @hasSection('sidebar')
     <aside class="sidebar">

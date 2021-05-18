@@ -19,7 +19,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+  <main id="main" class="py-8 sm:mt-40 main">
     @if ( woocommerce_product_loop() )
 
         @php
@@ -89,5 +89,6 @@
          */
         // do_action( 'woocommerce_sidebar' );
     @endphp
+  </main>
 @endsection
 

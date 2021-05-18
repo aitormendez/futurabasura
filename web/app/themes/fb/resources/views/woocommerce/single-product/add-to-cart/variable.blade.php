@@ -90,11 +90,11 @@ do_action( 'woocommerce_before_add_to_cart_form' );
               <div id="ftbs_variationsTableRowColumn_quantity_{{ $idx }}" class="relative ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_quantity">
                 @if ($idx===0)
                   <div id="ftbs_variationsTableRowColumn_quantityInput_add" class="ftbs_variationsTableRowColumn_quantityInput_add cursor-pointer absolute leading-none top-0 right-0 py-1.5 px-2 select-none hover:text-azul text-center">&plus;</div>
-                  <input id="ftbs_variationsTableRowColumn_quantityInput" class="block h-full p-4 font-bold ftbs_variationsTableRowColumn_quantityInput text-azul" type="text" value="1" />
+                  <input id="ftbs_variationsTableRowColumn_quantityInput" class="block h-full p-4 font-bold border-none ftbs_variationsTableRowColumn_quantityInput text-azul" type="text" value="1" />
                   <div id="ftbs_variationsTableRowColumn_quantityInput_remove" class="ftbs_variationsTableRowColumn_quantityInput_remove cursor-pointer absolute leading-none bottom-0 right-0 py-1.5 px-2 select-none hover:text-azul">&minus;</div>
                 @else
                   <div class="ftbs_variationsTableRowColumn_quantityInput_add_inactive cursor-pointer absolute leading-none top-0 right-0 py-1.5 px-2 select-none hover:text-azul text-center">&plus;</div>
-                  <input class="block h-full p-4 font-bold ftbs_variationsTableRowColumn_quantityInput_inactive ftbs_variationsTableRowColumn_quantityInput text-azul" value="" />
+                  <input class="block h-full p-4 font-bold border-none ftbs_variationsTableRowColumn_quantityInput_inactive ftbs_variationsTableRowColumn_quantityInput text-azul" value="" />
                   <div class="ftbs_variationsTableRowColumn_quantityInput_remove_inactive cursor-pointer absolute leading-none bottom-0 right-0 py-1.5 px-2 select-none hover:text-azul">&minus;</div>
                 @endif
               </div>
