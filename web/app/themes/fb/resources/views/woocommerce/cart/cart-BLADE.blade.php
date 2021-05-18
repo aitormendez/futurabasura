@@ -1,6 +1,7 @@
 @php
 /**
  * TRADUCCIÓN DEL CART ORIGINAL A BLADE
+ * NO SE USA. ESTÁ A EFECTOS DE BACKUP
  *
  * Cart Page
  *
