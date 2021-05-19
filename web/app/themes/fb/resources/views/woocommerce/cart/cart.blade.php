@@ -29,13 +29,13 @@ do_action( 'woocommerce_before_cart' );
 
   <div class="ticket">
     <div class="uppercase tk-header">
-      <div class="tk-row">
-        <div class="tk-cell tk-product-remove">&nbsp;</div>
-				<div class="tk-cell tk-product-thumbnail">&nbsp;</div>
-				<div class="tk-cell tk-product-name">{{ _e( 'Product', 'woocommerce' ) }}</div>
-				<div class="tk-cell tk-product-price">{{ _e( 'Price', 'woocommerce' ) }}</div>
-				<div class="tk-cell tk-product-quantity">{{ _e( 'Quantity', 'woocommerce' ) }}</div>
-				<div class="tk-cell tk-product-subtotal">{{ _e( 'Subtotal', 'woocommerce' ) }}</div>
+      <div class="flex tk-row">
+        <div class="font-bold tk-cell product-remove">&nbsp;</div>
+				<div class="font-bold tk-cell product-thumbnail">&nbsp;</div>
+				<div class="font-bold tk-cell product-name">{{ _e( 'Product', 'woocommerce' ) }}</div>
+				<div class="font-bold tk-cell product-price">{{ _e( 'Price', 'woocommerce' ) }}</div>
+				<div class="font-bold tk-cell product-quantity">{{ _e( 'Quantity', 'woocommerce' ) }}</div>
+				<div class="font-bold tk-cell product-subtotal">{{ _e( 'Subtotal', 'woocommerce' ) }}</div>
       </div>
     </div>
     <div class="tk-body">
@@ -50,13 +50,13 @@ do_action( 'woocommerce_before_cart' );
           @php
 					  $product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 					@endphp
-					<div class="tk-row woocommerce-cart-form__cart-item {{ apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) }}">
+					<div class="tk-row flex woocommerce-cart-form__cart-item {{ apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) }}">
 
-						<div class="tk-cell product-remove">
+						<div class="product-remove">
                {!! apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 'woocommerce_cart_item_remove_link',
                 sprintf(
-                  '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+                  '<a href="%s" class="text-xl text-red-600 remove tk-cell" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
                   esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
                   esc_html__( 'Remove this item', 'woocommerce' ),
                   esc_attr( $product_id ),
@@ -114,11 +114,13 @@ do_action( 'woocommerce_before_cart' );
                 @php
                   $product_quantity = woocommerce_quantity_input(
                     array(
+                      'input_id' => "ftbsCartProduct_".$cart_item["product_id"],
                       'input_name'   => "cart[{$cart_item_key}][qty]",
                       'input_value'  => $cart_item['quantity'],
                       'max_value'    => $_product->get_max_purchase_quantity(),
                       'min_value'    => '0',
                       'product_name' => $_product->get_name(),
+                      'classes' => 'text-blue-700 font-bold ftbsCartQuantityInput'
                     ),
                     $_product,
                     false
@@ -127,6 +129,8 @@ do_action( 'woocommerce_before_cart' );
               @endif
 
               {!! apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ) !!}
+              <div class="product-quantity-remove">&minus;</div>
+							<div class="product-quantity-add">&plus;</div>
 						</div>
 
 						<div class="tk-cell product-subtotal" data-title="{{ esc_attr( translate( 'Subtotal', 'woocommerce' )) }}">

@@ -1,0 +1,45 @@
+body.cart {
+  .ticket {
+    .tk-row {
+      .tk-cell {
+        &.product-remove {
+          width: 5%;
+        }
+
+        &.product-thumbnail {
+          width: 20%;
+        }
+
+        &.product-name {
+          width: 20%;
+        }
+
+        &.product-price {
+          width: 20%;
+        }
+
+        &.product-quantity {
+          width: 20%;
+
+          input[type=number] {
+            -moz-appearance: textfield;
+            width: 100%;
+            display: block;
+            padding: 1em;
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+          }
+        }
+        &.product-subtotal {
+          width: 10%;
+        }
+      }
+    }
+  }
+}
+
+
