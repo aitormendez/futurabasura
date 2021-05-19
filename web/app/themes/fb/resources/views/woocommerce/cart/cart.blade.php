@@ -28,7 +28,7 @@ do_action( 'woocommerce_before_cart' );
   {{-- nueva tabla --}}
 
   <div class="ticket">
-    <div class="uppercase tk-header">
+    {{-- <div class="uppercase tk-header">
       <div class="flex tk-row">
         <div class="font-bold tk-cell product-remove">&nbsp;</div>
 				<div class="font-bold tk-cell product-thumbnail">&nbsp;</div>
@@ -37,7 +37,7 @@ do_action( 'woocommerce_before_cart' );
 				<div class="font-bold tk-cell product-quantity">{{ _e( 'Quantity', 'woocommerce' ) }}</div>
 				<div class="font-bold tk-cell product-subtotal">{{ _e( 'Subtotal', 'woocommerce' ) }}</div>
       </div>
-    </div>
+    </div> --}}
     <div class="tk-body">
       @foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item )
         @php
@@ -50,13 +50,13 @@ do_action( 'woocommerce_before_cart' );
           @php
 					  $product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 					@endphp
-					<div class="tk-row flex woocommerce-cart-form__cart-item {{ apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) }}">
+					<div class="border-b border-black tk-row bg-white flex items-center woocommerce-cart-form__cart-item {{ apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) }}">
 
-						<div class="product-remove">
+						<div class="flex items-center order-6 product-remove">
                {!! apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 'woocommerce_cart_item_remove_link',
                 sprintf(
-                  '<a href="%s" class="text-xl text-red-600 remove tk-cell" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+                  '<a href="%s" class="block text-5xl text-red-600 remove tk-cell" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
                   esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
                   esc_html__( 'Remove this item', 'woocommerce' ),
                   esc_attr( $product_id ),
@@ -66,7 +66,7 @@ do_action( 'woocommerce_before_cart' );
               ) !!}
 						</div>
 
-						<div class="tk-cell product-thumbnail">
+						<div class="p-6 bg-gray-800 tk-cell product-thumbnail">
               @php
                 $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
               @endphp
@@ -105,7 +105,7 @@ do_action( 'woocommerce_before_cart' );
 							?>
 						</div>
 
-						<div class="tk-cell product-quantity" data-title="{{ esc_attr( translate( 'Quantity', 'woocommerce' )) }}">
+						<div class="flex tk-cell product-quantity" data-title="{{ esc_attr( translate( 'Quantity', 'woocommerce' )) }}">
               @if ( $_product->is_sold_individually() )
                 @php
                   $product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -120,7 +120,7 @@ do_action( 'woocommerce_before_cart' );
                       'max_value'    => $_product->get_max_purchase_quantity(),
                       'min_value'    => '0',
                       'product_name' => $_product->get_name(),
-                      'classes' => 'text-blue-700 font-bold ftbsCartQuantityInput'
+                      'classes' => 'h-full text-center text-blue-700 font-bold ftbsCartQuantityInput'
                     ),
                     $_product,
                     false
@@ -129,8 +129,10 @@ do_action( 'woocommerce_before_cart' );
               @endif
 
               {!! apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ) !!}
-              <div class="product-quantity-remove">&minus;</div>
-							<div class="product-quantity-add">&plus;</div>
+              <div class="flex flex-col botones-qty">
+                <div class="product-quantity-add cursor-pointer leading-none py-1.5 px-2 select-none hover:text-azul text-center">&plus;</div>
+                <div class="cursor-pointer leading-none py-1.5 px-2 select-none hover:text-azul product-quantity-remove">&minus;</div>
+              </div>
 						</div>
 
 						<div class="tk-cell product-subtotal" data-title="{{ esc_attr( translate( 'Subtotal', 'woocommerce' )) }}">
@@ -152,7 +154,7 @@ do_action( 'woocommerce_before_cart' );
 						</div>
 					@endif
 
-					<button type="submit" class="invisible button" name="update_cart" value="{{ esc_attr( translate( 'Update cart', 'woocommerce' )) }}">{{ esc_attr( translate( 'Update cart', 'woocommerce' )) }}</button>
+					<button type="submit" class="button" name="update_cart" value="{{ esc_attr( translate( 'Update cart', 'woocommerce' )) }}">{{ esc_attr( translate( 'Update cart', 'woocommerce' )) }}</button>
 
 					@php
             do_action( 'woocommerce_cart_actions' );

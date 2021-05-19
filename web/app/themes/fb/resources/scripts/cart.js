@@ -1,25 +1,29 @@
 $(document).ready(() => {
   if (document.body.classList.contains('cart')) {
 
+    let btnActualizar = $("[name='update_cart']");
 
     // actualizar carrito al cambiar cantidad
+    function actualizar() {
+      btnActualizar.trigger("click");
+    }
 
-    $('.ftbsCartQuantityInput').change(function(){
-      $("[name='update_cart']").trigger("click");
+    $('.ftbsCartQuantityInput').change(function() {
+      actualizar();
     });
 
 
     // aumentar y reducir cantidad con botones personalizados
 
-    $('.product-quantity-add').each(function(){
-      let id = $(this).siblings('.quantity').find('.ftbsCartQuantityInput').attr('id');
+    $('.product-quantity-add').each(function() {
+      let id = $(this).parent('.botones-qty').siblings('.quantity').find('.ftbsCartQuantityInput').attr('id');
       $(this).click(function() {
         ftbsCartIncreaseProduct(id);
       }) ;
     })
 
-    $('.product-quantity-remove').each(function(){
-      let id = $(this).siblings('.quantity').find('.ftbsCartQuantityInput').attr('id');
+    $('.product-quantity-remove').each(function() {
+      let id = $(this).parent('.botones-qty').siblings('.quantity').find('.ftbsCartQuantityInput').attr('id');
       $(this).click(function() {
         ftbsCartDecreaseProduct(id);
       }) ;
@@ -27,21 +31,16 @@ $(document).ready(() => {
 
     function ftbsCartIncreaseProduct(id) {
       let curr = parseInt($('#' + id).val());
-      console.log(curr);
       $('#' + id).val(++curr);
       $("[name='update_cart']").prop("disabled", false);
-      $("[name='update_cart']").trigger("click");
+      actualizar();
     }
 
     function ftbsCartDecreaseProduct(id) {
       let curr = parseInt($('#' + id).val());
-      console.log(curr);
       $('#' + id).val(--curr);
       $("[name='update_cart']").prop("disabled", false);
-      $("[name='update_cart']").trigger("click");
+      actualizar();
     }
   }
 });
-
-
-

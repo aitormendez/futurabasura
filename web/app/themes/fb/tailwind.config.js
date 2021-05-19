@@ -41,7 +41,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      borderWidth: ['last'],
+    },
   },
   plugins: [
     require('tailwindcss-debug-screens'),
