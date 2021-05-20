@@ -13,6 +13,7 @@ module.exports = {
   theme: {
     fill: theme => ({
       'red': theme('colors.red.600'),
+      'allo-claro': theme('colors.allo-claro'),
     }),
     extend: {
       typography: {
@@ -38,6 +39,8 @@ module.exports = {
       },
       backgroundImage: theme => ({
         'fondo': "url('../images/bg.svg')",
+        'tk-triangulo': "url('../images/triangulo-ticket.svg')",
+        'tk-triangulo-down': "url('../images/triangulo-ticket-down.svg')",
         'fondo-claro': "url('../images/bg-claro.svg')",
         'fondo-medio': "url('../images/bg-medio.svg')",
         'punteado': "url('../images/punteado-cupon.svg')",

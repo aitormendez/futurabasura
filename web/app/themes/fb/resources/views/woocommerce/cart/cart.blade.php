@@ -28,6 +28,10 @@ do_action( 'woocommerce_before_cart' );
   {{-- nueva tabla --}}
 
   <div class="ticket">
+    <div class="w-full ticket-head">
+      <div class="w-full ticket-triangulo bg-tk-triangulo"></div>
+      <div class="w-full h-10 bg-allo-claro"></div>
+    </div>
     <div class="tk-body">
       @foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item )
         @php
@@ -179,6 +183,7 @@ do_action( 'woocommerce_before_cart' );
 			@php do_action( 'woocommerce_after_cart_contents' ) @endphp
 
     </div>
+
   </div>
 
   {{-- termina nueva tabla --}}
@@ -198,6 +203,12 @@ do_action( 'woocommerce_before_cart' );
 		 */
 		do_action( 'woocommerce_cart_collaterals' );
   @endphp
+  <div class="w-full ticket-head">
+    <div class="w-full ticket-triangulo bg-tk-triangulo-down"></div>
+  </div>
 </div>
 
+<div class="w-full ticket-head bg-tk-triangulo-down"></div>
+
 @php do_action( 'woocommerce_after_cart' ) @endphp
+
