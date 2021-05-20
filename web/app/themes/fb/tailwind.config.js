@@ -11,6 +11,9 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fill: theme => ({
+      'red': theme('colors.red.600'),
+    }),
     extend: {
       typography: {
         DEFAULT: {
@@ -30,6 +33,7 @@ module.exports = {
         'negro-fb':'#3e2b2f',
         'gris-fb':'#ada3a4',
         'allo':'#ffff00',
+        'allo-claro':'#dbffe9',
         'azul':'#0000ff',
       },
       backgroundImage: theme => ({
