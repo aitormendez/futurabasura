@@ -45,7 +45,7 @@ do_action( 'woocommerce_before_cart' );
           {{-- row --}}
 					<div class="tracking-wider text-gray-600 mb-2 flex justify-between tk-row bg-allo-claro woocommerce-cart-form__cart-item {{ apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) }}">
 
-            <div class="flex flex-wrap justify-between w-full col-1">
+            <div class="flex flex-wrap justify-between w-full md:nowrap md:justify-start col-1">
               {{-- thumbnail --}}
               <div class="p-6 tk-cell product-thumbnail">
                 @php
@@ -62,7 +62,7 @@ do_action( 'woocommerce_before_cart' );
               </div>
 
               {{-- datos de producto --}}
-              <div class="order-2 w-full px-6 tk-cell product-data">
+              <div class="order-2 w-full px-6 md:pl-0 md:pt-6 md:order-1 md:w-auto tk-cell product-data">
                 <div class="product-name" data-title="{{ esc_attr( translate( 'Product', 'woocommerce' )) }}">
 
                   @if ( ! $product_permalink )
@@ -92,9 +92,15 @@ do_action( 'woocommerce_before_cart' );
                 <div class="artist">
                   {{ $artista }}
                 </div>
+
+                <div class="hidden product-price md:block" data-title="{{ esc_attr( translate( 'Price', 'woocommerce' )) }}">
+                  <?php
+                    echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+                  ?>
+                </div>
               </div>
 
-              <div class="order-3 w-1/2 pb-3 pl-6 italic product-meta">
+              <div class="order-3 w-1/2 pb-3 pl-6 italic product-meta md:hidden">
                 <div class="tk-cell product-price" data-title="{{ esc_attr( translate( 'Price', 'woocommerce' )) }}">
                   <?php
                     echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
@@ -103,7 +109,7 @@ do_action( 'woocommerce_before_cart' );
               </div>
 
               {{-- input quantity --}}
-              <div class="flex items-center justify-end order-1 tk-cell product-quantity" data-title="{{ esc_attr( translate( 'Quantity', 'woocommerce' )) }}">
+              <div class="flex items-center order-1 md:bg-white tk-cell product-quantity" data-title="{{ esc_attr( translate( 'Quantity', 'woocommerce' )) }}">
                 @if ( $_product->is_sold_individually() )
                   @php
                     $product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -133,7 +139,7 @@ do_action( 'woocommerce_before_cart' );
                 </div>
               </div>
 
-              <div class="self-end order-4 pb-3 italic font-bold tk-cell product-subtotal" data-title="{{ esc_attr( translate( 'Subtotal', 'woocommerce' )) }}">
+              <div class="self-end justify-end order-4 pb-3 italic font-bold md:pb-0 md:self-center tk-cell product-subtotal md:flex" data-title="{{ esc_attr( translate( 'Subtotal', 'woocommerce' )) }}">
                 {!! apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ) !!}
               </div>
           </div> {{-- /col-1 --}}
