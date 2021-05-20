@@ -30,7 +30,7 @@ do_action( 'woocommerce_before_cart' );
   <div class="ticket">
     <div class="w-full ticket-head">
       <div class="w-full ticket-triangulo bg-tk-triangulo"></div>
-      <div class="w-full h-10 bg-allo-claro"></div>
+      <div class="w-full h-10 mb-2 bg-allo-claro"></div>
     </div>
     <div class="tk-body">
       @foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item )
@@ -166,8 +166,22 @@ do_action( 'woocommerce_before_cart' );
 
 					@if ( wc_coupons_enabled() )
 						<div class="coupon">
-							<label for="coupon_code">{{ esc_attr( translate( 'Coupon', 'woocommerce' )) }}</label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="{{ esc_attr( translate( 'Coupon code', 'woocommerce' )) }}>" /> <button type="submit" class="button" name="apply_coupon" value="{{ esc_attr( translate( 'Apply coupon', 'woocommerce' )) }}">{{ esc_attr( translate( 'Apply coupon', 'woocommerce' )) }}</button>
-							@php do_action( 'woocommerce_cart_coupon' ) @endphp
+              <div class="pt-6 bg-allo-claro"></div>
+							<div class="flex justify-between central-row">
+                <div class="pl-6 lateral bg-allo-claro"></div>
+                <div class="flex flex-wrap justify-center central">
+                  <label class="hidden" for="coupon_code">{{ esc_attr( translate( 'Coupon', 'woocommerce' )) }}</label>
+
+                  <input type="text" name="coupon_code" class="w-full font-bold tracking-wider text-center text-red-600 bg-transparent h-36 input-text" id="coupon_code" value="" placeholder="{{ esc_attr( translate( 'Coupon code', 'woocommerce' )) }}" />
+
+                  <button class="w-full bg-transparent border-4 btn" type="submit" class="button" name="apply_coupon" value="{{ esc_attr( translate( 'Apply coupon', 'woocommerce' )) }}">{{ esc_attr( translate( 'Apply coupon', 'woocommerce' )) }}
+                  </button>
+
+                  @php do_action( 'woocommerce_cart_coupon' ) @endphp
+                </div>
+                <div class="pl-6 lateral bg-allo-claro"></div>
+              </div>
+              <div class="pt-6 bg-allo-claro"></div>
 						</div>
 					@endif
 

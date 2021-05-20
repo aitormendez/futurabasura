@@ -58,6 +58,18 @@ body.cart {
             }
           }
         }
+
+        &.actions {
+          .coupon {
+            .central {
+              width: 20rem;
+            }
+
+            .lateral {
+              width: calc(50% - 10rem);
+            }
+          }
+        }
       }
 
       @media (min-width: 786px) {
