@@ -185,7 +185,7 @@ do_action( 'woocommerce_before_cart' );
 						</div>
 					@endif
 
-					<button type="submit" class="invisible button" name="update_cart" value="{{ esc_attr( translate( 'Update cart', 'woocommerce' )) }}">{{ esc_attr( translate( 'Update cart', 'woocommerce' )) }}</button>
+					<button type="submit" class="hidden button" name="update_cart" value="{{ esc_attr( translate( 'Update cart', 'woocommerce' )) }}">{{ esc_attr( translate( 'Update cart', 'woocommerce' )) }}</button>
 
 					@php
             do_action( 'woocommerce_cart_actions' );

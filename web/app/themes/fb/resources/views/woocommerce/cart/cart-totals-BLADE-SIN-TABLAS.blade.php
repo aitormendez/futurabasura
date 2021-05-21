@@ -1,5 +1,8 @@
 @php
 /**
+ * TRADUCCIÓN DE LA PLANTILLA ORIGINAL A BLADE
+ * CONVERTIR TABLAS HTM,L A DIVS
+ *
  * Cart totals
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/cart/cart-totals.php.
@@ -24,15 +27,15 @@ defined( 'ABSPATH' ) || exit;
 
 	<h2 class="hidden">{{ __( 'Cart totals', 'woocommerce' ) }}</h2>
 
-	<div class="p-6 subt-tabla bg-allo-claro">
+	<div class="subt-tabla">
 
-		<div class="flex justify-between text-2xl italic subt-row">
+		<div class="subt-row">
 			<h3 class="subt-row-header">{{ __( 'Subtotal', 'woocommerce' ) }}</h3>
 			<div class="subt-cell" data-title="{{ __( 'Subtotal', 'woocommerce' ) }}">@php wc_cart_totals_subtotal_html() @endphp</div>
     </div>
 
 		@foreach ( WC()->cart->get_coupons() as $code => $coupon )
-			<div class="flex border text-red-600 border-red-600 p-6 my-6 subt-row cart-discount coupon-{{ sanitize_title( $code ) }}">
+			<div class="subt-row cart-discount coupon-{{ sanitize_title( $code ) }}">
 				<h3 class="subt-row-header">@php wc_cart_totals_coupon_label( $coupon ) @endphp</h3>
 				<div class="subt-cell" data-title="{{ esc_attr( wc_cart_totals_coupon_label( $coupon, false ) ) }}">@php wc_cart_totals_coupon_html( $coupon )@endphp</div>
 			</div>
@@ -72,22 +75,23 @@ defined( 'ABSPATH' ) || exit;
 
 			@if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) )
 				@foreach ( WC()->cart->get_tax_totals() as $code => $tax )
-					<div class="flex justify-between text-2xl italic subt-row tax-rate tax-rate-{{ sanitize_title( $code ) }}">
+					<div class="subt-row tax-rate tax-rate-{{ sanitize_title( $code ) }}">
 						<h3 class="subt-row-header">{{ $tax->label  }} {!! estimated_text !!}</h3>
 						<div class="subt-cell" data-title="{{ $tax->label }}">{!! wp_kses_post( $tax->formatted_amount ) !!}</div>
 					</div>
 				@endforeach
 			@else
-				<div class="flex justify-between text-2xl italic subt-row tax-total">
+				<div class="subt-row tax-total">
 					<h3 class="subt-row-header">{{  WC()->countries->tax_or_vat() }}{!! estimated_text !!} </h3>
 					<div class="subt-cell" data-title="{{ WC()->countries->tax_or_vat() }}">@php wc_cart_totals_taxes_total_html()@endphp</div>
 				</div>
 			@endif
     @endif
 
+
 		<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
 
-		<div class="flex justify-between text-2xl italic font-bold subt-row order-total">
+		<div class="subt-row order-total">
 			<div class="subt-row-header">{{ __( 'Total', 'woocommerce' ) }}</div>
 			<div class="subt-cell" data-title="{{ __( 'Total', 'woocommerce' ) }}">@php wc_cart_totals_order_total_html() @endphp</div>
 		</div>
@@ -96,7 +100,7 @@ defined( 'ABSPATH' ) || exit;
 
 	</div> {{-- /TABLA --}}
 
-	<div class="px-6 pb-20 bg-allo-claro wc-proceed-to-checkout">
+	<div class="wc-proceed-to-checkout">
 		@php do_action( 'woocommerce_proceed_to_checkout' )@endphp
 	</div>
 
