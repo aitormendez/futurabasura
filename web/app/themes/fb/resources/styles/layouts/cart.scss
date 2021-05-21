@@ -33,12 +33,6 @@ body.cart {
           }
         }
 
-        &.product-price {
-          .woocommerce-Price-currencySymbol {
-            margin-left: 0.3em;
-          }
-        }
-
         &.product-quantity {
           .quantity {
             height: 100%;
@@ -98,6 +92,12 @@ body.cart {
           }
         }
       }
+    }
+  }
+
+  .cart_totals {
+    .subt-tabla {
+      max-width: 20rem;
     }
   }
 }

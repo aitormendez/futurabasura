@@ -24,6 +24,6 @@
 }
 @endif
 
-<a href="{!! esc_url( wc_get_checkout_url() ) !!}" class="block p-6 tracking-wider text-center text-white bg-azul checkout-button button alt wc-forward">
+<a href="{!! esc_url( wc_get_checkout_url() ) !!}" class="block p-6 tracking-wider text-center text-white bg-azul hover:bg-gray-900 hover:text-white checkout-button button alt wc-forward">
 	{{ __( 'Proceed to checkout', 'woocommerce' ) }}
 </a>

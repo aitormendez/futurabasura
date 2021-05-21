@@ -18,13 +18,13 @@
 defined( 'ABSPATH' ) || exit;
 @endphp
 
-<div class="cart_totals {!! ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : '' !!}">
+<div class="flex flex-col items-center p-6 bg-allo-claro cart_totals {!! ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : '' !!}">
 
 	@php do_action( 'woocommerce_before_cart_totals' ) @endphp
 
 	<h2 class="hidden">{{ __( 'Cart totals', 'woocommerce' ) }}</h2>
 
-	<div class="p-6 subt-tabla bg-allo-claro">
+	<div class="w-full max-w-xs subt-tabla">
 
 		<div class="flex justify-between text-2xl italic subt-row">
 			<h3 class="subt-row-header">{{ __( 'Subtotal', 'woocommerce' ) }}</h3>
@@ -96,7 +96,7 @@ defined( 'ABSPATH' ) || exit;
 
 	</div> {{-- /TABLA --}}
 
-	<div class="px-6 pb-20 bg-allo-claro wc-proceed-to-checkout">
+	<div class="w-full max-w-xs pt-6 pb-20 bg-allo-claro wc-proceed-to-checkout">
 		@php do_action( 'woocommerce_proceed_to_checkout' )@endphp
 	</div>
 
