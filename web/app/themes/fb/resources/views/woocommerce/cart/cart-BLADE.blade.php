@@ -31,10 +31,10 @@ do_action( 'woocommerce_before_cart' );
 			<tr>
 				<th class="product-remove">&nbsp;</th>
 				<th class="product-thumbnail">&nbsp;</th>
-				<th class="product-name">{{ _e( 'Product', 'woocommerce' ) }}</th>
-				<th class="product-price">{{ _e( 'Price', 'woocommerce' ) }}</th>
-				<th class="product-quantity">{{ _e( 'Quantity', 'woocommerce' ) }}</th>
-				<th class="product-subtotal">{{ _e( 'Subtotal', 'woocommerce' ) }}</th>
+				<th class="product-name">{{ __( 'Product', 'woocommerce' ) }}</th>
+				<th class="product-price">{{ __( 'Price', 'woocommerce' ) }}</th>
+				<th class="product-quantity">{{ __( 'Quantity', 'woocommerce' ) }}</th>
+				<th class="product-subtotal">{{ __( 'Subtotal', 'woocommerce' ) }}</th>
 			</tr>
 		</thead>
 		<tbody>
