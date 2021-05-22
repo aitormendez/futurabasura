@@ -18,7 +18,7 @@
 defined( 'ABSPATH' ) || exit;
 @endphp
 
-<div class="flex flex-col items-center p-6 bg-allo-claro cart_totals {!! ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : '' !!}">
+<div class="flex flex-col items-center p-6 md:px-0 bg-allo-claro cart_totals {!! ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : '' !!}">
 
 	@php do_action( 'woocommerce_before_cart_totals' ) @endphp
 
@@ -95,6 +95,14 @@ defined( 'ABSPATH' ) || exit;
 		@php do_action( 'woocommerce_cart_totals_after_order_total' ) @endphp
 
 	</div> {{-- /TABLA --}}
+
+  @hasoption('exp_car_totals')
+    <div class="flex justify-center w-full p-6 mt-6 bg-white experiencia">
+      <div class="max-w-xs text-sm text-center text-gray-500">
+        @option('exp_car_totals')
+      </div>
+    </div>
+  @endoption
 
 	<div class="w-full max-w-xs pt-6 pb-20 bg-allo-claro wc-proceed-to-checkout">
 		@php do_action( 'woocommerce_proceed_to_checkout' )@endphp
