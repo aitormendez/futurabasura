@@ -82,7 +82,29 @@ class Opciones extends Field
                     'min_height' => '1135',
                     'max_width' => '2000',
                     'max_height' => '1135',
-                ]);
+                ])
+                ->addTab('Experiencia de compra', ['placement' => 'left'])
+                    ->addTextarea('exp_car_totals', [
+                        'label' => 'Car totals',
+                        'instructions' => 'Esta nota aparecerá en el carrito de la compra.',
+                        'rows' => '5',
+                    ])
+                    ->addTextarea('exp_form-billing', [
+                        'label' => 'Form billing',
+                        'instructions' => 'Esta nota aparecerá en.',
+                        'rows' => '5',
+                    ])
+                    ->addTextarea('exp_form_shipping', [
+                        'label' => 'Form Shipping',
+                        'instructions' => 'Esta nota aparecerá en.',
+                        'rows' => '5',
+                    ])
+                    ->addTextarea('exp_review_order', [
+                        'label' => 'Review order',
+                        'instructions' => 'Esta nota aparecerá en.',
+                        'rows' => '5',
+                    ])
+                ;
 
         return $options->build();
     }
