@@ -33,7 +33,7 @@
       "type": "package",
       "package": {
         "name": "advanced-custom-fields/advanced-custom-fields-pro",
-        "version": "5.9.5",
+        "version": "5.9.6",
         "type": "wordpress-plugin",
         "dist": {
           "type": "zip",
@@ -88,6 +88,8 @@
     "wpackagist-plugin/cookie-notice": "*",
     "advanced-custom-fields/advanced-custom-fields-pro": "*",
     "wpackagist-plugin/easy-wp-smtp": "*",
+    "wpackagist-plugin/mailchimp-for-woocommerce": "*",
+    "wpackagist-plugin/facebook-for-woocommerce": "*",
     "wpackagist-plugin/favicon-by-realfavicongenerator": "*",
     "soberwp/intervention": "dev-master"
   },
