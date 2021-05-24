@@ -76,7 +76,7 @@
     "vlucas/phpdotenv": "^5.3",
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
-    "roots/wordpress": "5.7.1",
+    "roots/wordpress": "5.7.2",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "wpackagist-plugin/woocommerce": "*",
@@ -90,6 +90,7 @@
     "wpackagist-plugin/easy-wp-smtp": "*",
     "wpackagist-plugin/mailchimp-for-woocommerce": "*",
     "wpackagist-plugin/facebook-for-woocommerce": "*",
+    "wpackagist-plugin/woo-redsys-gateway-light": "*",
     "wpackagist-plugin/favicon-by-realfavicongenerator": "*",
     "soberwp/intervention": "dev-master"
   },
