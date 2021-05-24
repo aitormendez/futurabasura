@@ -52,7 +52,7 @@ a {
 
 .woocommerce-message,
 .woocommerce-error {
-  background-color: white;
+  @apply bg-allo;
   padding: 1em;
   border: 1px solid #000;
   text-align: center;
