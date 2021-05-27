@@ -14,13 +14,13 @@
       <a href="{{ $artist['permalink'] }}" role="article" class="flex flex-wrap mb-6 md:mb-10 justify-startmb-6 article md:flex-nowrap hover:text-white">
         <h2 class="block w-full p-6 font-bold text-center uppercase tracking-max">{{ $artist['name'] }}</h2>
 
-        <div class="flex items-center justify-center avatar f-full">
+        <div class="flex items-start justify-center avatar f-full">
           @if ($artist['avatar'])
           <img src="{{ $artist['avatar']['url'] }}" srcset="{{ $artist['srcset'] }}" sizes="(max-width: 768px) 100vw, 20vw" alt="{{ $artist['name'] }}" class="">
           @endif
         </div>
 
-        <div class="flex flex-wrap w-full align-top md:w-auto productos">
+        <div class="flex items-start w-full md:w-auto productos">
           @foreach ($artist['products'] as $prod)
               {!! $prod['prod_img'] !!}
           @endforeach

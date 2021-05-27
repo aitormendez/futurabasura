@@ -10,7 +10,6 @@ body.artists {
       align-self: flex-start;
 
       img {
-        display: block;
         max-width: 25vw;
         max-height: 25vw;
         width: auto;
@@ -45,9 +44,9 @@ body.artists {
 
       .productos {
         align-self: flex-start;
+        width: 50%;
 
         img {
-          display: block;
           max-width: 10vw;
           max-height: 10vw;
           width: auto;
