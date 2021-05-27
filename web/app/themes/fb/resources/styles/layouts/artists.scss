@@ -23,7 +23,7 @@ body.artists {
       }
 
       img {
-        filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+        filter: brightness(50%) sepia(100%) hue-rotate(190deg) saturate(500%);
       }
     }
   }
