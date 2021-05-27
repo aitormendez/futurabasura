@@ -23,15 +23,15 @@ defined( 'ABSPATH' ) || exit;
 <div class="woocommerce-billing-fields">
 	@if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() )
 
-		<h3>{{ __( 'Billing &amp; Shipping', 'woocommerce' ) }}</h3>
+		<h3 class="font-bold tracking-wider uppercase">{{ __( 'Billing &amp; Shipping', 'woocommerce' ) }}</h3>
 
 	@else
 
-		<h3>{{ __( 'Billing details', 'woocommerce' ) }}</h3>
+		<h3 class="font-bold tracking-wider uppercase">{{ __( 'Billing details', 'woocommerce' ) }}</h3>
 
 	@endif
 
-	<?php do_action( 'woocommerce_before_checkout_billing_form', $checkout ); ?>
+	@php do_action( 'woocommerce_before_checkout_billing_form', $checkout ) @endphp
 
 	<div class="woocommerce-billing-fields__field-wrapper">
 		@php $fields = $checkout->get_checkout_fields( 'billing' ) @endphp

@@ -2,4 +2,24 @@ body.checkout {
   .ticket-triangulo {
     height: 30px;
   }
+
+  .form-row {
+    margin-bottom: 1em;
+
+    label {
+      @apply text-sm font-bold tracking-wide block;
+
+      abbr[title] {
+        text-decoration: none;
+      }
+    }
+
+    .woocommerce-input-wrapper {
+      @apply w-full;
+
+      input {
+        @apply w-full;
+      }
+    }
+  }
 }

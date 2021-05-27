@@ -19,7 +19,11 @@
 @if ( ! defined( 'ABSPATH' ) )
 	@php exit @endphp
 @endif
-<div class="w-full ticket-triangulo bg-tk-triangulo"></div>
+<div class="w-full ticket-head">
+  <div class="w-full ticket-triangulo bg-tk-triangulo"></div>
+  <div class="w-full h-10 bg-allo-claro"></div>
+</div>
+
 @php do_action( 'woocommerce_before_checkout_form', $checkout ); @endphp
 
 {{-- If checkout registration is disabled and not logged in, the user cannot checkout. --}}
@@ -28,7 +32,7 @@
 	@php return @endphp
 @endif
 
-<form name="checkout" method="post" class="checkout woocommerce-checkout" action="{!! esc_url( wc_get_checkout_url() ) !!}" enctype="multipart/form-data">
+<form name="checkout" method="post" class="p-6 checkout woocommerce-checkout bg-allo-claro" action="{!! esc_url( wc_get_checkout_url() ) !!}" enctype="multipart/form-data">
 
 	@if ( $checkout->get_checkout_fields() )
 
@@ -63,3 +67,8 @@
 </form>
 
 @php do_action( 'woocommerce_after_checkout_form', $checkout ) @endphp
+
+<div class="w-full ticket-head">
+  <div class="w-full h-10 bg-allo-claro"></div>
+  <div class="w-full ticket-triangulo bg-tk-triangulo-down"></div>
+</div>
