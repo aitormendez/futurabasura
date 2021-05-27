@@ -1,9 +1,9 @@
 body.artists {
   .article {
-    .avatar {
-      img {
-        max-width: 12vw;
-      }
+    transition: color 0s !important;
+
+    h2 {
+      background-color: white;
     }
 
     .productos {
@@ -11,38 +11,47 @@ body.artists {
 
       img {
         display: block;
-        max-width: 7vw;
-        max-height: 7vw;
+        max-width: 25vw;
+        max-height: 25vw;
         width: auto;
         height: auto;
       }
     }
-  }
 
-  @screen md {
-    .article {
-      .h2 {
-
+    &:hover {
+      h2 {
+        @apply bg-azul;
       }
 
-      .bio {
+      img {
+        filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+      }
+    }
+  }
 
+  @media (min-width: 786px) {
+    .article {
+      h2 {
+        width: 25vw;
+        height: 25vw;
       }
 
       .avatar {
-
+        img {
+          width: 25vw;
+          height: 25vw;
+        }
       }
 
       .productos {
-
-      }
-
-      &:hover {
-        background-color: #000;
-        color: #fff;
+        align-self: flex-start;
 
         img {
-          filter: grayscale(100%);
+          display: block;
+          max-width: 10vw;
+          max-height: 10vw;
+          width: auto;
+          height: auto;
         }
       }
     }

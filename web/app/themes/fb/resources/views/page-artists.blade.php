@@ -11,20 +11,16 @@
     @endwhile
 
     @foreach ($artists as $artist)
-      <a href="{{ $artist['permalink'] }}" role="article" class="flex flex-wrap justify-between p-6 mb-6 text-black bg-white article md:flex-nowrap md:pt-0 md:mb-2">
-        <h2 class="mb-6 font-bold uppercase tracking-max md:pt-6 md:w-1/6 ">{{ $artist['name'] }}</h2>
+      <a href="{{ $artist['permalink'] }}" role="article" class="flex flex-wrap mb-6 md:mb-10 justify-startmb-6 article md:flex-nowrap hover:text-white">
+        <h2 class="block w-full p-6 font-bold text-center uppercase tracking-max">{{ $artist['name'] }}</h2>
 
-        <div class="flex items-center justify-center avatar md:w-1/6 md:pt-6">
+        <div class="flex items-center justify-center avatar f-full">
           @if ($artist['avatar'])
-          <img src="{{ $artist['avatar']['url'] }}" srcset="{{ $artist['srcset'] }}" sizes="(max-width: 768px) 80vw, 20vw" alt="{{ $artist['name'] }}" class="rounded-full">
+          <img src="{{ $artist['avatar']['url'] }}" srcset="{{ $artist['srcset'] }}" sizes="(max-width: 768px) 100vw, 20vw" alt="{{ $artist['name'] }}" class="">
           @endif
         </div>
 
-        <div class="flex-grow mb-6 text-sm bio md:mb-0 md:px-6 md:w-1/3 md:pt-6">
-          {{ $artist['description'] }}
-        </div>
-
-        <div class="flex flex-wrap align-top productos md:w-1/6">
+        <div class="flex flex-wrap w-full align-top md:w-auto productos">
           @foreach ($artist['products'] as $prod)
               {!! $prod['prod_img'] !!}
           @endforeach
