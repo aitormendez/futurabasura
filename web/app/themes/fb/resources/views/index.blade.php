@@ -10,7 +10,7 @@
 
     {!! get_search_form(false) !!}
   @endif
-
+<h1>aaaaaa</h1>
   @while(have_posts()) @php(the_post())
     @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
   @endwhile
