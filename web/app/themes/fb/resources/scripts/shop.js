@@ -4,7 +4,8 @@ $(document).ready(() => {
       var select = '.dropdown_artist';
       function onProductTaxChange() {
           if ( $(select).val() !=='' ) {
-              location.href = fb.homeUrl+ '/artists/'+$(select).val();
+              // location.href = fb.homeUrl+ '/artists/'+$(select).val();
+              location.href = fb.homeUrl+ '/shop?&artist='+$(select).val();
           } else {
             location.href = fb.homeUrl+ '/shop/';
           }
