@@ -7,9 +7,9 @@
     "node": ">=12.14.0"
   },
   "scripts": {
-    "build": "mix",
-    "build:production": "mix --production",
-    "start": "mix watch",
+    "build": "TAILWIND_MODE=build mix",
+    "build:production": "TAILWIND_MODE=build mix --production",
+    "start": "TAILWIND_MODE=watch mix watch",
     "hot": "mix watch --hot",
     "clear": "wp acorn optimize:clear",
     "test": "npm run lint",
@@ -21,6 +21,7 @@
     "translate:js": "wp i18n make-json ./resources/lang --pretty-print"
   },
   "devDependencies": {
+    "@tailwindcss/jit": "^0.1.18",
     "@tailwindcss/typography": "^0.4.0",
     "@tinypixelco/laravel-mix-wp-blocks": "^1.1.0",
     "@wordpress/babel-preset-default": "^5.0.1",
@@ -37,7 +38,7 @@
     "sass-loader": "11.0.1",
     "stylelint": "^13.10.0",
     "stylelint-config-standard": "^20.0.0",
-    "tailwindcss": "^2.0.3",
+    "tailwindcss": "^2.1.1",
     "tailwindcss-debug-screens": "^2.0.0"
   },
   "dependencies": {
