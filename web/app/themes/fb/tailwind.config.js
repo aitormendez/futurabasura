@@ -1,6 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
+  mode: 'jit',
   purge: {
     content: [
       './app/**/*.php',
@@ -48,6 +49,26 @@ module.exports = {
     },
   },
   variants: {
+    variants: [
+      `responsive`,
+      `dark`,
+      `motion-safe`,
+      `motion-reduce`,
+      `first`,
+      `last`,
+      `odd`,
+      `even`,
+      `visited`,
+      `checked`,
+      `group-hover`,
+      `group-focus`,
+      `focus-within`,
+      `hover`,
+      `focus`,
+      `focus-visible`,
+      `active`,
+      `disabled`,
+    ],
     extend: {
       borderWidth: ['last'],
     },
