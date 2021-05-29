@@ -48,8 +48,8 @@ module.exports = {
        }),
     },
   },
-  variants: {
-    variants: [
+  variants:
+    [
       `responsive`,
       `dark`,
       `motion-safe`,
@@ -67,12 +67,10 @@ module.exports = {
       `focus`,
       `focus-visible`,
       `active`,
-      `disabled`,
     ],
     extend: {
       borderWidth: ['last'],
     },
-  },
   plugins: [
     require('@tailwindcss/jit'),
     require('tailwindcss-debug-screens'),
