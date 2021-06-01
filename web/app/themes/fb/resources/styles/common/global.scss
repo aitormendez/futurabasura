@@ -6,6 +6,19 @@ html {
   }
 }
 
+.main {
+  margin-top: 10rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  .tax-artist & {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+
+}
+
 body {
   @apply font-sans;
 }

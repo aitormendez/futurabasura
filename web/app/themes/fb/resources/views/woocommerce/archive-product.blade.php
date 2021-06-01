@@ -19,10 +19,16 @@
 @extends('layouts.app')
 
 @section('content')
-  <main id="main" class="py-8 sm:mt-40 main">
+  <main id="main" class="main">
     @if (is_tax('artist'))
-     <h1>artist</h1>
-     @dump($artist_hero)
+     @if ($artist_hero['has_hero_img'])
+     <div id="toggle-button" class="flex flex-wrap justify-center bg-white hero md:cursor-pointer">
+      <img src="{!! $artist_hero['hero_img']['url'] !!}" alt="{!! $artist_hero['hero_img']['alt'] !!}" srcset="{!! $artist_hero['hero_srcset'] !!}" sizes="100vw" class="w-full">
+      <div class="p-6 section collapsible description md:w-3/4">
+        {!! $artist_hero['term']->description !!}
+      </div>
+     </div>
+     @endif
     @endif
     @if ( woocommerce_product_loop() )
 

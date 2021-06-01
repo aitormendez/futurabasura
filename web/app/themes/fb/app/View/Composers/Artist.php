@@ -35,9 +35,15 @@ class Artist extends Composer
 
             $output = [
                 'term' => $term,
+                'has_hero_img' => false,
                 'hero_img' => $hero,
-                'hero_srceset' => wp_get_attachment_image_srcset($hero['ID']),
+
             ];
+
+            if ($hero) {
+                $output['has_hero_img'] = true;
+                $output['hero_srcset'] = wp_get_attachment_image_srcset($hero['ID']);
+            }
 
             return $output;
         }

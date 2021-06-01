@@ -1,7 +1,13 @@
 .post-type-archive-product,
 .tax-artist {
 
-  @screen md {
+  @media (min-width: 786px) {
+    .hero .description {
+      height: 3.8rem;
+      overflow: hidden;
+      transition:height 0.3s ease-out;
+    }
+
     .producto {
       img {
         width: auto;

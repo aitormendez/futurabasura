@@ -19,7 +19,6 @@ class ProductPortada extends Composer
     {
         return [
             'producto' => $this->producto(),
-            // 'hero' => $this->artistHero(),
         ];
     }
 
