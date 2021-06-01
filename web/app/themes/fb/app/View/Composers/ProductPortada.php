@@ -13,12 +13,14 @@ class ProductPortada extends Composer
      */
     protected static $views = [
         'woocommerce.content-product-portada',
+        'woocommerce.archive-product',
     ];
 
     public function with()
     {
         return [
             'producto' => $this->producto(),
+            // 'hero' => $this->artistHero(),
         ];
     }
 
@@ -31,14 +33,14 @@ class ProductPortada extends Composer
         $format = $product->get_attribute( 'format' );
 
         $output = [
-            'title'         => $product->get_title(),
-            'url'           => get_permalink($product_id),
-            'img_url'       => get_the_post_thumbnail_url($product_id, 'large'),
-            'img_srcset'    => wp_get_attachment_image_srcset($product_img_id),
-            'artist'        => get_the_terms($product_id, 'artist')[0]->name,
-            'regular_prize' => $product->get_regular_price(),
-            'has_format'    => false,
-            'has_sale_prize'    => false,
+            'title'          => $product->get_title(),
+            'url'            => get_permalink($product_id),
+            'img_url'        => get_the_post_thumbnail_url($product_id, 'large'),
+            'img_srcset'     => wp_get_attachment_image_srcset($product_img_id),
+            'artist'         => get_the_terms($product_id, 'artist')[0]->name,
+            'regular_prize'  => $product->get_regular_price(),
+            'has_format'     => false,
+            'has_sale_prize' => false,
         ];
 
         if ($sale_prize) {
@@ -53,4 +55,6 @@ class ProductPortada extends Composer
 
         return $output;
     }
+
+
 }

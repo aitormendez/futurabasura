@@ -67,6 +67,7 @@ module.exports = {
       `focus`,
       `focus-visible`,
       `active`,
+      `disabled`,
     ],
     extend: {
       borderWidth: ['last'],
