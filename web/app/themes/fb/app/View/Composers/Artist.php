@@ -12,7 +12,7 @@ class Artist extends Composer
      * @var array
      */
     protected static $views = [
-        'tax-artist',
+        'woocommerce.archive-product',
     ];
 
     /**
@@ -23,15 +23,24 @@ class Artist extends Composer
     public function with()
     {
         return [
-            'artisthero' => $this->artistHero(),
+            'artist_hero' => $this->artistHero(),
         ];
     }
 
     public function artistHero()
     {
-        $term = get_queried_object();
+        if (is_tax('artist')) {
+            $term = get_queried_object();
+            $hero = get_field('artist_hero', $term);
 
-        return $term;
+            $output = [
+                'term' => $term,
+                'hero_img' => $hero,
+                'hero_srceset' => wp_get_attachment_image_srcset($hero['ID']),
+            ];
+
+            return $output;
+        }
     }
 
 }

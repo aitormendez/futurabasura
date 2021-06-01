@@ -13,7 +13,6 @@ class ProductPortada extends Composer
      */
     protected static $views = [
         'woocommerce.content-product-portada',
-        'woocommerce.archive-product',
     ];
 
     public function with()

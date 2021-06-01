@@ -22,6 +22,7 @@
   <main id="main" class="py-8 sm:mt-40 main">
     @if (is_tax('artist'))
      <h1>artist</h1>
+     @dump($artist_hero)
     @endif
     @if ( woocommerce_product_loop() )
 
