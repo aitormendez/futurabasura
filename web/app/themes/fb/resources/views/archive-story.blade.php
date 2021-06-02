@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <main id="main" class="py-8 sm:mt-40 main">
+  <main id="main" class="sm:mt-40 main">
     @include('partials.page-header')
 
     @if (! have_posts())
