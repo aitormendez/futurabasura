@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-<main id="main" class="py-8 sm:mt-40 main">
+
   @section('content')
+  <main id="main" class="py-8 sm:mt-40 main">
 
     @if (count($cupones) !== 0)
       <section>
@@ -10,9 +11,9 @@
     @endif
 
     @include('partials.slider')
-
+  </main>
   @endsection
-</main>
+
 
 @section('sidebar')
   @include('partials.sidebar')

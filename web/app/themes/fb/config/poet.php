@@ -32,7 +32,7 @@ return [
         'story' => [
             'enter_title_here' => 'Título da la noticia',
             'menu_icon' => 'dashicons-megaphone',
-            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
             'has_archive' => true,
             'labels' => [

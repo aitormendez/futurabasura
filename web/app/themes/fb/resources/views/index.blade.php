@@ -2,6 +2,7 @@
 
 @section('content')
   @include('partials.page-header')
+  <h1>lokjlkj</h1>
 
   @if (! have_posts())
     <x-alert type="warning">

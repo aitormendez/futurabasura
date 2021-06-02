@@ -49,7 +49,12 @@ class Post extends Composer
         }
 
         if (is_archive()) {
-            return get_the_archive_title();
+            if (is_archive('story')) {
+                return __('News', 'sage');
+            } else {
+                return get_the_archive_title();
+            }
+
         }
 
         if (is_search()) {

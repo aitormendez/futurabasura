@@ -158,10 +158,10 @@ add_action('after_setup_theme', function () {
     remove_theme_support('core-block-patterns');
 
     /**
-     * Enable plugins to manage the document title.
-     * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
+     * Enable plugins to manage the document .
+     * @link https://developer.wordpress.org/reference/functions/add_theme_support/#-tag
      */
-    add_theme_support('title-tag');
+    add_theme_support('-tag');
 
     /**
      * Enable post thumbnail support.
@@ -219,8 +219,8 @@ add_action('widgets_init', function () {
     $config = [
         'before_widget' => '<section class="widget %1$s %2$s">',
         'after_widget' => '</section>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>'
+        'before_' => '<h3>',
+        'after_' => '</h3>'
     ];
 
     register_sidebar([

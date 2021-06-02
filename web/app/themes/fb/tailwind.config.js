@@ -29,7 +29,7 @@ module.exports = {
       },
       fontFamily: {
         'sans': ['arial', 'sans-serif'],
-        'serif': ['times-new-roman', 'serif'],
+        'serif': ['times-new-roman', 'times', 'serif'],
        },
       colors: {
         'negro-fb':'#3e2b2f',
@@ -85,7 +85,13 @@ module.exports = {
           fontSize: '1.5rem',
           letterSpacing: '0.2em',
           lineHeight: '1em',
-          color: '#fff'
+          color: '#fff',
+        },
+        '.page-header-font': {
+          fontFamily: '"Times New Roman", Times, serif',
+          fontSize: '3rem',
+          letterSpacing: '-0.03em',
+          color: '#444444',
         }
       }
       const botones = {
