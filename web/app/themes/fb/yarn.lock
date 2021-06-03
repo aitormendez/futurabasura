@@ -5124,6 +5124,11 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
+lightgallery@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/lightgallery/-/lightgallery-2.1.1.tgz#dbd5e714848b250d5f1cb38cc51e5f8a08d62b8a"
+  integrity sha512-bB2C82APU75HX8ekKhdPSbncQuSgNjS4c9KBj0Bwz64xQtgZW70famYIitNaNwi4KegU6ItxvTT4rSNWj7JkXw==
+
 limiter@^1.0.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/limiter/-/limiter-1.1.5.tgz#8f92a25b3b16c6131293a0cc834b4a838a2aa7c2"

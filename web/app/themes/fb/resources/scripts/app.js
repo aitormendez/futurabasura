@@ -10,6 +10,7 @@ import './shop.js';
 import './select2.js';
 import './singleProduct.js';
 import './simpleProduct.js';
+import './singleStory.js';
 import './variableProduct.js';
 import './frontPage.js';
 import './cart.js';

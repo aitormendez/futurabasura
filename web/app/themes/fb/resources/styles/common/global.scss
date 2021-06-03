@@ -9,12 +9,11 @@ html {
 .main {
   margin-top: 10rem;
 
-  .tax-artist & {
+  .tax-artist &,
+  .single-story & {
     margin-top: 0;
     padding-top: 0;
   }
-
-
 }
 
 body {
