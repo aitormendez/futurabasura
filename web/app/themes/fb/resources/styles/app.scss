@@ -20,5 +20,9 @@
 
 @import "~@glidejs/glide/dist/css/glide.core.min.css";
 @import "~select2/dist/css/select2.css";
+
+$lg-path-fonts: 'https://cdn.jsdelivr.net/npm/lightgallery@2.1.2/fonts';
+$lg-path-images: 'https://cdn.jsdelivr.net/npm/lightgallery@2.1.2/images';
+
 @import "~lightgallery/scss/lightgallery-bundle.scss";
 // @import "~@glidejs/glide/dist/css/glide.theme.min.css";
