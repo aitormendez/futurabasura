@@ -24,32 +24,6 @@ add_action('wp_enqueue_scripts', function () {
     }
 
     wp_enqueue_style('sage/app.css', asset('styles/app.css')->uri(), false, null);
-
-    $frases = get_field('frases', 'option');
-
-    if( $frases ) {
-        $frases_array = [];
-        foreach( $frases as $frase ) {
-            $frases_array[] = $frase['frase'];
-        };
-    }
-
-    $fondos = [
-        'f50x70v' => get_field('fondo_50x70v', 'option')['url'],
-        'f50x70h' => get_field('fondo_50x70h', 'option')['url'],
-        'f61x91v' => get_field('fondo_61x91v', 'option')['url'],
-        'f61x91h' => get_field('fondo_61x91h', 'option')['url'],
-    ];
-
-    $datos = array(
-        'homeUrl' => get_bloginfo( 'url' ),
-        'frases' => $frases_array,
-        'fondos' => $fondos,
-        'homeUrl' => get_bloginfo( 'url' ),
-    );
-
-    wp_localize_script('sage/app.js', 'fb', $datos);
-
 }, 100);
 
 /**
@@ -58,7 +32,7 @@ add_action('wp_enqueue_scripts', function () {
  * @return void
  */
 add_action('enqueue_block_editor_assets', function () {
-    if ($manifest = asset('scripts/manifest.asset.php')->get()) {
+    if ($manifest = asset('scripts/manifest.asset.php')->load()) {
         wp_enqueue_script('sage/vendor.js', asset('scripts/vendor.js')->uri(), ...array_values($manifest));
         wp_enqueue_script('sage/editor.js', asset('scripts/editor.js')->uri(), ['sage/vendor.js'], null, true);
 
@@ -86,15 +60,18 @@ add_action('after_setup_theme', function () {
     ]);
 
     /**
+     * Disable full-site editing support.
+     *
+     * @link https://wptavern.com/gutenberg-10-5-embeds-pdfs-adds-verse-block-color-options-and-introduces-new-patterns
+     */
+    remove_theme_support('block-templates');
+
+    /**
      * Register the navigation menus.
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage'),
-        'info_navigation' => __('Info Navigation', 'sage'),
-        'social_navigation' => __('Social Navigation', 'sage'),
-        'shop_navigation' => __('Shop Navigation', 'sage'),
-        'contents_navigation' => __('Contents Navigation', 'sage'),
+        'primary_navigation' => __('Primary Navigation', 'sage')
     ]);
 
     /**
@@ -158,10 +135,10 @@ add_action('after_setup_theme', function () {
     remove_theme_support('core-block-patterns');
 
     /**
-     * Enable plugins to manage the document .
-     * @link https://developer.wordpress.org/reference/functions/add_theme_support/#-tag
+     * Enable plugins to manage the document title.
+     * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
      */
-    add_theme_support('-tag');
+    add_theme_support('title-tag');
 
     /**
      * Enable post thumbnail support.
@@ -200,14 +177,6 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
      */
     add_theme_support('customize-selective-refresh-widgets');
-
-    /**
-     * Soporte para Woocommerce.
-     * @link https://docs.woocommerce.com/document/woocommerce-theme-developer-handbook/
-     */
-    add_theme_support( 'wc-product-gallery-zoom' );
-    add_theme_support( 'wc-product-gallery-lightbox' );
-    add_theme_support( 'wc-product-gallery-slider' );
 }, 20);
 
 /**
@@ -219,8 +188,8 @@ add_action('widgets_init', function () {
     $config = [
         'before_widget' => '<section class="widget %1$s %2$s">',
         'after_widget' => '</section>',
-        'before_' => '<h3>',
-        'after_' => '</h3>'
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
     ];
 
     register_sidebar([
@@ -233,4 +202,3 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer'
     ] + $config);
 });
-
