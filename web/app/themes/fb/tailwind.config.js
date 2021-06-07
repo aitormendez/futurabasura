@@ -73,7 +73,6 @@ module.exports = {
       borderWidth: ['last'],
     },
   plugins: [
-    require('@tailwindcss/jit'),
     require('tailwindcss-debug-screens'),
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
