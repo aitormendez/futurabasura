@@ -1,0 +1,77 @@
+html {
+  font-size: 1rem;
+
+  @screen sm {
+    font-size: calc(0.5vw + 0.7rem);
+  }
+}
+
+.main {
+  margin-top: 10rem;
+
+  .tax-artist &,
+  .single-story & {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+body {
+  @apply font-sans;
+}
+
+#fondo {
+  @apply fixed inset-0 bg-fondo-medio;
+  background-size: 10px 10px;
+
+}
+
+#app {
+  @apply relative;
+}
+
+.sombra {
+  text-shadow: 0.1em 0.1em 0 #000;
+}
+
+a {
+  color: theme('colors.azul');
+  transition: color 0.5s, background-color 0.5s;
+
+  &:hover {
+    color: theme('colors.negro-fb');
+    text-decoration: none;
+  }
+}
+
+#fondo-slider {
+  height: 100%;
+}
+
+
+.punteado {
+  width: 12px;
+  height: 100%;
+  background-position: 0 -6px;
+}
+
+.woocommerce-message,
+.woocommerce-error {
+  @apply bg-allo;
+  padding: 1em;
+  border: 1px solid #000;
+  text-align: center;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  @screen md {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.woocommerce-Price-currencySymbol {
+  margin-left: 0.3em;
+}

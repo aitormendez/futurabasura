@@ -152,7 +152,6 @@ return [
         /*
          * Package Service Providers...
          */
-        Hexbit\Woocommerce\Providers\WooCommerceServiceProvider::class,
 
         /*
          * Application Service Providers...
