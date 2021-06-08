@@ -14,7 +14,10 @@ require('@tinypixelco/laravel-mix-wp-blocks');
 
 mix
   .setPublicPath('./public')
-  .browserSync('sage.test');
+  .browserSync({
+    proxy: 'https://futurabasura.test',
+    browser: "google chrome",
+  });
 
 mix
   .sass('resources/styles/app.scss', 'styles')
