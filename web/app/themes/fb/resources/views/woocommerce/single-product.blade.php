@@ -19,43 +19,37 @@
 @extends('layouts.app')
 
 @section('content')
+  <main id="main" class="py-8 bg-white sm:mt-40 main">
 
-    @php
-        /**
-         * woocommerce_before_main_content hook.
-         *
-         * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-         * @hooked woocommerce_breadcrumb - 20
-         */
-        do_action( 'woocommerce_before_main_content' );
-    @endphp
+      @php
+          /**
+           * woocommerce_before_main_content hook.
+           *
+           * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+           * @hooked woocommerce_breadcrumb - 20
+           */
+          do_action( 'woocommerce_before_main_content' );
+      @endphp
 
 
-    @while ( have_posts() )
+      @while ( have_posts() )
 
-        @php the_post(); @endphp
+          @php the_post(); @endphp
 
-        @php wc_get_template_part( 'content', 'single-product' ); @endphp
+          @php wc_get_template_part( 'content', 'single-product' ); @endphp
 
-    @endwhile
-    {{--end of the loop--}}
+      @endwhile
+      {{--end of the loop--}}
 
-    @php
-        /**
-         * woocommerce_after_main_content hook.
-         *
-         * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-         */
-        do_action( 'woocommerce_after_main_content' );
-    @endphp
+      @php
+          /**
+           * woocommerce_after_main_content hook.
+           *
+           * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+           */
+          do_action( 'woocommerce_after_main_content' );
+      @endphp
 
-    @php
-        /**
-         * woocommerce_sidebar hook.
-         *
-         * @hooked woocommerce_get_sidebar - 10
-         */
-        do_action( 'woocommerce_sidebar' );
-    @endphp
 
+  </main>
 @endsection

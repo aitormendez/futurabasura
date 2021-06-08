@@ -6,6 +6,8 @@
       </a>
     </h2>
 
+    @thumbnail('large')
+
     @include('partials/entry-meta')
   </header>
 
