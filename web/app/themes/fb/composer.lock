@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b19fa3139815dc660e191f7b2ddc72d8",
+    "content-hash": "d86c43d4a42355d3d67edaca2f1250d6",
     "packages": [
         {
             "name": "brick/math",
@@ -222,6 +222,68 @@
                 }
             ],
             "time": "2020-04-13T13:17:36+00:00"
+        },
+        {
+            "name": "hexbit/sage-woocommerce",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smarteist/sage-woocommerce.git",
+                "reference": "f13b55d18c0b9c39176d916bbaac93ca46522f2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smarteist/sage-woocommerce/zipball/f13b55d18c0b9c39176d916bbaac93ca46522f2a",
+                "reference": "f13b55d18c0b9c39176d916bbaac93ca46522f2a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0",
+                "roots/acorn": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "acorn": {
+                    "providers": [
+                        "Hexbit\\Woocommerce\\Providers\\WooCommerceServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hexbit\\Woocommerce\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ali Hosseini",
+                    "email": "ali.hosseini.sr@gmail.com",
+                    "homepage": "https://hexbit.dev/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Woocommerce support for sage 10",
+            "homepage": "https://github.com/smarteist/sage-woocommerce",
+            "keywords": [
+                "blade",
+                "hexbit",
+                "sage",
+                "smarteist",
+                "woocommerce",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/smarteist/sage-woocommerce/issues",
+                "source": "https://github.com/smarteist/sage-woocommerce/tree/1.0.5"
+            },
+            "time": "2021-03-03T14:22:02+00:00"
         },
         {
             "name": "illuminate/bus",
@@ -1242,6 +1304,66 @@
             "time": "2021-01-18T20:58:21+00:00"
         },
         {
+            "name": "log1x/acf-composer",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Log1x/acf-composer.git",
+                "reference": "1dd67e5b40dc1d7207755b8b4442eacda2655029"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Log1x/acf-composer/zipball/1dd67e5b40dc1d7207755b8b4442eacda2655029",
+                "reference": "1dd67e5b40dc1d7207755b8b4442eacda2655029",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3|^8.0",
+                "stoutlogic/acf-builder": "^1.11"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "suggest": {
+                "log1x/modern-acf-options": "Gives ACF option pages a much needed design overhaul."
+            },
+            "type": "package",
+            "extra": {
+                "acorn": {
+                    "providers": [
+                        "Log1x\\AcfComposer\\Providers\\AcfComposerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Log1x\\AcfComposer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Nifong",
+                    "email": "brandon@tendency.me"
+                }
+            ],
+            "description": "Create fields, blocks, option pages, and widgets using ACF Builder and Sage 10",
+            "support": {
+                "issues": "https://github.com/Log1x/acf-composer/issues",
+                "source": "https://github.com/Log1x/acf-composer/tree/v2.0.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Log1x",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-03-10T04:00:05+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "2.2.0",
             "source": {
@@ -2009,6 +2131,52 @@
                 "source": "https://github.com/roots/support/tree/1.0.0"
             },
             "time": "2019-01-28T09:46:14+00:00"
+        },
+        {
+            "name": "stoutlogic/acf-builder",
+            "version": "1.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/StoutLogic/acf-builder.git",
+                "reference": "06f5903fb5455bdae57246291bcd699ae29dc905"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/StoutLogic/acf-builder/zipball/06f5903fb5455bdae57246291bcd699ae29dc905",
+                "reference": "06f5903fb5455bdae57246291bcd699ae29dc905",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/inflector": "^1.1|^2.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpdocumentor/reflection-docblock": "2.*",
+                "phpunit/phpunit": "4.*",
+                "squizlabs/php_codesniffer": "^2.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "StoutLogic\\AcfBuilder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Pfisterer",
+                    "email": "steve@stoutlogic.com"
+                }
+            ],
+            "description": "An Advanced Custom Field Configuration Builder",
+            "support": {
+                "issues": "https://github.com/StoutLogic/acf-builder/issues",
+                "source": "https://github.com/StoutLogic/acf-builder/tree/1.11.0"
+            },
+            "time": "2021-02-11T17:16:16+00:00"
         },
         {
             "name": "symfony/console",
