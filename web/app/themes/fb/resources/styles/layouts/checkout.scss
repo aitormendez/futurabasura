@@ -3,16 +3,25 @@ body.checkout {
     height: 30px;
   }
 
+  h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 1em;
+    margin-top: 2em;
+  }
+
+  textarea {
+    width: 100%;
+    border: none;
+  }
+
+  table {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
   .form-row {
     margin-bottom: 1em;
-
-    label {
-      @apply text-sm font-bold tracking-wide block;
-
-      abbr[title] {
-        text-decoration: none;
-      }
-    }
 
     .woocommerce-input-wrapper {
       @apply w-full;
@@ -21,5 +30,66 @@ body.checkout {
         @apply w-full;
       }
     }
+  }
+
+  .select2-container {
+
+    .select2-dropdown {
+      border-radius: 0;
+      border: none;
+    }
+
+    .select2-selection {
+      border: none;
+      border-radius: 0;
+
+      .select2-selection__rendered {
+
+      }
+    }
+  }
+
+  .shop_table {
+    tr {
+      border-bottom: 1px solid black;
+
+      &.cart_item {
+        background-color: #fff;
+
+        td,
+        tr {
+          padding-top: 0.5em;
+          padding-bottom: 0.5em;
+        }
+      }
+
+      td {
+        &.product-total,
+        &.product-total {
+          text-align: right;
+        }
+      }
+
+      &.cart-subtotal,
+      &.order-total {
+        td,
+        th {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  label {
+    @apply text-sm font-bold tracking-wide block;
+    margin-bottom: 0.3em;
+
+    abbr[title] {
+      text-decoration: none;
+    }
+  }
+
+  .wc_payment_methods {
+
   }
 }
