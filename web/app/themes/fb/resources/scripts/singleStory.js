@@ -4,7 +4,7 @@ import lgZoom from 'lightgallery/plugins/zoom';
 
 
 $(document).ready(() => {
-  if (document.body.classList.contains('single-story')) {
+  if (document.body.classList.contains('single-story') || document.body.classList.contains('single-project'))  {
 
     let galerias = document.getElementsByClassName('lightbox');
 

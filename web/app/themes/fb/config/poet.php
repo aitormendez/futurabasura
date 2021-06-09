@@ -30,7 +30,7 @@ return [
             ],
         ],
         'story' => [
-            'enter_title_here' => 'Título da la noticia',
+            'enter_title_here' => 'Título de la noticia',
             'menu_icon' => 'dashicons-megaphone',
             'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
@@ -39,15 +39,13 @@ return [
                 'singular' => __('Story', 'sage'),
                 'plural' => __('Stories', 'sage'),
             ],
-            // 'admin_cols'   => [
-            //     'artist' => [
-            //         'taxonomy' => 'artist'
-            //     ],
-            //     'slider' => array(
-            //         'title'    => 'Slider',
-            //         'meta_key' => 'mostrar_en_slider',
-            //       ),
-            // ],
+        ],
+        'project' => [
+            'enter_title_here' => 'Título del proyecto',
+            'menu_icon' => 'dashicons-portfolio',
+            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
+            'show_in_rest' => true,
+            'has_archive' => true,
         ],
     ],
 
