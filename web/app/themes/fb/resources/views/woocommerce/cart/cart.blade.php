@@ -148,7 +148,7 @@ do_action( 'woocommerce_before_cart' );
               </div>
           </div> {{-- /col-1 --}}
 
-          <div class="flex items-center justify-center p-4 col-2 product-remove">
+          <div class="flex items-center justify-center col-2 product-remove">
             <a href="{!! esc_url( wc_get_cart_remove_url( $cart_item_key ) ) !!}" aria-label="{!! esc_html__( 'Remove this item', 'woocommerce' ) !!}" data-product_id="{!! esc_attr( $product_id ) !!}" data-product_sku="{!! esc_attr( $_product->get_sku() ) !!}" class="flex items-center w-full h-full p-3 border border-red-600">
               @svg('images.waste', 'fill-red w-full')
             </a>
