@@ -53,6 +53,11 @@ body.checkout {
     tr {
       border-bottom: 1px solid black;
 
+      td,
+      tr {
+        @apply px-4;
+      }
+
       &.cart_item {
         background-color: #fff;
 
