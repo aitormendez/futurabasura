@@ -17,7 +17,6 @@ return [
             // 'enter_title_here' => 'Enter book title',
             // 'menu_icon' => 'dashicons-book-alt',
             // 'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
-            // 'show_in_rest' => true,
             // 'has_archive' => true,
             'admin_cols'   => [
                 'artist' => [
@@ -33,7 +32,6 @@ return [
             'enter_title_here' => 'Título de la noticia',
             'menu_icon' => 'dashicons-megaphone',
             'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
-            'show_in_rest' => true,
             'has_archive' => true,
             'labels' => [
                 'singular' => __('Story', 'sage'),
@@ -44,8 +42,11 @@ return [
             'enter_title_here' => 'Título del proyecto',
             'menu_icon' => 'dashicons-portfolio',
             'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
-            'show_in_rest' => true,
             'has_archive' => true,
+            'labels' => [
+                'singular' => __('Project', 'sage'),
+                'plural' => __('Projects', 'sage'),
+            ],
         ],
     ],
 
