@@ -104,6 +104,14 @@ class Opciones extends Field
                         'instructions' => 'Esta nota aparecerá en.',
                         'rows' => '5',
                     ])
+                ->addTab('Footer', ['placement' => 'left'])
+                    ->addColorPicker('footer_color', [
+                        'label' => 'Color Picker Field',
+                        'instructions' => 'Elige el color del footer',
+                        'default_value' => '#FFEE38',
+                    ])
+                    ->addText('footer_frase')
+
                 ;
 
         return $options->build();

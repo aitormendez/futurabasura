@@ -30,4 +30,12 @@
       @endforeach
     </ul>
   </div>
+  <div class="flex flex-wrap justify-center w-full color">
+    <span class="mb-10 font-serif frase-footer text-9xl" style="color: @option('footer_color')">@option('footer_frase')</span>
+    <div class="flex items-end w-full h-56 p-1 mancha" style="background-color: @option('footer_color')">
+      <span class="text-xs uppercase">
+        <a href="https://e451.net" class="text-black">451 web development</a>
+      </span>
+    </div>
+  </div>
 </footer>
