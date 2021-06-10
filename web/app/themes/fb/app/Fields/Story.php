@@ -4,42 +4,37 @@ namespace App\Fields;
 
 use Log1x\AcfComposer\Field;
 use StoutLogic\AcfBuilder\FieldsBuilder;
+use App\Fields\Partials\Portada;
 
 class Story extends Field
 {
     public function fields()
     {
-        $artist = new FieldsBuilder('story');
+        $builder = new FieldsBuilder('Destacar');
 
-        $artist
-            ->setLocation('post_type', '==', 'story');
+        $builder
+            ->setLocation('post_type', '==', 'story')
+                ->or('post_type', '==', 'project');
 
-        $artist
+        $builder
             ->addTab('Portada', ['placement' => 'left'])
-                ->addTrueFalse('noticia_a_portada', [
-                    'label' => 'Enviar a portada',
-                    'instructions' => 'Si se activa, esta noticia será enviada a portada',
-                    'message' => '',
-                    'default_value' => 0,
-                    'ui' => 1,
-                    'ui_on_text' => 'Está Activo',
-                    'ui_off_text' => 'Desactivado',
-                ])
-                ->addRadio('noticia_formato', [
-                    'label' => 'Formato de noticia',
-                    'instructions' => 'elige el formato con el que se mostrará la noticia en portada',
+                ->addFields($this->get(Portada::class))
+                ->addRadio('contenido_formato', [
+                    'label' => 'Formato de contenido',
+                    'instructions' => 'elige el formato con el que se mostrará el contenido en portada',
                     'choices' => [
                         'imagen' => 'imagen',
                         'galeria' => 'Galeria',
                         'mosaico' => 'Mosaico',
+                        'repeticion' => 'Repetición',
                     ],
                     'allow_null' => 0,
                     'default_value' => '',
                     'layout' => 'horizontal',
                     'return_format' => 'value',
                 ])
-                    ->conditional('noticia_a_portada', '==', '1')
-                ->addImage('noticia_imagen_portada', [
+                    ->conditional('mostrar_en_portada', '==', '1')
+                ->addImage('contenido_imagen_portada', [
                     'label' => 'imagen para portada',
                     'instructions' => 'Debe tener un formato de 2000 px x 1500 px',
                     'return_format' => 'array',
@@ -50,8 +45,9 @@ class Story extends Field
                     'max_width' => '2000',
                     'max_height' => '1500',
                 ])
-                    ->conditional('noticia_formato', '==', 'imagen')
-                ->addGallery('noticia_galeria_portada', [
+                    ->conditional('contenido_formato', '==', 'imagen')
+                    ->or('contenido_formato', '==', 'repeticion')
+                ->addGallery('contenido_galeria_portada', [
                     'label' => 'Galería',
                     'instructions' => 'Introduce las imágenes de la galería. 1500 px x 1500 px',
                     'return_format' => 'array',
@@ -64,8 +60,8 @@ class Story extends Field
                     'max_width' => '1500',
                     'max_height' => '1500',
                 ])
-                    ->conditional('noticia_formato', '==', 'galeria')
-                ->addGallery('noticia_mosaico_portada', [
+                    ->conditional('contenido_formato', '==', 'galeria')
+                ->addGallery('contenido_mosaico_portada', [
                     'label' => 'Galería',
                     'instructions' => 'Introduce las cuatro imágenes del mosaico. 1500 px x 1500 px',
                     'return_format' => 'array',
@@ -78,9 +74,9 @@ class Story extends Field
                     'max_width' => '1500',
                     'max_height' => '1500',
                 ])
-                    ->conditional('noticia_formato', '==', 'mosaico')
+                    ->conditional('contenido_formato', '==', 'mosaico')
             ;
 
-        return $artist->build();
+        return $builder->build();
     }
 }

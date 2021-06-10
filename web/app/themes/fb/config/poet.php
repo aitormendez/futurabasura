@@ -14,10 +14,6 @@ return [
 
     'post' => [
         'product' => [
-            // 'enter_title_here' => 'Enter book title',
-            // 'menu_icon' => 'dashicons-book-alt',
-            // 'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
-            // 'has_archive' => true,
             'admin_cols'   => [
                 'artist' => [
                     'taxonomy' => 'artist'

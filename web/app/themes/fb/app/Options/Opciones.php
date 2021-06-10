@@ -106,8 +106,8 @@ class Opciones extends Field
                     ])
                 ->addTab('Footer', ['placement' => 'left'])
                     ->addColorPicker('footer_color', [
-                        'label' => 'Color Picker Field',
-                        'instructions' => 'Elige el color del footer',
+                        'label' => 'Color footer',
+                        'instructions' => 'Se aplica en la mancha de color del footer y en la frase',
                         'default_value' => '#FFEE38',
                     ])
                     ->addText('footer_frase')
