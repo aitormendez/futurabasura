@@ -44,8 +44,10 @@ class Destacados extends Composer
             $formato = get_field('contenido_formato', $post->ID);
 
             $out = [
+                'post_type' => get_post_type( $post->ID ),
                 'title'   => get_the_title($post->ID),
                 'formato' => $formato,
+                'excerpt' => get_the_excerpt( $post->ID ),
             ];
 
             if ($formato === 'imagen' || $formato === 'repeticion') {
