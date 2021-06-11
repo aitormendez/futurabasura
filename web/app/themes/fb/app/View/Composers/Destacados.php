@@ -34,13 +34,13 @@ class Destacados extends Composer
             'posts_per_page'   => -1,
             'post_type'        => ['product', 'story', 'project'],
             'post_status'      => 'publish',
-            'meta_key'		=> 'mostrar_en_portada',
-            'meta_value'	=> '1'
+            'meta_key'		   => 'mostrar_en_portada',
+            'meta_value'	   => '1'
         ]);
 
 
 
-        $array = array_map(function ($post) {
+        $posts_array = array_map(function ($post) {
             $formato = get_field('contenido_formato', $post->ID);
 
             $out = [
@@ -104,12 +104,16 @@ class Destacados extends Composer
             return $out;
         }, $posts);
 
+        $output = [
+            'posts' => $posts_array,
+        ];
+
         if (count($posts) !== 0) {
-            $array['has_posts'] = true;
+            $output['has_posts'] = true;
         } else {
-            $array['has_posts'] = false;
+            $output['has_posts'] = false;
         }
 
-        return $array;
+        return $output;
     }
 }

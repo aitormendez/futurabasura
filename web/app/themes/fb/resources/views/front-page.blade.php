@@ -14,9 +14,13 @@
 @dump($destacados)
 
 @if ($destacados['has_posts'] = true)
+
     <section id="destacados">
-      @include('partials.destacados-portada')
+      @foreach ($destacados['posts'] as $destacado)
+        @include('partials.destacados-portada')
+      @endforeach
     </section>
+
 @endif
 
   </main>
