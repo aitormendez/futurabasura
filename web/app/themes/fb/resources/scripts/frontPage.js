@@ -39,7 +39,7 @@ $(document).ready(() => {
       });
     }
 
-    // ajustar alto de contenito copn formato "repetido"
+    // ajustar alto de contenito con formato "repetido"
     // ----------------------------------------------------
 
     let repetidos = $('.repeticion');
@@ -51,7 +51,6 @@ $(document).ready(() => {
       console.log(img);
       let alto = img.height();
       clip.height(alto);
-
     });
 
   }

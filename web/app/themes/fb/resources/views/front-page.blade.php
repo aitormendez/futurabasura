@@ -11,7 +11,6 @@
     @endif
 
     @include('partials.slider')
-@dump($destacados)
 
 @if ($destacados['has_posts'] = true)
 
