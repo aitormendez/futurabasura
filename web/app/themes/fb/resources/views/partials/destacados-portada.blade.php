@@ -79,5 +79,18 @@
     </a>
   @endif
 
+  {{-- REPETICION --}}
+  @if ($destacado['formato'] === 'repeticion')
+    <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white md:justify-between md:flex-nowrap">
+      <header class="w-full p-6 col-datos md:flex md:flex-col md:justify-between">
+        <div class="arriba">
+          <div class="font-serif text-lg font-bold capitalize meta">{{ $destacado['post_type'] }}</div>
+          <h2 class="my-6 text-2xl tracking-widest">{{ $destacado['title'] }}</h2>
+        </div>
+      </header>
+    </a>
+  @endif
+
+
 </article>
 
