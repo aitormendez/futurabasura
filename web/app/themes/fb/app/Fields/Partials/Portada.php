@@ -44,14 +44,11 @@ class Portada extends Partial
                 ->conditional('mostrar_en_portada', '==', '1')
             ->addImage('contenido_imagen_portada', [
                 'label' => 'imagen para portada',
-                'instructions' => 'Debe tener un formato de 2000 px x 1500 px',
+                'instructions' => 'Debe tener un ancho de 1500 px y, probablemente, quede mejor un formato cuadrado (1500px de alto)',
                 'return_format' => 'array',
-                'preview_size' => 'thumbnail',
+                'preview_size' => 'medium',
                 'library' => 'all',
-                'min_width' => '2000',
-                'min_height' => '1500',
-                'max_width' => '2000',
-                'max_height' => '1500',
+                'min_width' => '1500',
             ])
                 ->conditional('contenido_formato', '==', 'imagen')
                 ->or('contenido_formato', '==', 'repeticion')
@@ -73,7 +70,7 @@ class Portada extends Partial
                 'label' => 'Galería',
                 'instructions' => 'Introduce las cuatro imágenes del mosaico. 1500 px x 1500 px',
                 'return_format' => 'array',
-                'min' => '',
+                'min' => '4',
                 'max' => '4',
                 'insert' => 'append',
                 'library' => 'all',
