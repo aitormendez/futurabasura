@@ -5,7 +5,6 @@ $(document).ready(() => {
     // ----------------------------------------------------
 
     let cupones = document.getElementsByClassName('cupon-wrap');
-    console.log(cupones);
 
     for (const c of cupones) {
       altoOrg = c.offsetHeight;

@@ -1,4 +1,9 @@
-import Glide, { Controls, Autoplay, Keyboard, Breakpoints } from '@glidejs/glide/dist/glide.modular.esm';
+import Glide, {
+  Controls,
+  Autoplay,
+  Keyboard,
+  Breakpoints
+} from '@glidejs/glide/dist/glide.modular.esm';
 
 $(document).ready(() => {
   if (document.body.classList.contains('single-product')) {
@@ -6,9 +11,9 @@ $(document).ready(() => {
     // galería de imágenes con Glide
     // ----------------------------------------------------
     let
-    g = document.getElementById('glide'),
-    s = g.getElementsByClassName('slide'),
-    i= document.getElementById('indice');
+      g = document.getElementById('glide'),
+      s = g.getElementsByClassName('slide'),
+      i = document.getElementById('indice');
 
     var glide = new Glide('.g-gallery', {
       type: 'carousel',
@@ -18,15 +23,19 @@ $(document).ready(() => {
       gap: 0,
     })
 
-    glide.on('run', function() {
+    glide.on('run', function () {
       indice();
     })
 
-    glide.on('mount.before', function() {
+    glide.on('mount.before', function () {
       indice();
     })
 
-    glide.mount({ Controls, Autoplay, Keyboard });
+    glide.mount({
+      Controls,
+      Autoplay,
+      Keyboard
+    });
 
     function indice() {
       i.innerHTML = (glide.index + 1) + ' / ' + (s.length - 2);
@@ -50,7 +59,6 @@ $(document).ready(() => {
     for (const c of slidesA) {
       let gid = '#' + c.id;
       let dur = Math.floor((Math.random() * 10000) + 1000);
-      console.log(gid);
 
       new Glide(gid, {
         type: 'carousel',
@@ -72,7 +80,10 @@ $(document).ready(() => {
             perView: 2,
           },
         },
-      }).mount({ Autoplay, Breakpoints })
+      }).mount({
+        Autoplay,
+        Breakpoints
+      })
     }
 
     // galería de imágenes con Glide para productos relacionados
@@ -84,10 +95,9 @@ $(document).ready(() => {
     for (const c of slides) {
       let list = '.g-related-' + c.classList;
       let clase = '.' + list.split(' ').slice(2).toString();
-      console.log(clase);
       let dur = Math.floor((Math.random() * 10000) + 1000);
 
-      new Glide( clase, {
+      new Glide(clase, {
         type: 'carousel',
         autoplay: 10,
         animationDuration: dur,
@@ -107,7 +117,10 @@ $(document).ready(() => {
             perView: 2,
           },
         },
-      }).mount({ Autoplay, Breakpoints })
+      }).mount({
+        Autoplay,
+        Breakpoints
+      })
     }
 
   }
