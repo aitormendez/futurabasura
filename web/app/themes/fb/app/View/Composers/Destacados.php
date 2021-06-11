@@ -51,6 +51,11 @@ class Destacados extends Composer
                 'link'      => get_permalink( $post->ID  ),
             ];
 
+            if ($out['post_type'] === 'product') {
+                $artists = wp_get_post_terms($post->ID, 'artist');
+                $out['artist'] = $artists[0]->name;
+            }
+
             if ($formato === 'imagen' || $formato === 'repeticion') {
 
                 $img = get_field ('contenido_imagen_portada', $post->ID);
