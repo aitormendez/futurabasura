@@ -48,7 +48,6 @@ $(document).ready(() => {
 
       let img = $(this).find('img').eq(0);
       let clip = $(this).find('.clip').eq(0);
-      console.log(img);
       let alto = img.height();
       clip.height(alto);
     });
