@@ -15,12 +15,23 @@
 
   @media (min-width: 786px) {
     #destacados {
-      article a {
+      .imagen a {
         img {
           max-width: 40vw;
           max-height: 40vw;
           width: auto;
           height: auto;
+        }
+
+        header {
+          max-width: 40vw;
+        }
+      }
+
+      .mosaico a {
+        .msc {
+          width: 40vw;
+          height: 40vw;
         }
 
         header {
