@@ -5,7 +5,6 @@ namespace App\Fields;
 use Log1x\AcfComposer\Field;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 use App\Fields\Partials\Portada;
-use App\Fields\Partials\ContenidoFormato;
 
 class Contenido extends Field
 {
@@ -20,7 +19,6 @@ class Contenido extends Field
         $builder
             ->addTab('Portada', ['placement' => 'left'])
                 ->addFields($this->get(Portada::class))
-
             ;
 
         return $builder->build();

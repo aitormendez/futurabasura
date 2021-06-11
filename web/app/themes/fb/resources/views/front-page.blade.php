@@ -11,6 +11,14 @@
     @endif
 
     @include('partials.slider')
+@dump($destacados)
+
+@if ($destacados['has_posts'] = true)
+    <section id="destacados">
+      @include('partials.destacados-portada')
+    </section>
+@endif
+
   </main>
   @endsection
 

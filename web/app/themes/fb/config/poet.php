@@ -29,6 +29,7 @@ return [
             'menu_icon' => 'dashicons-megaphone',
             'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
             'has_archive' => true,
+            'show_in_rest' => true,
             'labels' => [
                 'singular' => __('Story', 'sage'),
                 'plural' => __('Stories', 'sage'),
@@ -39,6 +40,7 @@ return [
             'menu_icon' => 'dashicons-portfolio',
             'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
             'has_archive' => true,
+            'show_in_rest' => true,
             'labels' => [
                 'singular' => __('Project', 'sage'),
                 'plural' => __('Projects', 'sage'),
