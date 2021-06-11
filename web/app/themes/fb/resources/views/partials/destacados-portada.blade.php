@@ -1,4 +1,3 @@
-@dump($destacado)
 <article class="mb-6 {{ $destacado['post_type'] }} {{ $destacado['formato'] }}">
 
   {{-- IMAGEN --}}
@@ -82,12 +81,28 @@
   {{-- REPETICION --}}
   @if ($destacado['formato'] === 'repeticion')
     <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white md:justify-between md:flex-nowrap">
-      <header class="w-full p-6 col-datos md:flex md:flex-col md:justify-between">
-        <div class="arriba">
-          <div class="font-serif text-lg font-bold capitalize meta">{{ $destacado['post_type'] }}</div>
-          <h2 class="my-6 text-2xl tracking-widest">{{ $destacado['title'] }}</h2>
+      <div class="img">
+        <img src="{!! $destacado['url'] !!}" srcset="{!! $destacado['srcset'] !!}" alt="" sizes="">
+      </div>
+      <div class="relative w-full">
+        <div class="overflow-hidden clip">
+          <div class="interior">
+            @for ($i = 0; $i < 200; $i++)
+              <span class="my-6 text-2xl tracking-widest">{{ $destacado['title'] }}</span>
+            @endfor
+          </div>
         </div>
-      </header>
+
+        @if ($destacado['post_type'] === 'product')
+          <div class="absolute bottom-0 w-full p-6 font-serif text-3xl text-center bg-white artist">
+            By {!! $destacado['artist'] !!}
+          </div>
+        @endif
+
+
+      </div>
+      @if ($destacado['has_img'])
+    @endif
     </a>
   @endif
 

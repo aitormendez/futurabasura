@@ -25,6 +25,18 @@
           }
         }
       }
+
+      &.repeticion {
+        .clip {
+          .interior {
+            width: 150%;
+            height: 150%;
+            position: relative;
+            top: -20%;
+            left: -20%;
+          }
+        }
+      }
     }
   }
 

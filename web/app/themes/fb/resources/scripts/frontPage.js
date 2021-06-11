@@ -22,7 +22,6 @@ $(document).ready(() => {
     // ----------------------------------------------------
 
     let gals = document.querySelectorAll('.galeria .glide');
-    console.log(gals);
 
     for (let i = 0; i < gals.length; i++) {
       gals[i].id = 'gal' + i;
@@ -39,6 +38,21 @@ $(document).ready(() => {
         Keyboard
       });
     }
+
+    // ajustar alto de contenito copn formato "repetido"
+    // ----------------------------------------------------
+
+    let repetidos = $('.repeticion');
+
+    repetidos.each(function () {
+
+      let img = $(this).find('img').eq(0);
+      let clip = $(this).find('.clip').eq(0);
+      console.log(img);
+      let alto = img.height();
+      clip.height(alto);
+
+    });
 
   }
 });
