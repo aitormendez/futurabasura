@@ -31,7 +31,8 @@ class Portada extends Partial
                 'label' => 'Formato de contenido',
                 'instructions' => 'elige el formato con el que se mostrará el contenido en portada',
                 'choices' => [
-                    'imagen' => 'imagen',
+                    'imagen' => 'Imagen',
+                    'imagen_grande' => 'Imagen grande',
                     'galeria' => 'Galeria',
                     'mosaico' => 'Mosaico',
                     'repeticion' => 'Repetición',
@@ -43,7 +44,7 @@ class Portada extends Partial
             ])
                 ->conditional('mostrar_en_portada', '==', '1')
             ->addImage('contenido_imagen_portada', [
-                'label' => 'imagen para portada',
+                'label' => 'Imagen para portada',
                 'instructions' => 'Debe tener un ancho de 1500 px y, probablemente, quede mejor un formato cuadrado (1500px de alto)',
                 'return_format' => 'array',
                 'preview_size' => 'medium',
@@ -52,6 +53,18 @@ class Portada extends Partial
             ])
                 ->conditional('contenido_formato', '==', 'imagen')
                 ->or('contenido_formato', '==', 'repeticion')
+            ->addImage('contenido_imagen_grande_portada', [
+                'label' => 'Imagen full page para portada',
+                'instructions' => 'Debe tener un tamaño de 2000 x 1200 px',
+                'return_format' => 'array',
+                'preview_size' => 'medium',
+                'library' => 'all',
+                'min_width' => '2000',
+                'min_height' => '1200',
+                'max_width' => '2000',
+                'max_height' => '1200',
+            ])
+                ->conditional('contenido_formato', '==', 'imagen_grande')
             ->addGallery('contenido_galeria_portada', [
                 'label' => 'Galería',
                 'instructions' => 'Introduce las imágenes de la galería. 1500 px x 1500 px',
@@ -60,9 +73,9 @@ class Portada extends Partial
                 'max' => '',
                 'insert' => 'append',
                 'library' => 'all',
-                'min_width' => '1500',
+                'min_width' => '2000',
                 'min_height' => '1500',
-                'max_width' => '1500',
+                'max_width' => '2000',
                 'max_height' => '1500',
             ])
                 ->conditional('contenido_formato', '==', 'galeria')
