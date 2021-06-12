@@ -68,6 +68,18 @@ class Destacados extends Composer
                     $out['has_img'] = false;
                 }
 
+            } elseif($formato === 'imagen_grande') {
+
+                $img = get_field ('contenido_imagen_grande_portada', $post->ID);
+                if ($img) {
+                    $out['has_img'] = true;
+                    $out['url'] = $img['url'];
+                    $out['srcset'] = wp_get_attachment_image_srcset($img['ID']);
+                    $out['alt'] = $img['alt'];
+                } else {
+                    $out['has_img'] = false;
+                }
+
             } elseif ($formato === 'mosaico') {
 
                 $mosaico = get_field ('contenido_mosaico_portada', $post->ID);

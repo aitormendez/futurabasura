@@ -20,6 +20,26 @@
     </a>
   @endif
 
+  {{-- IMAGEN GRANDE--}}
+  @if ($destacado['formato'] === 'imagen_grande')
+    <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white">
+      <header class="w-full p-6 col-datos md:absolute">
+        <div class="arriba">
+          <div class="font-serif text-lg font-bold capitalize meta">{{ $destacado['post_type'] }}</div>
+          <h2 class="my-6 text-2xl tracking-widest">{{ $destacado['title'] }}</h2>
+        </div>
+        <div class="tracking-wide excerpt">
+          {!! $destacado['excerpt'] !!}
+        </div>
+      </header>
+      @if ($destacado['has_img'])
+        <div class="img">
+          <img src="{!! $destacado['url'] !!}" srcset="{!! $destacado['srcset'] !!}" alt="{!! $destacado['alt'] !!}" sizes="100vw">
+        </div>
+      @endif
+    </a>
+  @endif
+
   {{-- MOSAICO --}}
   @if ($destacado['formato'] === 'mosaico')
     <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white md:justify-between md:flex-nowrap">
@@ -82,7 +102,7 @@
   @if ($destacado['formato'] === 'repeticion')
     <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white md:justify-between md:flex-nowrap">
       <div class="img">
-        <img src="{!! $destacado['url'] !!}" srcset="{!! $destacado['srcset'] !!}" alt="{!! $destacado['alt'] !!}"" sizes="">
+        <img src="{!! $destacado['url'] !!}" srcset="{!! $destacado['srcset'] !!}" alt="{!! $destacado['alt'] !!}" sizes="(max-width: 768px) 100vw, 40vw">
       </div>
       <div class="relative w-full">
         <div class="overflow-hidden clip">
