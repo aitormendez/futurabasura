@@ -38,13 +38,22 @@ class Destacados extends Composer
             'meta_value'	   => '1'
         ]);
 
-
-
         $posts_array = array_map(function ($post) {
             $formato = get_field('contenido_formato', $post->ID);
 
+            $post_type = get_post_type( $post->ID );
+
+            if ($post_type === 'project') {
+                $post_type = "Projects";
+            } elseif ($post_type === 'story') {
+                $post_type = "News";
+            } elseif ($post_type === 'product') {
+                $post_type = "Products";
+            };
+
+
             $out = [
-                'post_type' => get_post_type( $post->ID ),
+                'post_type' => $post_type,
                 'title'     => get_the_title($post->ID),
                 'formato'   => $formato,
                 'excerpt'   => get_the_excerpt( $post->ID ),
