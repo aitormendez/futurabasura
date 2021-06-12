@@ -66,6 +66,7 @@ window.onload = function () {
   let titulos = document.getElementsByClassName('title-repetido');
 
   for (let i = 0; i < titulos.length; i++) {
+    const element = titulos[i];
     element.addEventListener('mouseover', function (event) {
       let randX = Math.floor((Math.random() * 100) - 50);
       let randY = Math.floor((Math.random() * 100) - 50);
