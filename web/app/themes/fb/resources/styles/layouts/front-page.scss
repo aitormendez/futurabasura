@@ -38,6 +38,17 @@
           }
         }
       }
+
+      &.imagen_grande {
+        header {
+          opacity: 1;
+          transition: opacity 0.5s;
+
+          &:hover {
+            opacity: 0;
+          }
+        }
+      }
     }
   }
 
@@ -78,6 +89,14 @@
 
         .contenedor-slider {
           width: 40vw;
+        }
+      }
+
+      &.imagen_grande {
+        header {
+          width: 40vw;
+          height: 40vh;
+          font-size: 1vw;
         }
       }
     }

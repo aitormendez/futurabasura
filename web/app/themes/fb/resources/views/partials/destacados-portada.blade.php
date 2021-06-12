@@ -22,18 +22,16 @@
 
   {{-- IMAGEN GRANDE--}}
   @if ($destacado['formato'] === 'imagen_grande')
-    <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white">
-      <header class="w-full p-6 col-datos md:absolute">
-        <div class="arriba">
-          <div class="font-serif text-lg font-bold capitalize meta">{{ $destacado['post_type'] }}</div>
-          <h2 class="my-6 text-2xl tracking-widest">{{ $destacado['title'] }}</h2>
-        </div>
-        <div class="tracking-wide excerpt">
+    <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white md:justify-center md:items-center">
+      <header class="w-full p-6 col-datos md:absolute md:bg-white md:flex md:flex-col md:justify-between md:flex-wrap">
+        <div class="w-full font-serif text-lg font-bold capitalize meta">{{ $destacado['post_type'] }}</div>
+        <h2 class="w-full mb-12 text-2xl tracking-widest text-center">{{ $destacado['title'] }}</h2>
+        <div class="self-end tracking-wide text-center excerpt">
           {!! $destacado['excerpt'] !!}
         </div>
       </header>
       @if ($destacado['has_img'])
-        <div class="img">
+        <div class="overflow-hidden img md:max-h-screen">
           <img src="{!! $destacado['url'] !!}" srcset="{!! $destacado['srcset'] !!}" alt="{!! $destacado['alt'] !!}" sizes="100vw">
         </div>
       @endif
