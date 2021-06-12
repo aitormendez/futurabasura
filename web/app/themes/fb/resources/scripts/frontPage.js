@@ -3,6 +3,9 @@ import Glide, {
   Autoplay,
   Keyboard
 } from '@glidejs/glide/dist/glide.modular.esm';
+import anime, {
+  random
+} from 'animejs';
 
 $(document).ready(() => {
   if (document.body.classList.contains('home')) {
@@ -44,7 +47,7 @@ $(document).ready(() => {
 
 
 window.onload = function () {
-  // ajustar alto de contenito con formato "repetido"
+  // ajustar alto de contenido con formato "repetido"
   // ----------------------------------------------------
 
   let repetidos = $('.repeticion');
@@ -56,4 +59,32 @@ window.onload = function () {
     let alto = img.height();
     clip.height(alto);
   });
+
+  // Animación título de contenido con formato "repetido"
+  // ----------------------------------------------------
+
+  let titulos = document.getElementsByClassName('title-repetido');
+
+  for (let i = 0; i < titulos.length; i++) {
+    const element = titulos[i];
+    element.addEventListener('mouseover', function (event) {
+      let randX = Math.floor((Math.random() * 100) - 50);
+      let randY = Math.floor((Math.random() * 100) - 50);
+      let rotate = Math.floor((Math.random() * 360) - 180);
+      console.log(randX);
+
+      anime({
+        targets: this,
+        translateY: randY,
+        translateX: randX,
+        rotate: rotate,
+        duration: 1000,
+      });
+
+
+    })
+  }
+
+
+
 };

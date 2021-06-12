@@ -107,7 +107,7 @@
             @for ($a = 0; $a < 6; $a++)
               <div class="relative linea">
                 @for ($i = 0; $i < 10; $i++)
-                  <span class="mx-6 text-2xl tracking-widest title-repetido">{{ $destacado['title'] }}</span>
+                  <span class="inline-block mx-6 text-2xl tracking-widest title-repetido">{{ $destacado['title'] }}</span>
                 @endfor
               </div>
             @endfor
