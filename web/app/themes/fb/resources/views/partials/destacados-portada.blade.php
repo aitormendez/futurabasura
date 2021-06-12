@@ -102,20 +102,23 @@
       <div class="img">
         <img src="{!! $destacado['url'] !!}" srcset="{!! $destacado['srcset'] !!}" alt="{!! $destacado['alt'] !!}" sizes="(max-width: 768px) 100vw, 40vw">
       </div>
-      <div class="relative w-full">
-        <div class="overflow-hidden clip">
-          <div class="interior">
-            @for ($i = 0; $i < 200; $i++)
-              <span class="my-6 text-2xl tracking-widest">{{ $destacado['title'] }}</span>
+
+        <div class="relative overflow-hidden clip">
+            @for ($a = 0; $a < 6; $a++)
+              <div class="relative linea">
+                @for ($i = 0; $i < 10; $i++)
+                  <span class="mx-6 text-2xl tracking-widest title-repetido">{{ $destacado['title'] }}</span>
+                @endfor
+              </div>
             @endfor
-          </div>
+            @if ($destacado['post_type'] === 'Products')
+            <div class="absolute bottom-0 w-full p-6 font-serif text-3xl text-center bg-white artist">
+              By {!! $destacado['artist'] !!}
+            </div>
+          @endif
         </div>
 
-        @if ($destacado['post_type'] === 'product')
-          <div class="absolute bottom-0 w-full p-6 font-serif text-3xl text-center bg-white artist">
-            By {!! $destacado['artist'] !!}
-          </div>
-        @endif
+
 
 
       </div>

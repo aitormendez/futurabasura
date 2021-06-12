@@ -9,32 +9,18 @@
         .contenedor-slider {
           width: 100%;
         }
-
-        a:hover {
-          @apply bg-azul;
-
-          img {
-            filter: brightness(50%) sepia(100%) hue-rotate(190deg) saturate(500%);
-          }
-        }
       }
 
       &.repeticion {
         .clip {
-          .interior {
-            width: 150%;
-            height: 150%;
-            position: relative;
-            top: -20%;
-            left: -20%;
-          }
-        }
+          text-overflow: clip;
 
-        a:hover {
-          @apply bg-azul;
+          .linea {
+            width: 4000px;
 
-          img {
-            filter: brightness(50%) sepia(100%) hue-rotate(190deg) saturate(500%);
+            &:nth-child(2n) {
+              left: -20%;
+            }
           }
         }
       }
@@ -55,6 +41,23 @@
   @media (min-width: 786px) {
     #destacados article {
       &.imagen a {
+        img {
+          max-width: 40vw;
+          max-height: 40vw;
+          width: auto;
+          height: auto;
+        }
+
+        &:hover {
+          @apply bg-azul;
+
+          img {
+            filter: brightness(50%) sepia(100%) hue-rotate(190deg) saturate(500%);
+          }
+        }
+      }
+
+      &.repeticion a {
         img {
           max-width: 40vw;
           max-height: 40vw;
@@ -90,7 +93,17 @@
         .contenedor-slider {
           width: 40vw;
         }
+
+        a:hover {
+          @apply bg-azul;
+
+          img {
+            filter: brightness(50%) sepia(100%) hue-rotate(190deg) saturate(500%);
+          }
+        }
       }
+
+
 
       &.imagen_grande {
         header {
@@ -110,14 +123,6 @@
           max-height: 35vw;
           width: auto;
           height: auto;
-        }
-
-        &:hover {
-          @apply bg-azul;
-
-          img {
-            filter: brightness(50%) sepia(100%) hue-rotate(190deg) saturate(500%);
-          }
         }
       }
 

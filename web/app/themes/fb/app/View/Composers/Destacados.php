@@ -60,7 +60,7 @@ class Destacados extends Composer
                 'link'      => get_permalink( $post->ID  ),
             ];
 
-            if ($out['post_type'] === 'product') {
+            if ($out['post_type'] === 'Products') {
                 $artists = wp_get_post_terms($post->ID, 'artist');
                 $out['artist'] = $artists[0]->name;
             }
