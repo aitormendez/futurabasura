@@ -99,31 +99,29 @@
   {{-- REPETICION --}}
   @if ($destacado['formato'] === 'repeticion')
     <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white md:justify-between md:flex-nowrap">
-      <div class="img">
-        <img src="{!! $destacado['url'] !!}" srcset="{!! $destacado['srcset'] !!}" alt="{!! $destacado['alt'] !!}" sizes="(max-width: 768px) 100vw, 40vw">
-      </div>
 
-        <div class="relative overflow-hidden clip">
-            @for ($a = 0; $a < 6; $a++)
-              <div class="relative linea">
-                @for ($i = 0; $i < 10; $i++)
-                  <span class="inline-block mx-6 text-2xl tracking-widest title-repetido">{{ $destacado['title'] }}</span>
-                @endfor
-              </div>
-            @endfor
-            @if ($destacado['post_type'] === 'Products')
-            <div class="absolute bottom-0 w-full p-6 font-serif text-3xl text-center bg-white artist">
-              By {!! $destacado['artist'] !!}
-            </div>
-          @endif
-        </div>
-
-
-
-
-      </div>
       @if ($destacado['has_img'])
-    @endif
+        <div class="img">
+          <img src="{!! $destacado['url'] !!}" srcset="{!! $destacado['srcset'] !!}" alt="{!! $destacado['alt'] !!}" sizes="(max-width: 768px) 100vw, 40vw">
+        </div>
+      @endif
+
+
+      <div class="relative overflow-hidden clip">
+          @for ($a = 0; $a < 6; $a++)
+            <div class="relative linea">
+              @for ($i = 0; $i < 10; $i++)
+                <span class="inline-block mx-6 text-2xl tracking-widest title-repetido">{{ $destacado['title'] }}</span>
+              @endfor
+            </div>
+          @endfor
+          @if ($destacado['post_type'] === 'Products')
+          <div class="absolute bottom-0 w-full p-6 font-serif text-3xl text-center bg-white artist">
+            By {!! $destacado['artist'] !!}
+          </div>
+        @endif
+      </div>
+
     </a>
   @endif
 
