@@ -14,7 +14,7 @@
       </header>
       @if ($destacado['has_img'])
         <div class="img">
-          <img src="{!! $destacado['url'] !!}" srcset="{!! $destacado['srcset'] !!}" alt="{!! $destacado['alt'] !!}" sizes="">
+          <img src="{!! $destacado['url'] !!}" srcset="{!! $destacado['srcset'] !!}" alt="{!! $destacado['alt'] !!}" sizes="(max-width: 768px) 100vw, 40vw">
         </div>
       @endif
     </a>
@@ -35,7 +35,7 @@
       @if ($destacado['has_msc'])
         <div class="flex flex-wrap items-start msc">
           @foreach ($destacado['mosaico'] as $img)
-            <img class="w-2/4" src="{!! $img['url'] !!}" alt="{!! $img['alt'] !!}">
+            <img class="w-2/4" src="{!! $img['url'] !!}" alt="{!! $img['alt'] !!}" sizes="(max-width: 768px) 50vw, 20vw">
           @endforeach
         </div>
       @endif
@@ -63,7 +63,7 @@
 
               @foreach ($destacado['galeria'] as $img)
               <li class="glide__slide">
-                <img class="" src="{!! $img['url'] !!}" alt="{!! $img['alt'] !!}">
+                <img class="" src="{!! $img['url'] !!}" alt="{!! $img['alt'] !!}" sizes="(max-width: 768px) 100vw, 40vw">
               </li>
               @endforeach
 
