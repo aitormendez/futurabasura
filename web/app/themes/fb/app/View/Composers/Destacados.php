@@ -63,6 +63,7 @@ class Destacados extends Composer
                     $out['has_img'] = true;
                     $out['url'] = $img['url'];
                     $out['srcset'] = wp_get_attachment_image_srcset($img['ID']);
+                    $out['alt'] = $img['alt'];
                 } else {
                     $out['has_img'] = false;
                 }

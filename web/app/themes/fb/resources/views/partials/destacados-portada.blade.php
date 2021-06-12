@@ -14,7 +14,7 @@
       </header>
       @if ($destacado['has_img'])
         <div class="img">
-          <img src="{!! $destacado['url'] !!}" srcset="{!! $destacado['srcset'] !!}" alt="" sizes="">
+          <img src="{!! $destacado['url'] !!}" srcset="{!! $destacado['srcset'] !!}" alt="{!! $destacado['alt'] !!}" sizes="">
         </div>
       @endif
     </a>
@@ -35,7 +35,7 @@
       @if ($destacado['has_msc'])
         <div class="flex flex-wrap items-start msc">
           @foreach ($destacado['mosaico'] as $img)
-            <img class="w-2/4" src="{{ $img['url'] }}" alt="">
+            <img class="w-2/4" src="{!! $img['url'] !!}" alt="{!! $img['alt'] !!}">
           @endforeach
         </div>
       @endif
@@ -63,7 +63,7 @@
 
               @foreach ($destacado['galeria'] as $img)
               <li class="glide__slide">
-                <img class="" src="{{ $img['url'] }}" alt="">
+                <img class="" src="{!! $img['url'] !!}" alt="{!! $img['alt'] !!}">
               </li>
               @endforeach
 
@@ -82,7 +82,7 @@
   @if ($destacado['formato'] === 'repeticion')
     <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white md:justify-between md:flex-nowrap">
       <div class="img">
-        <img src="{!! $destacado['url'] !!}" srcset="{!! $destacado['srcset'] !!}" alt="" sizes="">
+        <img src="{!! $destacado['url'] !!}" srcset="{!! $destacado['srcset'] !!}" alt="{!! $destacado['alt'] !!}"" sizes="">
       </div>
       <div class="relative w-full">
         <div class="overflow-hidden clip">
