@@ -11,7 +11,7 @@
         }
 
         a:hover {
-          @apply bg-allo;
+          @apply bg-azul;
 
           img {
             filter: brightness(50%) sepia(100%) hue-rotate(190deg) saturate(500%);
@@ -31,7 +31,7 @@
         }
 
         a:hover {
-          @apply bg-allo;
+          @apply bg-azul;
 
           img {
             filter: brightness(50%) sepia(100%) hue-rotate(190deg) saturate(500%);
@@ -74,7 +74,7 @@
         }
 
         &:hover {
-          @apply bg-allo;
+          @apply bg-azul;
 
           img {
             filter: brightness(50%) sepia(100%) hue-rotate(190deg) saturate(500%);
@@ -110,6 +110,14 @@
           max-height: 35vw;
           width: auto;
           height: auto;
+        }
+
+        &:hover {
+          @apply bg-azul;
+
+          img {
+            filter: brightness(50%) sepia(100%) hue-rotate(190deg) saturate(500%);
+          }
         }
       }
 
