@@ -3,7 +3,6 @@
 
   @section('content')
   <main id="main" class="py-8 sm:mt-40 main">
-    @dump($destacados)
 
     @if (count($cupones) !== 0)
       <section>
