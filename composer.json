@@ -92,6 +92,7 @@
     "wpackagist-plugin/facebook-for-woocommerce": "*",
     "wpackagist-plugin/woo-redsys-gateway-light": "*",
     "wpackagist-plugin/favicon-by-realfavicongenerator": "*",
+    "wpackagist-plugin/mailchimp-for-wp": "*",
     "soberwp/intervention": "dev-master"
   },
   "require-dev": {
