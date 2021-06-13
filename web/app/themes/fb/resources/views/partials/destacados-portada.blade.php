@@ -116,7 +116,7 @@
             </div>
           @endfor
           @if ($destacado['post_type'] === 'Products')
-          <div class="absolute bottom-0 w-full p-6 font-serif text-3xl text-center bg-white artist">
+          <div class="absolute bottom-0 w-full p-6 font-serif text-3xl text-center bg-white artista-producto">
             By {!! $destacado['artist'] !!}
           </div>
         @endif

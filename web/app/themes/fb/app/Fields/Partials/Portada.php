@@ -43,6 +43,20 @@ class Portada extends Partial
                 'return_format' => 'value',
             ])
                 ->conditional('mostrar_en_portada', '==', '1')
+            ->addRadio('procedencia_img', [
+                'label' => 'Procedencia de la imagen',
+                'instructions' => 'Elige si la imagen se obtiene de la imagen destacada en este post o si se sube una imagen nueva',
+                'choices' => [
+                    'nueva' => 'Subir imagen nueva',
+                    'destacada' => 'Usar la imagen destacada',
+                ],
+                'allow_null' => 0,
+                'default_value' => 'nueva',
+                'layout' => 'vertical',
+                'return_format' => 'value',
+            ])
+                ->conditional('contenido_formato', '==', 'imagen')
+                ->or('contenido_formato', '==', 'repeticion')
             ->addImage('contenido_imagen_portada', [
                 'label' => 'Imagen para portada',
                 'instructions' => 'Debe tener un ancho de 1500 px y, probablemente, quede mejor un formato cuadrado (1500px de alto)',
@@ -52,7 +66,9 @@ class Portada extends Partial
                 'min_width' => '1500',
             ])
                 ->conditional('contenido_formato', '==', 'imagen')
+                    ->and('procedencia_img', '==', 'nueva')
                 ->or('contenido_formato', '==', 'repeticion')
+                    ->and('procedencia_img', '==', 'nueva')
             ->addImage('contenido_imagen_grande_portada', [
                 'label' => 'Imagen full page para portada',
                 'instructions' => 'Debe tener un tamaño de 2000 x 1200 px',

@@ -84,6 +84,51 @@ window.onload = function () {
     })
   }
 
+  // Animación color de autor en contenido con formato "repetido"
+  // ----------------------------------------------------
+
+  let artistas = document.getElementsByClassName('artista-producto');
+
+  let R, G, B, dur;
+
+  const setVars = () => {
+    R = Math.floor((Math.random() * 255)),
+      G = Math.floor((Math.random() * 255)),
+      B = Math.floor((Math.random() * 255)),
+      dur = Math.floor((Math.random() * 4000));
+  }
+
+  const getColor = () => {
+    setVars();
+    return `rgb(${R}, ${G}, ${B})`;
+  };
+
+  setVars();
+
+  for (let i = 0; i < artistas.length; i++) {
+    const element = artistas[i];
+
+    element.addEventListener('mouseover', function (event) {
+
+      anime({
+        targets: this,
+        color: getColor,
+        duration: dur,
+        loop: true,
+        easing: 'linear',
+        loopBegin: (anim) => {
+          getColor();
+        },
+      });
+
+
+    });
+
+    // element.addEventListener('mouseout', function (event) {
+    //   colors.pause;
+    // });
+  }
+
 
 
 };
