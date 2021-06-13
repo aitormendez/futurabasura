@@ -48,6 +48,10 @@
           height: auto;
         }
 
+        header {
+          max-width: 40vw;
+        }
+
         &:hover {
           @apply bg-azul;
 
@@ -133,13 +137,13 @@
         }
 
         header {
-          max-width: 35vw;
+          max-width: 40vw;
         }
       }
 
       &.galeria {
         header {
-          max-width: 35vw;
+          max-width: 40vw;
         }
 
         .contenedor-slider {
