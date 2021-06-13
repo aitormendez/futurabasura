@@ -34,6 +34,22 @@ return [
                 'singular' => __('Story', 'sage'),
                 'plural' => __('Stories', 'sage'),
             ],
+            'admin_filters'   => [
+                'destacada' => array(
+                    'title'    => 'Destadaca',
+                    'meta_key' => 'mostrar_en_portada',
+                  ),
+            ],
+            'admin_cols'   => [
+                'destacada' => array(
+                    'title'    => 'Destadaca',
+                    'meta_key' => 'mostrar_en_portada',
+                  ),
+                'formato' => array(
+                    'title'    => 'Formato',
+                    'meta_key' => 'contenido_formato',
+                  ),
+            ],
         ],
         'project' => [
             'enter_title_here' => 'Título del proyecto',
@@ -44,6 +60,22 @@ return [
             'labels' => [
                 'singular' => __('Project', 'sage'),
                 'plural' => __('Projects', 'sage'),
+            ],
+            'admin_filters'   => [
+                'destacada' => array(
+                    'title'    => 'Destadaca',
+                    'meta_key' => 'mostrar_en_portada',
+                  ),
+            ],
+            'admin_cols'   => [
+                'destacada' => array(
+                    'title'    => 'Destadaca',
+                    'meta_key' => 'mostrar_en_portada',
+                  ),
+                'formato' => array(
+                'title'    => 'Formato',
+                'meta_key' => 'contenido_formato',
+                ),
             ],
         ],
     ],

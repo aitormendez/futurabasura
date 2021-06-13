@@ -127,7 +127,7 @@ window.onload = function () {
   // element.addEventListener('mouseout', function (event) {
   //   colors.pause;
   // });
-}
+  // }
 
 
 

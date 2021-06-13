@@ -67,15 +67,33 @@ class Destacados extends Composer
 
             if ($formato === 'imagen' || $formato === 'repeticion') {
 
-                $img = get_field ('contenido_imagen_portada', $post->ID);
-                if ($img) {
-                    $out['has_img'] = true;
-                    $out['url'] = $img['url'];
-                    $out['srcset'] = wp_get_attachment_image_srcset($img['ID']);
-                    $out['alt'] = $img['alt'];
-                } else {
-                    $out['has_img'] = false;
+                $procedencia_img = get_field('procedencia_img', $post->ID);
+
+                if ($procedencia_img === 'nueva') {
+                    $img = get_field ('contenido_imagen_portada', $post->ID);
+                    if ($img) {
+                        $out['has_img'] = true;
+                        $out['url'] = $img['url'];
+                        $out['srcset'] = wp_get_attachment_image_srcset($img['ID']);
+                        $out['alt'] = $img['alt'];
+                    } else {
+                        $out['has_img'] = false;
+                    }
+                } elseif ($procedencia_img === 'destacada') {
+                    $thumb_id = get_post_thumbnail_id($post->ID );
+                    if ($thumb_id) {
+                        $thumb_url = wp_get_attachment_image_src($thumb_id, 'full');
+                        $thumb_srcset = wp_get_attachment_image_srcset($thumb_id, 'full');
+                        $thumb_alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+                        $out['has_img'] = true;
+                        $out['url'] = $thumb_url[0];
+                        $out['srcset'] = $thumb_srcset;
+                        $out['alt'] = $thumb_alt;
+                    } else {
+                        $out['has_img'] = false;
+                    }
                 }
+
 
             } elseif($formato === 'imagen_grande') {
 
