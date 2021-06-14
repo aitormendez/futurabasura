@@ -30,4 +30,7 @@
       @endforeach
     </ul>
   </div>
+  <div class="formulario">aaaaaaa
+    {!! do_shortcode( '[mc4wp_form id="474"]', false ) !!}
+  </div>
 </footer>

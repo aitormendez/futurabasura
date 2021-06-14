@@ -38,4 +38,10 @@
       </span>
     </div>
   </div>
+  <div class="w-full p-4 bg-white border border-black formulario">
+    <div class="flex flex-wrap formu">
+      <h3 class="tracking-widest">NEWSLETTER</h3>
+      {!! do_shortcode( '[mc4wp_form id="474"]' ) !!}
+    </div>
+  </div>
 </footer>

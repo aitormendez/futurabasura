@@ -5,3 +5,20 @@ input {
   outline: none !important;
   box-shadow: none !important;
 }
+
+
+footer {
+  .formulario {
+    @apply m-6;
+
+    form {
+      label {
+        display: none;
+      }
+
+      input[type="submit"] {
+        @apply text-azul bg-transparent;
+      }
+    }
+  }
+}

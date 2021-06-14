@@ -20,7 +20,6 @@
 
 @section('content')
   <main id="main" class="main">
-    @dump($artist_hero)
     @if (is_tax('artist'))
      @if ($artist_hero['has_hero_img'])
      <div id="toggle-button" class="flex flex-wrap justify-center bg-white hero md:cursor-pointer">
