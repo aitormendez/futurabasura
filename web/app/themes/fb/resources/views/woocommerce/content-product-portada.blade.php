@@ -16,11 +16,11 @@ if ( empty( $product ) || ! $product->is_visible() ) {
     <div class="inset-0 p-4 font-bold tracking-widest uppercase hover md:bg-negro-fb md:absolute md:text-white">
       <p class="mb-4">{{ $producto['title'] }}</p>
       <p class="mb-4">{{ $producto['artist'] }}</p>
-      @if ($producto['has_format'])
-       <p class="mb-4">{{ $producto['format'] }}</p>
-      @endif
 
       @if ($producto['product_type'] == 'simple')
+        @if ($producto['has_format'])
+          <p class="mb-4">{{ $producto['format'] }}</p>
+        @endif
         @if ($producto['has_sale_prize'])
           <p class="mb-4 text-red-600 line-through">{{ $producto['regular_prize'] }} €</p>
           <p class="mb-4">{{ $producto['sale_prize'] }} €</p>
