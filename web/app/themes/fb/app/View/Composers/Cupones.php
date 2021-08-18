@@ -4,7 +4,7 @@ namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
 
-class FrontPage extends Composer
+class Cupones extends Composer
 {
     /**
      * List of views served by this composer.
@@ -12,7 +12,7 @@ class FrontPage extends Composer
      * @var array
      */
     protected static $views = [
-        'front-page',
+        'partials.cupones',
     ];
 
     /**

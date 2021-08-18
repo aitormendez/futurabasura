@@ -30,6 +30,14 @@
      </div>
      @endif
     @endif
+
+    @if (!is_tax('artist'))
+        @include('partials.cupones')
+    @endif
+
+    
+
+    
     @if ( woocommerce_product_loop() )
 
         @php
