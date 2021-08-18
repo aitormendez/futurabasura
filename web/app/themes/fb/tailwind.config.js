@@ -69,7 +69,7 @@ module.exports = {
           fontFamily: '"Times New Roman", Times, serif',
           fontSize: '3rem',
           letterSpacing: '-0.03em',
-          color: '#444444',
+          color: '#3e2b2f',
         }
       }
       const botones = {
