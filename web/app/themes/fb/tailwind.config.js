@@ -1,3 +1,4 @@
+const { nodeName } = require('jquery');
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
@@ -18,7 +19,11 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            maxWidth: 'auto,'
+            maxWidth: 'auto,',
+            'a:link': {
+              'text-decoration': 'none',
+              color: '#0000ff',
+            }
           },
         },
       },

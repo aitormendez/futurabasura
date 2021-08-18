@@ -39,7 +39,7 @@ body {
   text-shadow: 0.1em 0.1em 0 #000;
 }
 
-a {
+a:link {
   color: theme('colors.azul');
   transition: color 0.5s, background-color 0.5s;
 
