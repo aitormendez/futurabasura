@@ -16,7 +16,9 @@
                 <p class="mb-4 font-bold tracking-widest text-black">{!! $slide['regular_price'] !!} €</p>
               </div>
             </div>
-            <img class="relative" src="{!! $slide['img']['url'] !!}" srcset="{!! $slide['srcset'] !!}" sizes="(max-width: 640px) 100vw, 80vw" alt="">
+            @if (array_key_exists('img', $slide))
+              <img class="relative" src="{!! $slide['img']['url'] !!}" srcset="{!! $slide['srcset'] !!}" sizes="(max-width: 640px) 100vw, 80vw" alt="">
+            @endif
           </a>
         </li>
         @endforeach
