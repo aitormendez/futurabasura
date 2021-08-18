@@ -72,6 +72,7 @@
 
         &:hover {
           @apply bg-azul;
+          color: #fff;
 
           img {
             filter: brightness(50%) sepia(100%) hue-rotate(190deg) saturate(500%);
@@ -90,6 +91,7 @@
 
         a:hover {
           @apply bg-azul;
+          color: #fff;
 
           img {
             filter: brightness(50%) sepia(100%) hue-rotate(190deg) saturate(500%);
