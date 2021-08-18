@@ -1,6 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
+  mode: 'jit',
   purge: {
     content: [
       './app/**/*.php',
@@ -51,7 +52,6 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/jit'),
     require('tailwindcss-debug-screens'),
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
