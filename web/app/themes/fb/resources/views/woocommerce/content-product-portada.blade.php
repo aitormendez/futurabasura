@@ -10,6 +10,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 @endphp
 
+@dump($producto)
+
 <li class="inline-block producto infinite-scroll-item">
   <a href="{!! $producto['url'] !!}" class="relative block">
     <img src="{!! $producto['img_url'] !!}" alt="{!! $producto['title'] !!}" srcset="{!! $producto['img_srcset'] !!}" sizes="(max-width: 768px) 100vw, 25vw" class="block">
@@ -20,12 +22,24 @@ if ( empty( $product ) || ! $product->is_visible() ) {
        <p class="mb-4">{{ $producto['format'] }}</p>
       @endif
 
-      @if ($producto['has_sale_prize'])
-       <p class="mb-4 text-red-600 line-through">{{ $producto['regular_prize'] }} €</p>
-       <p class="mb-4">{{ $producto['sale_prize'] }} €</p>
-      @else
-      <p class="mb-4">{{ $producto['regular_prize'] }} €</p>
+      @if ($producto['product_type'] == 'simple')
+        @if ($producto['has_sale_prize'])
+          <p class="mb-4 text-red-600 line-through">{{ $producto['regular_prize'] }} €</p>
+          <p class="mb-4">{{ $producto['sale_prize'] }} €</p>
+        @else
+          <p class="mb-4">{{ $producto['regular_prize'] }} €</p>
+        @endif
+      @elseif($producto['product_type'] == 'variable')
+        @foreach ($producto['variaciones'] as $v)
+          @if ($v['sale_price'] != '')
+            <p>{{ $v['format'] }} cm <span class="text-red-600 line-through">{{ $v['regular_price'] }} €</span> {{ $v['sale_price'] }} €</p>
+          @else
+          <p>{{ $v['format'] }} cm {{ $v['regular_price'] }} €</p>
+          @endif
+           
+        @endforeach
       @endif
+
 
     </div>
 

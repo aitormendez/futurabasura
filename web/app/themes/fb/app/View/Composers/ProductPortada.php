@@ -39,7 +39,11 @@ class ProductPortada extends Composer
             'regular_prize'  => $product->get_regular_price(),
             'has_format'     => false,
             'has_sale_prize' => false,
+            'product_type'   => $product->get_type(),
+            'html_price'   => $product->get_type(),
+            
         ];
+
 
         if ($sale_prize) {
             $output['has_sale_prize'] = true;
@@ -49,6 +53,26 @@ class ProductPortada extends Composer
         if ($format) {
             $output['has_format'] = true;
             $output['format'] = $format;
+        }
+
+        if ( $product->is_type( 'variable' ) ) {
+            $variations = $product->get_available_variations();
+            $variaciones_ids = $product->get_children();
+
+            $vrtns = array_map(function($v) {
+                $prod = wc_get_product($v);
+                $atts = $prod->get_attributes();
+                return [
+                    'prod'          => $prod,
+                    'sale_price'    =>  $prod->get_sale_price(),
+                    'regular_price' =>  $prod->get_regular_price(),
+                    'atts'          =>  $atts,
+                    'format'        => str_replace('-', ' ', $atts['pa_format']),
+
+                ];
+            }, $variaciones_ids);
+
+            $output['variaciones'] = $vrtns;
         }
 
         return $output;
