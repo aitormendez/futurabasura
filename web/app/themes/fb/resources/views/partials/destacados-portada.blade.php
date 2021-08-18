@@ -25,7 +25,7 @@
     <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white md:justify-center md:items-center">
       <header class="w-full p-6 col-datos md:absolute md:bg-white md:flex md:flex-col md:justify-between md:flex-wrap">
         <div class="w-full font-serif text-lg font-bold capitalize meta">{{ $destacado['post_type'] }}</div>
-        <h2 class="w-full mb-12 text-2xl tracking-widest text-center">{{ $destacado['title'] }}</h2>
+        <h2 class="w-full mt-12 mb-12 text-2xl tracking-widest text-center md:mt-0">{{ $destacado['title'] }}</h2>
         <div class="self-end tracking-wide text-center excerpt">
           {!! $destacado['excerpt'] !!}
         </div>
