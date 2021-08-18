@@ -10,8 +10,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 @endphp
 
-@dump($producto)
-
 <li class="inline-block producto infinite-scroll-item">
   <a href="{!! $producto['url'] !!}" class="relative block">
     <img src="{!! $producto['img_url'] !!}" alt="{!! $producto['title'] !!}" srcset="{!! $producto['img_srcset'] !!}" sizes="(max-width: 768px) 100vw, 25vw" class="block">
