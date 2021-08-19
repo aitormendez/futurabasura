@@ -27,7 +27,7 @@ $ct = $destacado['color_texto'] ?? '' ;
 
   {{-- IMAGEN GRANDE--}}
   @if ($destacado['formato'] === 'imagen_grande')
-    <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white md:justify-center md:items-center">
+    <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white md:justify-center md:items-center" style="background-color: {{ $bgc }}; color: {{ $ct }}">
       <header class="w-full p-6 col-datos md:absolute md:bg-white md:flex md:flex-col md:justify-between md:flex-wrap">
         <div class="w-full font-serif text-lg font-bold capitalize meta">{{ $destacado['post_type'] }}</div>
         <h2 class="w-full mt-12 mb-12 text-2xl tracking-widest text-center md:mt-0">{{ $destacado['title'] }}</h2>
@@ -45,7 +45,7 @@ $ct = $destacado['color_texto'] ?? '' ;
 
   {{-- MOSAICO --}}
   @if ($destacado['formato'] === 'mosaico')
-    <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white md:justify-between md:flex-nowrap">
+    <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white md:justify-between md:flex-nowrap" style="background-color: {{ $bgc }}; color: {{ $ct }}">
       <header class="w-full p-6 col-datos md:flex md:flex-col md:justify-between">
         <div class="arriba">
           <div class="font-serif text-lg font-bold capitalize meta">{{ $destacado['post_type'] }}</div>
@@ -67,7 +67,7 @@ $ct = $destacado['color_texto'] ?? '' ;
 
   {{-- GALERIA --}}
   @if ($destacado['formato'] === 'galeria')
-    <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white md:justify-between md:flex-nowrap">
+    <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white md:justify-between md:flex-nowrap" style="background-color: {{ $bgc }}; color: {{ $ct }}">
       <header class="w-full p-6 col-datos md:flex md:flex-col md:justify-between">
         <div class="arriba">
           <div class="font-serif text-lg font-bold capitalize meta">{{ $destacado['post_type'] }}</div>
@@ -103,7 +103,7 @@ $ct = $destacado['color_texto'] ?? '' ;
 
   {{-- REPETICION --}}
   @if ($destacado['formato'] === 'repeticion')
-    <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white md:justify-between md:flex-nowrap">
+    <a href="{{ $destacado['link'] }}" class="flex flex-wrap w-full text-black bg-white md:justify-between md:flex-nowrap" style="background-color: {{ $bgc }}; color: {{ $ct }}">
 
       @if ($destacado['has_img'])
         <div class="img">
