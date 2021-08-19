@@ -42,7 +42,7 @@
         }
 
         &:hover {
-          @apply bg-azul;
+          background-color: theme('colors.azul')!important;
           color: #fff;
 
           img {

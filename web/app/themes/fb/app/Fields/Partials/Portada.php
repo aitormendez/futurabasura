@@ -27,6 +27,13 @@ class Portada extends Partial
                 'ui_on_text' => 'Mostrando',
                 'ui_off_text' => 'Sin mostrar',
             ])
+            ->addColorPicker('color_de_fondo', [
+                'label' => 'Color de fondo',
+                'instructions' => '',
+                'required' => 0,
+                'default_value' => '',
+            ])
+                ->conditional('mostrar_en_portada', '==', '1')
             ->addRadio('contenido_formato', [
                 'label' => 'Formato de contenido',
                 'instructions' => 'elige el formato con el que se mostrará el contenido en portada',

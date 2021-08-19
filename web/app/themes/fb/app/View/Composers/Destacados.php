@@ -58,6 +58,7 @@ class Destacados extends Composer
                 'formato'   => $formato,
                 'excerpt'   => get_the_excerpt( $post->ID ),
                 'link'      => get_permalink( $post->ID  ),
+                'fondo'      => get_field('color_de_fondo', $post->ID),
             ];
 
             if ($out['post_type'] === 'Products') {
