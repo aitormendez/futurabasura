@@ -34,6 +34,13 @@ class Portada extends Partial
                 'default_value' => '',
             ])
                 ->conditional('mostrar_en_portada', '==', '1')
+            ->addColorPicker('color_de_texto', [
+                'label' => 'Color de texto',
+                'instructions' => '',
+                'required' => 0,
+                'default_value' => '',
+            ])
+                ->conditional('mostrar_en_portada', '==', '1')
             ->addRadio('contenido_formato', [
                 'label' => 'Formato de contenido',
                 'instructions' => 'elige el formato con el que se mostrará el contenido en portada',

@@ -1,8 +1,9 @@
 .home {
   #destacados {
     article {
-      a {
+      a:link {
         // transition: background-color 0s;
+        color: #000;
       }
 
       &.galeria {
@@ -43,7 +44,7 @@
 
         &:hover {
           background-color: theme('colors.azul')!important;
-          color: #fff;
+          color: #fff !important;
 
           img {
             filter: brightness(50%) sepia(100%) hue-rotate(190deg) saturate(500%);

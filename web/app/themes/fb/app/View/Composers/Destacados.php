@@ -51,14 +51,14 @@ class Destacados extends Composer
                 $post_type = "Products";
             };
 
-
             $out = [
                 'post_type' => $post_type,
                 'title'     => get_the_title($post->ID),
                 'formato'   => $formato,
                 'excerpt'   => get_the_excerpt( $post->ID ),
                 'link'      => get_permalink( $post->ID  ),
-                'fondo'      => get_field('color_de_fondo', $post->ID),
+                'fondo'     => get_field('color_de_fondo', $post->ID),
+                'color_texto'     => get_field('color_de_texto', $post->ID),
             ];
 
             if ($out['post_type'] === 'Products') {
