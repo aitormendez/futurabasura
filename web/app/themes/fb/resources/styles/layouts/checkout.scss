@@ -76,12 +76,22 @@ body.checkout {
       }
 
       &.cart-subtotal,
-      &.order-total {
+      &.order-total,
+      &.shipping {
         td,
         th {
           text-align: right;
         }
       }
+    }
+  }
+
+  .place-order {
+    button {
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 3rem;
     }
   }
 

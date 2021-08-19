@@ -87,6 +87,14 @@ module.exports = {
           fontSize: '0.8rem',
           color: '#000',
           padding: '0.7em 1em 0.6em'
+        },
+        '.btn-cart': {
+          backgroundColor: '#0000ff',
+          letterSpacing: '0.05em',
+          textAlign: 'center',
+          padding: '1em 1.5em',
+          textTransform: 'uppercase',
+          color: '#fff'
         }
       }
       addComponents([textos, botones])
