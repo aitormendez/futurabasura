@@ -143,7 +143,7 @@ do_action( 'woocommerce_before_cart' );
                 </div>
               </div>
 
-              <div class="self-end justify-end order-4 pb-3 italic font-bold md:pb-0 md:self-center tk-cell product-subtotal md:flex" data-title="{{ esc_attr( translate( 'Subtotal', 'woocommerce' )) }}">
+              <div class="self-end justify-end order-4 pb-3 italic font-bold md:pb-0 md:self-center tk-cell product-subtotal md:flex" data-title="{{ __( translate( 'Subtotal', 'woocommerce' )) }}">
                 {!! apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ) !!}
               </div>
           </div> {{-- /col-1 --}}

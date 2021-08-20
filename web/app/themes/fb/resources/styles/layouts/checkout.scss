@@ -3,6 +3,11 @@ body.checkout {
     height: 30px;
   }
 
+  .ticket-body {
+    padding-bottom: 6rem;
+    padding-top: 2rem;
+  }
+
   h3 {
     text-transform: uppercase;
     letter-spacing: 0.03em;
@@ -17,7 +22,6 @@ body.checkout {
 
   table {
     width: 100%;
-    margin-bottom: 2rem;
   }
 
   .form-row {
@@ -107,4 +111,37 @@ body.checkout {
   .wc_payment_methods {
 
   }
+
+  &.woocommerce-order-received {
+
+    .woocommerce-order-details {
+      margin-top: 2rem;
+
+      .woocommerce-order-details__title {
+        margin-left: 1rem;
+      }
+  
+      .woocommerce-table__line-item {
+        background-color: #fff;
+      }
+  
+      .shop_table {
+        margin-top: 1rem;
+
+        thead {
+          th {
+            color: theme('colors.azul');
+          }
+        }
+  
+        tfoot tr {
+          td,
+          th {
+            text-align: right;
+          }
+        }
+      }
+    }
+  
+  } 
 }
