@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa2964f96b6ee638f6d4e6ef2ed52dc3",
+    "content-hash": "86ded6883ca03cb6ac6b9a5714fa2158",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -1426,24 +1426,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/easy-wp-smtp/"
-        },
-        {
-            "name": "wpackagist-plugin/facebook-for-woocommerce",
-            "version": "2.6.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/facebook-for-woocommerce/",
-                "reference": "tags/2.6.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/facebook-for-woocommerce.2.6.1.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/facebook-for-woocommerce/"
         },
         {
             "name": "wpackagist-plugin/favicon-by-realfavicongenerator",
