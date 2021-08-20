@@ -5,6 +5,66 @@ body.cart {
     }
   }
 
+  .cart-collaterals {
+    @apply bg-allo-claro py-6;
+
+    .cart_totals {
+      h2 {
+        @apply text-2xl text-center mb-6;
+      }
+
+      .shop_table {
+        @apply mb-8;
+
+        tr {
+          border-bottom: 1px solid #000;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          th {
+            @apply text-right pr-6 align-top py-3;
+          }
+          td {
+            @apply py-3 pr-6;
+          }
+
+          &.order-total {
+            @apply text-3xl;
+          }
+        }
+  
+        .shipping {
+          .shipping-calculator-form {
+            p {
+              @apply my-2;
+            }
+          }
+
+          .shipping-calculator-button,
+          button {
+            @apply btn my-6 inline-block;
+          }
+
+          .select2-container--default {
+            .select2-selection--single {
+              border-radius: 0;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .select2-dropdown {
+    border: none !important;
+  }
+
+  
+
+
   .ticket {
     .tk-row {
       .product-remove {

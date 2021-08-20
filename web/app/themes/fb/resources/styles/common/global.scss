@@ -60,7 +60,8 @@ a:link {
 }
 
 .woocommerce-message,
-.woocommerce-error {
+.woocommerce-error,
+.woocommerce-info {
   @apply bg-allo;
   padding: 1em;
   border: 1px solid #000;
