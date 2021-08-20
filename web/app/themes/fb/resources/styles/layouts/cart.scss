@@ -47,11 +47,31 @@ body.cart {
             @apply btn my-6 inline-block;
           }
 
+
+
           .select2-container--default {
-            .select2-selection--single {
+            .select2-selection {
+              -webkit-box-shadow: 0;
+              box-shadow: 0;
+              background-color: #fff;
+              border: 0;
               border-radius: 0;
-              border: none;
+              outline: 0;
+              min-height: 3rem;
+              text-align: left;
+              margin-bottom: 0.1rem;
+  
+              .select2-selection__rendered,
+              .select2-selection__arrow {
+                display: block;
+                padding: 0.8rem 1.5rem;
+              }
+
+              .select2-selection__arrow {
+                margin-top: 0.5rem;                
+              }
             }
+
           }
         }
       }
@@ -60,6 +80,9 @@ body.cart {
 
   .select2-dropdown {
     border: none !important;
+    li {
+      padding: 0.8rem 1.5rem;
+    }
   }
 
   
