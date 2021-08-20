@@ -65,17 +65,17 @@ do_action( 'woocommerce_before_single_product' );
 
 
 
-	<div class="flex flex-col items-center justify-end summary entry-summary md:w-1/2">
+	<div class="flex flex-col items-center justify-end m-6 md:m-0 sm:w-full summary entry-summary md:w-1/2">
 
-    <h2 class="mb-6 uppercase artista tracking-max"><a href="{{ $artista['link'] }}">{{ $artista['artista']->name }}</a></h2>
+		<h2 class="mb-6 uppercase artista tracking-max"><a href="{{ $artista['link'] }}">{{ $artista['artista']->name }}</a></h2>
 
-    <h1 class="mb-6 font-bold product_title entry-title tracking-max">{!! get_the_title() !!}</h1>
+		<h1 class="mb-6 font-bold product_title entry-title tracking-max">{!! get_the_title() !!}</h1>
 
-    <div class="mb-6 text-center excerpt">{!! $post->post_excerpt !!}</div>
+		<div class="mb-6 text-center excerpt">{!! $post->post_excerpt !!}</div>
 
 
 
-    @php
+    	@php
   		/**
 		 * Hook: woocommerce_single_product_summary.
 		 *
