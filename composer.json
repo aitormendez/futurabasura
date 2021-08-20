@@ -93,6 +93,7 @@
     "wpackagist-plugin/woo-redsys-gateway-light": "*",
     "wpackagist-plugin/favicon-by-realfavicongenerator": "*",
     "wpackagist-plugin/mailchimp-for-wp": "*",
+    "wpackagist-plugin/wp-mail-logging": "*",
     "soberwp/intervention": "dev-master"
   },
   "require-dev": {
