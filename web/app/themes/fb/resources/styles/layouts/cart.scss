@@ -78,6 +78,10 @@ body.cart {
     }
   }
 
+  .woocommerce-customer-details {
+    @apply p-6;
+  }
+
   .select2-dropdown {
     border: none !important;
     li {

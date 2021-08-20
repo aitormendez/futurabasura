@@ -23,6 +23,9 @@ module.exports = {
             'a:link': {
               'text-decoration': 'none',
               color: '#0000ff',
+              '&:hover': {
+                color: '#000',
+              }
             }
           },
         },

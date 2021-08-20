@@ -15,7 +15,7 @@
     @include('partials/entry-meta')
   </header>
 
-  <div class="font-serif leading-5 entry-content md:bg-white md:mt-3">
+  <div class="font-serif leading-5 prose entry-content md:bg-white md:mt-3">
     @php(the_content())
   </div>
 
