@@ -1,6 +1,6 @@
 const InfiniteScroll = require('infinite-scroll');
 
-$(document).ready(() => {
+$(() => {
   if (document.body.classList.contains('woocommerce-shop')) {
 
     let main = new InfiniteScroll( '.infinite-scroll-container', {

@@ -3,7 +3,7 @@ import {
   ftbs_product_quantity_decrease
  } from './exports.js';
 
-$(document).ready(() => {
+ $(() => {
   if (document.body.classList.contains('simple')) {
 
     // Cantidad de productos a añadir al carro

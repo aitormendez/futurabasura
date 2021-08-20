@@ -15,7 +15,7 @@ import './variableProduct.js';
 import './frontPage.js';
 import './cart.js';
 
-$(document).ready(() => {
+$(() => {
 
   // comportamiento del scroll
   // ---------------------------------------------------------

@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(() => {
 
   if (document.body.classList.contains('tax-artist')) {
     // desplegable descripción artista

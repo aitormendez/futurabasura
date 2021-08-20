@@ -5,7 +5,7 @@ import Glide, {
   Breakpoints
 } from '@glidejs/glide/dist/glide.modular.esm';
 
-$(document).ready(() => {
+$(() => {
   if (document.body.classList.contains('single-product')) {
 
     // galería de imágenes con Glide

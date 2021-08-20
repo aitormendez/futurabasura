@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(() => {
   if (document.body.classList.contains('cart')) {
 
     let btnActualizar = $("[name='update_cart']");

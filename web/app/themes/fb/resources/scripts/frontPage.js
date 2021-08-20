@@ -7,7 +7,7 @@ import anime, {
   random
 } from 'animejs';
 
-$(document).ready(() => {
+$(() => {
   if (document.body.classList.contains('home')) {
 
     // ajustar alto cupones

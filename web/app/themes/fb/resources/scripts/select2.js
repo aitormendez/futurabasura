@@ -1,8 +1,7 @@
 import 'select2';
 
 // esto sirve para sustituir los filtros (inputs dropdown) en archivo de producto
-
-$(document).ready(() => {
+$(() => {
   if (document.body.classList.contains('post-type-archive-product') || document.body.classList.contains('tax-artist')) {
     let
     w = window.innerWidth,

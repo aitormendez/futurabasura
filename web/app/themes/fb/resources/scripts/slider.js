@@ -4,7 +4,7 @@ import Glide, {
   Keyboard
 } from '@glidejs/glide/dist/glide.modular.esm';
 
-$(document).ready(() => {
+$(() => {
   if (document.body.classList.contains('home')) {
 
     let viewportWidth = $(window).width(),
