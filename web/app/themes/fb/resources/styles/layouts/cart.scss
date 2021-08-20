@@ -7,7 +7,7 @@ body.cart {
 
   .cart-collaterals {
     .cart_totals {
-      @apply bg-allo-claro pt-6 pb-12;
+      @apply bg-allo-claro pt-6 pb-12 px-6 md:px-0;
 
       h2 {
         @apply text-2xl text-center mb-6;
