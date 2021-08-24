@@ -93,6 +93,7 @@
     "wpackagist-plugin/favicon-by-realfavicongenerator": "*",
     "wpackagist-plugin/mailchimp-for-wp": "*",
     "wpackagist-plugin/wp-mail-logging": "*",
+    "wpackagist-plugin/wp-crontrol": "*",
     "soberwp/intervention": "dev-master"
   },
   "require-dev": {
