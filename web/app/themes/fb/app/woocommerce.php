@@ -150,7 +150,7 @@ function template_redirect_action() {
 
 
 /**
- * Añadir clase simple/variable/etc en body de single-product.
+ * Eliminar ordenar por popularidad.
  * https://www.pixelninja.me/remove-woocommerce-product-sorting-options/
  */
 

@@ -40,13 +40,13 @@ body {
 }
 
 a:link {
-  // color: theme('colors.azul');
+  color: theme('colors.azul');
   transition: color 0.5s, background-color 0.5s;
 
-  // &:hover {
-  //   color: theme('colors.negro-fb');
-  //   text-decoration: none;
-  // }
+  &:hover {
+    color: theme('colors.negro-fb');
+    text-decoration: none;
+  }
 }
 
 #fondo-slider {

@@ -20,7 +20,7 @@
           @endif
         </div>
 
-        <div class="flex items-start w-full md:w-auto productos">
+        <div class="flex flex-wrap items-start w-full md:w-auto productos">
           @foreach ($artist['products'] as $prod)
               {!! $prod['prod_img'] !!}
           @endforeach
