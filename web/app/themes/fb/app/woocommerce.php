@@ -147,3 +147,17 @@ function template_redirect_action() {
         } );
     }
 }
+
+
+/**
+ * Añadir clase simple/variable/etc en body de single-product.
+ * https://www.pixelninja.me/remove-woocommerce-product-sorting-options/
+ */
+
+// Customizes the WooCommerce product sorting options
+// Available options are: menu_order, rating, date, popularity, price, price-desc
+
+  add_filter( "woocommerce_catalog_orderby", function( $orderby ) {
+    unset($orderby["popularity"]);
+    return $orderby;
+}, 20 );
