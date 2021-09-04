@@ -59,6 +59,16 @@
             .wpforms-field-label-inline {
                 margin-left: 1rem;
             }
+
+            ul {
+                li {
+                    padding-left: 0;
+        
+                    &::before {
+                        content: none;
+                    }
+                }
+            } 
         }
 
         button[type='submit'] {
@@ -67,14 +77,4 @@
             margin-right: auto;
         }
     }
-
-    ul {
-        li {
-            padding-left: 0;
-
-            &::before {
-                content: none;
-            }
-        }
-    } 
 }
