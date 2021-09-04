@@ -19,7 +19,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <main id="main" class="py-8 bg-white sm:mt-40 main">
+  <main id="main" class="bg-white sm:mt-40 main">
 
       @php
           /**

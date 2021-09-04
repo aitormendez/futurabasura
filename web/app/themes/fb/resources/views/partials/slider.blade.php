@@ -1,5 +1,4 @@
 @php $count = count($slider); @endphp
-@dump($slider)
 
 <div class="relative flex justify-center mb-4 bg-white slide-wrapper">
   <div id="fondo-slider" class="absolute w-screen bg-cover sm:w-3/4"></div>

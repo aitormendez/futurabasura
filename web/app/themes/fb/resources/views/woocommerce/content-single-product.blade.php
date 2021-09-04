@@ -65,7 +65,7 @@ do_action( 'woocommerce_before_single_product' );
 
 
 
-	<div class="flex flex-col items-center justify-end m-6 md:m-0 sm:w-full summary entry-summary md:w-1/2">
+	<div class="flex flex-col items-center justify-end pt-8 m-6 md:m-0 sm:w-full summary entry-summary md:w-1/2">
 
 		<h2 class="mb-6 uppercase artista tracking-max"><a href="{{ $artista['link'] }}">{{ $artista['artista']->name }}</a></h2>
 
