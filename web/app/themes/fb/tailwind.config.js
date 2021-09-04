@@ -82,6 +82,7 @@ module.exports = {
       }
       const botones = {
         '.btn': {
+          fontFamily: 'arial, sans-serif',
           border: '1px solid #000',
           backgroundColor: '#fff',
           textTransform: 'uppercase',
