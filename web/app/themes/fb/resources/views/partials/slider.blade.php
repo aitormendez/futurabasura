@@ -1,4 +1,5 @@
 @php $count = count($slider); @endphp
+@dump($slider)
 
 <div class="relative flex justify-center mb-4 bg-white slide-wrapper">
   <div id="fondo-slider" class="absolute w-screen bg-cover sm:w-3/4"></div>
@@ -12,8 +13,33 @@
               <div class="leading-tight datos">
                 <h2 class="mb-4 font-bold tracking-widest text-black">{!! $slide['nombre'] !!}</h2>
                 <p class="mb-4 font-bold tracking-widest text-black">{!! $slide['artist'] !!}</p>
-                <p class="mb-4 font-bold tracking-widest text-black">{!! $slide['formato_humano'] !!}</p>
-                <p class="mb-4 font-bold tracking-widest text-black">{!! $slide['regular_price'] !!} €</p>
+
+
+
+                @if ($slide['product_type'] == 'simple')
+                  @if ($slide['has_format'])
+                    <p class="mb-4 font-bold tracking-widest text-black">{{ $slide['format'] }} cm</p>
+                  @endif
+                  @if ($slide['has_sale_prize'])
+                    <p class="mb-4 font-bold text-red-600 line-through">{{ $slide['regular_price'] }} €</p>
+                    <p class="mb-4 font-bold tracking-widest text-black">{{ $slide['sale_prize'] }} €</p>
+                    @else
+                    <p class="mb-4 font-bold tracking-widest text-black">{{ $slide['regular_price'] }} €</p>
+                  @endif
+                @elseif($slide['product_type'] == 'variable')
+                  @foreach ($slide['variaciones'] as $v)
+                    @if ($v['sale_price'] != '')
+                      <p class="font-bold tracking-widest text-black">{{ $v['format'] }} cm</p>
+                      <p class="mb-4 font-bold tracking-widest text-black"><span class="text-red-600 line-through">{{ $v['regular_price'] }} €</span> {{ $v['sale_price'] }} €</p>
+                    @else
+                    <p class="mb-4 font-bold tracking-widest text-black">{{ $v['format'] }} cm {{ $v['regular_price'] }} €</p>
+                    @endif
+                     
+                  @endforeach
+                @endif
+
+
+                
               </div>
             </div>
             @if (array_key_exists('img', $slide))

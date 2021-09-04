@@ -19,13 +19,13 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
       @if ($producto['product_type'] == 'simple')
         @if ($producto['has_format'])
-          <p class="mb-4">{{ $producto['format'] }}</p>
+          <p class="mb-4">{{ $producto['format'] }} cm</p>
         @endif
-        @if ($producto['has_sale_prize'])
-          <p class="mb-4 text-red-600 line-through">{{ $producto['regular_prize'] }} €</p>
-          <p class="mb-4">{{ $producto['sale_prize'] }} €</p>
+        @if ($producto['has_sale_price'])
+          <p class="mb-4 text-red-600 line-through">{{ $producto['regular_price'] }} €</p>
+          <p class="mb-4">{{ $producto['sale_price'] }} €</p>
         @else
-          <p class="mb-4">{{ $producto['regular_prize'] }} €</p>
+          <p class="mb-4">{{ $producto['regular_price'] }} €</p>
         @endif
       @elseif($producto['product_type'] == 'variable')
         @foreach ($producto['variaciones'] as $v)

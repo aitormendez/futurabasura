@@ -27,7 +27,7 @@ class ProductPortada extends Composer
         $product_id = get_the_ID();
         $product = wc_get_product($product_id);
         $product_img_id = get_post_thumbnail_id($product_id);
-        $sale_prize = $product->get_sale_price();
+        $sale_price = $product->get_sale_price();
         $format = $product->get_attribute( 'format' );
 
         $output = [
@@ -36,18 +36,16 @@ class ProductPortada extends Composer
             'img_url'        => get_the_post_thumbnail_url($product_id, 'large'),
             'img_srcset'     => wp_get_attachment_image_srcset($product_img_id),
             'artist'         => get_the_terms($product_id, 'artist')[0]->name,
-            'regular_prize'  => $product->get_regular_price(),
+            'regular_price'  => $product->get_regular_price(),
             'has_format'     => false,
-            'has_sale_prize' => false,
+            'has_sale_price' => false,
             'product_type'   => $product->get_type(),
-            'html_price'   => $product->get_type(),
-            
         ];
 
 
-        if ($sale_prize) {
-            $output['has_sale_prize'] = true;
-            $output['sale_prize'] = $sale_prize;
+        if ($sale_price) {
+            $output['has_sale_price'] = true;
+            $output['sale_price'] = $sale_price;
         }
 
         if ($format) {
