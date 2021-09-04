@@ -121,7 +121,7 @@ $ct = $destacado['color_texto'] ?? '' ;
             </div>
           @endfor
           @if ($destacado['post_type'] === 'Products')
-          <div class="absolute bottom-0 w-full p-6 font-serif text-3xl text-center bg-white artista-producto">
+          <div class="absolute bottom-0 w-full p-6 font-serif text-center bg-white sm:text-3xl artista-producto">
             By {!! $destacado['artist'] !!}
           </div>
         @endif
