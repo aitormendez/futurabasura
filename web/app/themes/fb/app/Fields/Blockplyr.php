@@ -27,8 +27,8 @@ class Blockplyr extends Field
                 'layout' => 'vertical',
                 'return_format' => 'value',
             ])
-            ->addText('vimeo_id', [
-                'label' => 'Vimeo ID',
+            ->addText('video_id', [
+                'label' => 'Video ID',
                 'instructions' => 'Especifica el ID del vídeo en Vimeo o YouTube. Por ej. 152570988 o QUTKA47y6ig',
                 'placeholder' => '152570988',
             ]);

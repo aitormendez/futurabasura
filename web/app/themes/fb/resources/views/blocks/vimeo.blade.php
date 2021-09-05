@@ -15,5 +15,5 @@
 --}}
 
 <div class="contenedor plyr-block my-4 {{ $block['classes'] }}">
-	<div class="un-video" otra-cosa="{{ get_field('video_provider') }}" data-plyr-provider="{{ get_field('video_provider') }}" data-plyr-embed-id="{{ get_field('vimeo_id') }}"></div>
+	<div class="un-video" otra-cosa="{{ get_field('video_provider') }}" data-plyr-provider="{{ get_field('video_provider') }}" data-plyr-embed-id="{{ get_field('video_id') }}"></div>
 </div>
