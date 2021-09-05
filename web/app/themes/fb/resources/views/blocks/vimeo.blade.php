@@ -6,7 +6,7 @@
   Keywords: video vimeo youtube
   Mode: edit
   Align: center
-  PostTypes: story proyect page
+  PostTypes: story project page
   SupportsAlign: false
   SupportsMode: false
   SupportsMultiple: true
