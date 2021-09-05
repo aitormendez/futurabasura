@@ -1,6 +1,7 @@
 @import 'tailwindcss/base';
 
 @import 'common/global';
+@import 'common/variables';
 
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -29,3 +30,4 @@ $lg-path-images: 'https://cdn.jsdelivr.net/npm/lightgallery@2.1.2/images';
 
 @import "~lightgallery/scss/lightgallery-bundle.scss";
 // @import "~@glidejs/glide/dist/css/glide.theme.min.css";
+@import "~plyr/src/sass/plyr.scss";

@@ -48,6 +48,7 @@
     "infinite-scroll": "^4.0.1",
     "jquery": "^3.5.1",
     "lightgallery": "^2.1.1",
+    "plyr": "^3.6.8",
     "scrambling-text": "^1.0.4",
     "select2": "^4.1.0-rc.0",
     "tailwindcss": "^2.2.7",

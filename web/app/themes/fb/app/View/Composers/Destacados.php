@@ -48,7 +48,7 @@ class Destacados extends Composer
             } elseif ($post_type === 'story') {
                 $post_type = "News";
             } elseif ($post_type === 'product') {
-                $post_type = "Products";
+                $post_type = "Shop";
             };
 
             $out = [
@@ -61,7 +61,7 @@ class Destacados extends Composer
                 'color_texto'     => get_field('color_de_texto', $post->ID),
             ];
 
-            if ($out['post_type'] === 'Products') {
+            if ($out['post_type'] === 'Shop') {
                 $artists = wp_get_post_terms($post->ID, 'artist');
                 $out['artist'] = $artists[0]->name;
             }

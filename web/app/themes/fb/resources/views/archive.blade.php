@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
   <main id="main" class="sm:mt-40 main">
     @include('partials.page-header')
 

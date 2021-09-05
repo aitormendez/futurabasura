@@ -14,6 +14,7 @@ import './singleStory.js';
 import './variableProduct.js';
 import './frontPage.js';
 import './cart.js';
+// import './blocks/vimeo-block.js';
 
 $(() => {
 

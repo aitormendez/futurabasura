@@ -22,6 +22,7 @@ mix
 mix
   .sass('resources/styles/app.scss', 'styles')
   .sass('resources/styles/editor.scss', 'styles')
+  .sass('resources/styles/blocks/vimeo-block.scss', 'styles')
   .webpackConfig({
     devtool: 'source-map'
   })
@@ -33,6 +34,7 @@ mix
 mix
   .js('resources/scripts/app.js', 'scripts')
   .js('resources/scripts/customizer.js', 'scripts')
+  .js('resources/scripts/blocks/vimeo-block.js', 'scripts')
   .blocks('resources/scripts/editor.js', 'scripts')
   .autoload({ jquery: ['$', 'window.jQuery'] })
   .extract();
