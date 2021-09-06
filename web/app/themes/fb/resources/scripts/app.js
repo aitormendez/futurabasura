@@ -53,6 +53,7 @@ $(() => {
     anime({
       targets: '#solapa li',
       translateX: '52rem',
+      // rotate: Math.floor((Math.random() * 20) - 10),
       duration: 500,
       easing: 'easeOutElastic(1, .6)',
       delay: anime.stagger(50),
@@ -69,6 +70,7 @@ $(() => {
 
     anime({
       targets: '#solapa li',
+      // rotate: 0,
       duration: 100,
       translateX: 0,
     });

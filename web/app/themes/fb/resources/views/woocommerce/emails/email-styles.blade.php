@@ -25,13 +25,17 @@ $body      = get_option( 'woocommerce_email_body_background_color' );
 $base      = get_option( 'woocommerce_email_base_color' );
 $base_text = wc_light_or_dark( $base, '#202020', '#ffffff' );
 $text      = get_option( 'woocommerce_email_text_color' );
+// $footer_img_url = 'Roots\asset('images/email-hole.png')';
+
 
 // Pick a contrasting color for links.
-$link_color = wc_hex_is_light( $base ) ? $base : $base_text;
+// $link_color = wc_hex_is_light( $base ) ? $base : $base_text;
 
-if ( wc_hex_is_light( $body ) ) {
-	$link_color = wc_hex_is_light( $base ) ? $base_text : $base;
-}
+// if ( wc_hex_is_light( $body ) ) {
+// 	$link_color = wc_hex_is_light( $base ) ? $base_text : $base;
+// }
+
+$link_color = '#0000ff';
 
 $bg_darker_10    = wc_hex_darker( $bg, 10 );
 $body_darker_10  = wc_hex_darker( $body, 10 );
@@ -50,27 +54,29 @@ body {
 #wrapper {
 	background-color: <?php echo esc_attr( $bg ); ?>;
 	margin: 0;
-	padding: 70px 0;
+	padding: 0;
 	-webkit-text-size-adjust: none !important;
 	width: 100%;
 }
 
 #template_container {
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) !important;
 	background-color: <?php echo esc_attr( $body ); ?>;
-	border: 1px solid <?php echo esc_attr( $bg_darker_10 ); ?>;
-	border-radius: 3px !important;
 }
 
 #template_header {
 	background-color: <?php echo esc_attr( $base ); ?>;
-	border-radius: 3px 3px 0 0 !important;
 	color: <?php echo esc_attr( $base_text ); ?>;
 	border-bottom: 0;
 	font-weight: bold;
 	line-height: 100%;
 	vertical-align: middle;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-family: "Arial, sans-serif;
+}
+
+#template_date {
+	padding-top: 50px;
+	text-align: right;
+	letter-spacing: 0.4em;
 }
 
 #template_header h1,
@@ -86,17 +92,6 @@ body {
 
 #template_footer td {
 	padding: 0;
-	border-radius: 6px;
-}
-
-#template_footer #credit {
-	border: 0;
-	color: <?php echo esc_attr( $text_lighter_40 ); ?>;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-	font-size: 12px;
-	line-height: 150%;
-	text-align: center;
-	padding: 24px 0;
 }
 
 #template_footer #credit p {
@@ -142,14 +137,18 @@ body {
 #body_content_inner {
 	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
 	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 150%;
+	letter-spacing: 0.05em;
 	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
 }
 
 .td {
 	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
-	border: 1px solid <?php echo esc_attr( $body_darker_10 ); ?>;
+	border-bottom: 1px solid #000000;
+	border-top: none;
+	border-left: none;
+	border-right: none;
 	vertical-align: middle;
 }
 
@@ -161,7 +160,7 @@ body {
 
 .text {
 	color: <?php echo esc_attr( $text ); ?>;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-family: Times, "Times New Roman", serif;
 }
 
 .link {
@@ -169,47 +168,46 @@ body {
 }
 
 #header_wrapper {
-	padding: 36px 48px;
+	padding: 64px 48px 15px;
 	display: block;
 }
 
 h1 {
-	color: <?php echo esc_attr( $base ); ?>;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	color: <?php echo esc_attr( $text ); ?>;
+	font-family: Times, "Times New Roman", serif;
 	font-size: 30px;
-	font-weight: 300;
+	font-weight: 400;
 	line-height: 150%;
 	margin: 0;
-	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
-	text-shadow: 0 1px 0 <?php echo esc_attr( $base_lighter_20 ); ?>;
+	text-align: center;
 }
 
-h2 {
-	color: <?php echo esc_attr( $base ); ?>;
+#body_content h2 {
+	color: <?php echo esc_attr( $text ); ?>;
 	display: block;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-	font-size: 18px;
-	font-weight: bold;
+	font-family: Times, "Times New Roman", serif;
+	font-size: 24px;
+	font-weight: 400;
 	line-height: 130%;
-	margin: 0 0 18px;
-	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
+	margin: 50px 0 18px;
+	text-align: center;
 }
 
 h3 {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: <?php echo esc_attr( $text ); ?>;
 	display: block;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-	font-size: 16px;
-	font-weight: bold;
+	font-family: Times, "Times New Roman", serif;
+	font-size: 20px;
+	font-weight: 400;
 	line-height: 130%;
 	margin: 16px 0 8px;
-	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
+	text-align: center;
 }
 
 a {
 	color: <?php echo esc_attr( $link_color ); ?>;
 	font-weight: normal;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 img {
@@ -222,8 +220,46 @@ img {
 	text-decoration: none;
 	text-transform: capitalize;
 	vertical-align: middle;
-	margin-<?php echo is_rtl() ? 'left' : 'right'; ?>: 10px;
 	max-width: 100%;
 	height: auto;
+}
+
+#footer-section-title {
+	text-align: center;
+}
+
+#footer-section-title-end {
+	text-align: center;
+}
+
+#footer-section-title h2 {
+	font-size: 14px;
+	font-weight: 400;
+	padding-top: 30px;
+	font-family: Times, "Times New Roman", serif;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+#footer-section-title-end h2 {
+	font-size: 14px;
+	font-weight: 400;
+	padding-top: 10px;
+	font-family: Times, "Times New Roman", serif;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+#footer-section-body {
+	text-align: center;
+	font-family: Times, "Times New Roman", serif;
+}
+
+#footer-section-body a {
+	display: block;
+}
+
+#footer-section-img {
+	text-align: center;
 }
 <?php
