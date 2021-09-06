@@ -155,7 +155,8 @@ body {
 .address {
 	padding: 12px;
 	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
-	border: 1px solid <?php echo esc_attr( $body_darker_10 ); ?>;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
 }
 
 .text {
