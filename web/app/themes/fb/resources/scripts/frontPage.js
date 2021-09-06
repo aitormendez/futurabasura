@@ -17,7 +17,6 @@ $(() => {
     const player = new Plyr('#player', {captions: {
       active: true,
     }});
-    console.log('pl');
 
     // ajustar alto cupones
     // ----------------------------------------------------
