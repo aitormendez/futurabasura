@@ -6,9 +6,18 @@ import Glide, {
 import anime, {
   random
 } from 'animejs';
+import Plyr from 'plyr';
 
 $(() => {
   if (document.body.classList.contains('home')) {
+
+    // Hero video
+    // ----------------------------------------------------
+
+    const player = new Plyr('#player', {captions: {
+      active: true,
+    }});
+    console.log('pl');
 
     // ajustar alto cupones
     // ----------------------------------------------------

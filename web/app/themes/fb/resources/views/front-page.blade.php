@@ -7,6 +7,8 @@
 
     @include('partials.cupones')
 
+    @include('partials.hero-video')
+
 
     @include('partials.slider')
 

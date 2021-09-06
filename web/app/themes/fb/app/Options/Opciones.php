@@ -35,6 +35,11 @@ class Opciones extends Field
                 ->addRepeater('frases')
                     ->addText('frase')
                 ->endRepeater()
+            ->addTab('hero', ['placement' => 'left'])
+                ->addText('hero_video', [
+                    'label' => 'Hero video (Vimeo)',
+                    'instructions' => 'Introduce el identificador del vídeo en Vimeo (algo así: 152570988)',
+                ])
             ->addTab('Slider', ['placement' => 'left'])
                 ->addImage('fondo_50x70v', [
                     'label' => 'Fondo para el formato 50x70 vertical',
