@@ -18,6 +18,14 @@ $(() => {
       active: true,
     }});
 
+    const pl = document.querySelector('#player').dataset.muted;
+
+    if (pl == 1) {
+      player.on('ready', () => {
+        player.muted = true;
+    });
+    }
+
     // ajustar alto cupones
     // ----------------------------------------------------
 
