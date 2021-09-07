@@ -8,7 +8,7 @@
         @foreach ($slider as $slide)
         <li class="glide__slide" formato="{!! $slide['formato'] !!}">
           <a href="{!! $slide['url'] !!}" class="relative block prod">
-            <div class="absolute top-0 bottom-0 p-8 uppercase bg-white bg-hover">
+            <div class="absolute top-0 bottom-0 hidden p-8 uppercase bg-white bg-hover md:block">
               <div class="leading-tight datos">
                 <h2 class="mb-4 font-bold tracking-widest text-black">{!! $slide['nombre'] !!}</h2>
                 <p class="mb-4 font-bold tracking-widest text-black">{!! $slide['artist'] !!}</p>
