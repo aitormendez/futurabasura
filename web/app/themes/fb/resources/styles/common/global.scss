@@ -47,6 +47,10 @@ main a:link {
     color: theme('colors.negro-fb');
     text-decoration: none;
   }
+
+  &:visited {
+    color: rgb(108, 115, 153);
+    }
 }
 
 #fondo-slider {
