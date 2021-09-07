@@ -40,6 +40,24 @@ class Opciones extends Field
                     'label' => 'Hero video (Vimeo)',
                     'instructions' => 'Introduce el identificador del vídeo en Vimeo (algo así: 152570988)',
                 ])
+                ->addTrueFalse('hero_video_autoplay', [
+                    'label' => 'Autoplay + muted',
+                    'instructions' => 'Activar para que el video se reproduzca automáticamente en los dispositivos que lo admitan',
+                    'message' => '',
+                    'default_value' => 0,
+                    'ui' => 1,
+                    'ui_on_text' => '',
+                    'ui_off_text' => '',
+                ])
+                ->addTrueFalse('hero_video_loop', [
+                    'label' => 'Loop',
+                    'instructions' => 'Activar para que el video se reproduzca en un loop sin fin',
+                    'message' => '',
+                    'default_value' => 0,
+                    'ui' => 1,
+                    'ui_on_text' => '',
+                    'ui_off_text' => '',
+                ])
             ->addTab('Slider', ['placement' => 'left'])
                 ->addImage('fondo_50x70v', [
                     'label' => 'Fondo para el formato 50x70 vertical',
