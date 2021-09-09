@@ -53,7 +53,7 @@ if ( ! $product->is_purchasable() ) {
       {{-- tabla nueva --}}
       <div class="ftbs_variationsTable">
         <div id="ftbs_variationsTableRow_0" class="ftbs_variationsTableRow ftbs_variationsTableRowFirst" >
-          <div class="flex justify-between mb-6 text-sm border border-black ftbs_variationsTableRowPadContainer">
+          <div class="flex justify-between my-3 text-sm border border-black ftbs_variationsTableRowPadContainer">
             <div class="invisible w-0 overflow-hidden ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_radio">
               <input type="radio" name="attribute_pa_medidas" value="" checked="checked"  />
             </div>

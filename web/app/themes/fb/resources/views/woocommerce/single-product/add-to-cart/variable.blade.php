@@ -69,7 +69,7 @@ do_action( 'woocommerce_before_add_to_cart_form' );
         @foreach($variaciones as $idx => $variation)
           <div id="ftbs_variationsTableRow_<?php echo $idx; ?>" class="ftbs_variationsTableRow ftbs_variationsTableRow {{ ($idx===0)?'ftbs_variationsTableRowFirst':'ftbs_variationsTableRow_unselected' }}" attributename='attribute_pa_format' attributevalue='{!! $variation['size_slug'] !!}'>
             <!-- data-attribute_name="attribute_pa_format"  value="{!! $variation['size_slug'] !!}"-->
-            <div class="ftbs_variationsTableRowPadContainer @if ($idx!==0) ftbs_variationsTableRowPadContainer_inactive @endif flex justify-between border mb-6 text-sm">
+            <div class="ftbs_variationsTableRowPadContainer @if ($idx!==0) ftbs_variationsTableRowPadContainer_inactive @endif flex justify-between border my-3 text-sm">
 
               <div class="ftbs_variationsTableRowColumn ftbs_variationsTableRowColumn_radio">
                 <input id="ftbs_variationsTableRowColumn_radioInput_{{ $idx }}" class="invisible hidden overflow-hidden ftbs_variationsTableRowColumn_radioInput" type="radio" @if ($idx===0) name="attribute_pa_format" @endif variation_id="{!! $variation["variation_id"] !!}" value="{!! $variation['size_slug'] !!}" {!!($idx===0)?'checked="checked"':'' !!} />
