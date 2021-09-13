@@ -94,6 +94,7 @@
     "wpackagist-plugin/mailchimp-for-wp": "*",
     "wpackagist-plugin/wp-mail-logging": "*",
     "wpackagist-plugin/wp-crontrol": "*",
+    "wpackagist-plugin/query-monitor": "*",
     "soberwp/intervention": "dev-master"
   },
   "require-dev": {
