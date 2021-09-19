@@ -161,3 +161,13 @@ function template_redirect_action() {
     unset($orderby["popularity"]);
     return $orderby;
 }, 20 );
+
+
+/**
+ * Eliminar reviews de single product y additional information tab.
+ */
+add_filter( 'woocommerce_after_shipping_calculator', function()  {
+    echo '<h1>' . get_field('exp_car_totals', 'option') . '</h1>';
+});
+
+
