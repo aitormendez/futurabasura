@@ -10,6 +10,11 @@ footer {
       padding: 0;
       width: 100%;
       border: none;
+      margin-top: 0.5rem;
+    }
+
+    .mc4wp-notice {
+        margin-top: 0.5rem;
     }
   }
 
@@ -21,7 +26,9 @@ footer {
       }
 
       input {
-        // width: auto;
+        &[type="email"] {
+          margin-right: 1rem;
+        }
       }
     }
   }
