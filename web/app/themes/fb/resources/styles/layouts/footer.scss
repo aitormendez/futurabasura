@@ -26,6 +26,8 @@ footer {
       }
 
       input {
+        margin-top: 0;
+        
         &[type="email"] {
           margin-right: 1rem;
         }
