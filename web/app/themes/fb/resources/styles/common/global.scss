@@ -39,19 +39,35 @@ body {
   text-shadow: 0.1em 0.1em 0 #000;
 }
 
-main a:link {
-  color: theme('colors.azul');
-  transition: color 0.5s, background-color 0.5s;
-
-  &:hover {
-    color: theme('colors.negro-fb');
-    text-decoration: none;
+main {
+  a:link {
+    color: theme('colors.azul');
+    transition: color 0.5s, background-color 0.5s;
+  
+    &:hover {
+      color: theme('colors.negro-fb');
+      text-decoration: none;
+    }
+  
+    &:visited {
+      color: rgb(108, 115, 153);
+    }
   }
 
-  &:visited {
-    color: rgb(108, 115, 153);
-    }
-}
+  .prose {
+    ul > li {
+      padding-left: 0;
+      
+      &::before {
+        content: none;
+      }
+
+      img {
+        margin: 0;
+      }
+    } 
+  }
+} 
 
 #fondo-slider {
   height: 100%;
