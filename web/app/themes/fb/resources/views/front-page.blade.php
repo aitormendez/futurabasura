@@ -2,12 +2,11 @@
 
 
   @section('content')
-  <main id="main" class="py-8 sm:mt-40 main">
-
-
-    @include('partials.cupones')
+  <main id="main" class="mt-10 main">
 
     @include('partials.hero-video')
+
+    @include('partials.cupones')
 
 
     @include('partials.slider')
