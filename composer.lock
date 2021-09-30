@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b3715cc057cd6b0ac3d2c222367f008",
+    "content-hash": "30b3f60dd80949c0ab788929b56dfa17",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -1486,6 +1486,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/autodescription/"
+        },
+        {
+            "name": "wpackagist-plugin/complianz-gdpr",
+            "version": "5.4.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/complianz-gdpr/",
+                "reference": "tags/5.4.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/complianz-gdpr.5.4.0.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0 || ~2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/complianz-gdpr/"
         },
         {
             "name": "wpackagist-plugin/cookie-notice",
