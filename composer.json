@@ -95,6 +95,7 @@
     "wpackagist-plugin/wp-mail-logging": "*",
     "wpackagist-plugin/wp-crontrol": "*",
     "wpackagist-plugin/query-monitor": "*",
+    "wpackagist-plugin/gdpr-settings-for-wc": "*",
     "soberwp/intervention": "dev-master"
   },
   "require-dev": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e1078132db3877ca503e2a3ea9a04fe1",
+    "content-hash": "3b3715cc057cd6b0ac3d2c222367f008",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -352,7 +352,7 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v8.61.0",
+            "version": "v8.62.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
@@ -406,7 +406,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v8.61.0",
+            "version": "v8.62.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -454,7 +454,7 @@
         },
         {
             "name": "illuminate/macroable",
-            "version": "v8.61.0",
+            "version": "v8.62.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -500,16 +500,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.12.0",
+            "version": "v4.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "6608f01670c3cc5079e18c1dab1104e002579143"
+                "reference": "50953a2691a922aa1769461637869a0a2faa3f53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/6608f01670c3cc5079e18c1dab1104e002579143",
-                "reference": "6608f01670c3cc5079e18c1dab1104e002579143",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/50953a2691a922aa1769461637869a0a2faa3f53",
+                "reference": "50953a2691a922aa1769461637869a0a2faa3f53",
                 "shasum": ""
             },
             "require": {
@@ -550,9 +550,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.12.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.13.0"
             },
-            "time": "2021-07-21T10:44:31+00:00"
+            "time": "2021-09-20T12:20:58+00:00"
         },
         {
             "name": "oscarotero/env",
@@ -1091,12 +1091,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/soberwp/intervention.git",
-                "reference": "ea83e0c4e0862a5ce5937f573bc4768e474989ec"
+                "reference": "17d30942c252e040e1fcfbc31c6b8b51eb9843ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/soberwp/intervention/zipball/ea83e0c4e0862a5ce5937f573bc4768e474989ec",
-                "reference": "ea83e0c4e0862a5ce5937f573bc4768e474989ec",
+                "url": "https://api.github.com/repos/soberwp/intervention/zipball/17d30942c252e040e1fcfbc31c6b8b51eb9843ff",
+                "reference": "17d30942c252e040e1fcfbc31c6b8b51eb9843ff",
                 "shasum": ""
             },
             "require": {
@@ -1136,7 +1136,7 @@
                 "issues": "https://github.com/soberwp/intervention/issues",
                 "source": "https://github.com/soberwp/intervention/tree/master"
             },
-            "time": "2021-09-03T06:35:17+00:00"
+            "time": "2021-09-21T09:54:24+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1542,16 +1542,34 @@
             "homepage": "https://wordpress.org/plugins/favicon-by-realfavicongenerator/"
         },
         {
-            "name": "wpackagist-plugin/mailchimp-for-woocommerce",
-            "version": "2.5.2",
+            "name": "wpackagist-plugin/gdpr-settings-for-wc",
+            "version": "1.2.1",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/mailchimp-for-woocommerce/",
-                "reference": "tags/2.5.2"
+                "url": "https://plugins.svn.wordpress.org/gdpr-settings-for-wc/",
+                "reference": "tags/1.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mailchimp-for-woocommerce.2.5.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/gdpr-settings-for-wc.1.2.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0 || ~2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/gdpr-settings-for-wc/"
+        },
+        {
+            "name": "wpackagist-plugin/mailchimp-for-woocommerce",
+            "version": "2.5.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/mailchimp-for-woocommerce/",
+                "reference": "tags/2.5.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/mailchimp-for-woocommerce.2.5.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0 || ~2.0"
@@ -1615,15 +1633,15 @@
         },
         {
             "name": "wpackagist-plugin/woocommerce",
-            "version": "5.6.0",
+            "version": "5.7.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/woocommerce/",
-                "reference": "tags/5.6.0"
+                "reference": "tags/5.7.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/woocommerce.5.6.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/woocommerce.5.7.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0 || ~2.0"
@@ -1669,15 +1687,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
-            "version": "3.0.3",
+            "version": "3.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/3.0.3"
+                "reference": "tags/3.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.3.0.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.3.1.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0 || ~2.0"
@@ -1711,12 +1729,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "94b1ad0f093b41a6cfccbe1272026cbc1ebaad5c"
+                "reference": "25ba9c9c3fe3c26cc041f93602bf146abba74db4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/94b1ad0f093b41a6cfccbe1272026cbc1ebaad5c",
-                "reference": "94b1ad0f093b41a6cfccbe1272026cbc1ebaad5c",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/25ba9c9c3fe3c26cc041f93602bf146abba74db4",
+                "reference": "25ba9c9c3fe3c26cc041f93602bf146abba74db4",
                 "shasum": ""
             },
             "conflict": {
@@ -1789,7 +1807,7 @@
                 "ezsystems/ezplatform-admin-ui": ">=1.3,<1.3.5|>=1.4,<1.4.6",
                 "ezsystems/ezplatform-admin-ui-assets": ">=4,<4.2.1|>=5,<5.0.1|>=5.1,<5.1.1",
                 "ezsystems/ezplatform-kernel": "<=1.2.5|>=1.3,<=1.3.1",
-                "ezsystems/ezplatform-rest": ">=1.2,<=1.2.2|>=1.3,<=1.3.1",
+                "ezsystems/ezplatform-rest": ">=1.2,<=1.2.2|>=1.3,<1.3.8",
                 "ezsystems/ezplatform-user": ">=1,<1.0.1",
                 "ezsystems/ezpublish-kernel": "<=6.13.8.1|>=7,<=7.5.15.1",
                 "ezsystems/ezpublish-legacy": "<=2017.12.7.3|>=2018.6,<=2019.3.5.1",
@@ -1814,13 +1832,13 @@
                 "friendsoftypo3/mediace": ">=7.6.2,<7.6.5",
                 "froala/wysiwyg-editor": "<3.2.7",
                 "fuel/core": "<1.8.1",
-                "getgrav/grav": "<=1.7.10",
+                "getgrav/grav": "<1.7.21",
                 "getkirby/cms": "<=3.5.6",
                 "getkirby/panel": "<2.5.14",
                 "gos/web-socket-bundle": "<1.10.4|>=2,<2.6.1|>=3,<3.3",
                 "gree/jose": "<=2.2",
                 "gregwar/rst": "<1.0.3",
-                "grumpydictator/firefly-iii": "<5.6",
+                "grumpydictator/firefly-iii": "<5.6.1",
                 "guzzlehttp/guzzle": ">=4-rc.2,<4.2.4|>=5,<5.3.1|>=6,<6.2.1",
                 "helloxz/imgurl": "<=2.31",
                 "ibexa/post-install": "<=1.0.4",
@@ -1847,6 +1865,7 @@
                 "laravel/framework": "<6.20.26|>=7,<8.40",
                 "laravel/socialite": ">=1,<1.0.99|>=2,<2.0.10",
                 "lavalite/cms": "<=5.8",
+                "lcobucci/jwt": ">=3.4,<3.4.6|>=4,<4.0.4|>=4.1,<4.1.5",
                 "league/commonmark": "<0.18.3",
                 "league/flysystem": "<1.1.4|>=2,<2.1.1",
                 "lexik/jwt-authentication-bundle": "<2.10.7|>=2.11,<2.11.3",
@@ -1908,7 +1927,7 @@
                 "phpunit/phpunit": ">=4.8.19,<4.8.28|>=5.0.10,<5.6.3",
                 "phpwhois/phpwhois": "<=4.2.5",
                 "phpxmlrpc/extras": "<0.6.1",
-                "pimcore/pimcore": "<10.1.1",
+                "pimcore/pimcore": "<10.1.3",
                 "pocketmine/pocketmine-mp": "<3.15.4",
                 "pressbooks/pressbooks": "<5.18",
                 "prestashop/autoupgrade": ">=4,<4.10.1",
@@ -2028,6 +2047,7 @@
                 "verot/class.upload.php": "<=1.0.3|>=2,<=2.0.4",
                 "vrana/adminer": "<4.7.9",
                 "wallabag/tcpdf": "<6.2.22",
+                "web-auth/webauthn-framework": ">=3.3,<3.3.4",
                 "webcoast/deferred-image-processing": "<1.0.2",
                 "wikimedia/parsoid": "<0.12.2",
                 "willdurand/js-translation-bundle": "<2.1.1",
@@ -2043,7 +2063,7 @@
                 "yiisoft/yii2-jui": "<2.0.4",
                 "yiisoft/yii2-redis": "<2.0.8",
                 "yoast-seo-for-typo3/yoast_seo": "<7.2.3",
-                "yourls/yourls": "<=1.8.1",
+                "yourls/yourls": "<=1.8.2",
                 "zendesk/zendesk_api_client_php": "<2.2.11",
                 "zendframework/zend-cache": ">=2.4,<2.4.8|>=2.5,<2.5.3",
                 "zendframework/zend-captcha": ">=2,<2.4.9|>=2.5,<2.5.2",
@@ -2104,7 +2124,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-14T21:02:42+00:00"
+            "time": "2021-09-29T18:03:48+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
